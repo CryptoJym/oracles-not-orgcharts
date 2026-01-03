@@ -379,6 +379,69 @@ h1 {
   }
 }
 
+/* PRD falsifier: 375px width mobile (iPhone SE / small phones) */
+@media (max-width: 480px) {
+  .container {
+    width: 94vw;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .hero {
+    padding: 80px 0 50px;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .section__header h2 {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+  }
+
+  .diff__col,
+  .example__card,
+  .constraint-grid div,
+  .control__grid div {
+    padding: 16px;
+  }
+
+  .code-block pre {
+    font-size: 0.75rem;
+    padding: 14px 12px 20px;
+  }
+
+  .funnel {
+    font-size: 0.7rem;
+    padding: 16px;
+  }
+
+  .pill {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .hero__cta {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .topbar__inner {
+    padding: 12px 0;
+  }
+
+  .logo {
+    font-size: 0.95rem;
+  }
+}
+
+/* Prevent horizontal scroll on all screen sizes */
+html, body {
+  overflow-x: hidden;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
