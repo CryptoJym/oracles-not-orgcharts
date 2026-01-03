@@ -1,45 +1,73 @@
-# PRD: Proof-Driven Development Website
+# PRD (RPG) — Oracles, Not Org Charts
 
 ## Overview
-Create a single-page educational website that teaches proof-driven development
-for AI agents. The page must convert a reader in under 60 seconds by showing a
-memorable phrase, a mindset diff, a concrete example, a visual funnel, and
-paste-ins for Claude + AGENTS.md.
+Build a single-page educational site that teaches proof-driven development for AI agents.
+The page must convert a reader in under 60 seconds using a sequence of short, high-signal
+sections that embody the Propose -> Patch -> Prove -> Pack loop.
 
 ## Goals
-- Teach the core paradigm: "If it doesn't run, it doesn't exist."
+- Instill the prime directive: "If it doesn't run, it doesn't exist."
 - Replace role-based thinking with constraints + interfaces + oracles.
-- Make the proof loop (Propose -> Patch -> Prove -> Pack) unmistakable.
-- Provide copy-paste blocks for immediate adoption.
+- Teach the loop: Propose -> Patch -> Prove -> Pack.
+- Provide copy-paste blocks for immediate adoption (Claude instructions + AGENTS.md).
+- Make the proof plan visible for each section of the page.
 
 ## Non-Goals
-- No backend, no auth, no CMS.
-- No frameworks required; static HTML/CSS/JS only.
-- No dark-mode or theme toggles (keep focus on clarity).
+- No backend or CMS.
+- No authentication or analytics.
+- No framework dependency; static HTML/CSS/JS only.
 
-## Requirements
-1) Hero section with phrase + short explanation.
-2) Mindset diff section (before vs after).
-3) One-minute example with invariant + test + proof.
-4) Funnel illustration (text-based is acceptable).
-5) Roles -> constraints mapping.
-6) Control theory lens: sensors/actuators/controller.
-7) Paste-in sections for Claude instructions and AGENTS.md.
-8) Copy buttons for paste-in blocks.
+## Success Criteria
+- The phrase and diff are visible above the fold.
+- A reader can finish the page in under 2 minutes and recall the phrase.
+- `npm run verify` passes and fails when required phrases are removed.
 
-## Proof Plan (Required)
-- Truth command: `npm run verify`.
-- verify must run deterministic content checks:
-  - required files exist
-  - required phrases present
-- If verify fails, task is not done.
+## Requirements (with Proof Plans)
 
-## Risks
-- Content drift (phrases diverge from requirements).
-- Over-design reduces clarity.
+1) Phrase + Intuition (Hero)
+- Goal: Make the prime directive unforgettable.
+- Proof plan: `npm run verify` checks for the phrase; manual visual check in browser.
+- Assumption: users see the phrase without scrolling.
+- Falsifier: open page at 1366x768 and confirm phrase is visible.
 
-## Assumptions & Falsifiers
-- Assumption: users can copy from the page easily.
-  - Falsifier: copy button test via manual check in browser.
-- Assumption: proof phrases appear in hero + paste-ins.
-  - Falsifier: `npm run verify`.
+2) Mindset Diff
+- Goal: Show a before/after contrast (narrative -> oracle).
+- Proof plan: `npm run verify` checks diff headings and key bullets.
+- Assumption: diff is readable on mobile.
+- Falsifier: resize to 375px width, confirm single-column layout.
+
+3) One-minute Example
+- Goal: Demonstrate invariant -> test -> proof with a simple example.
+- Proof plan: `npm run verify` checks example headline + key lines.
+- Assumption: readers grasp the example in < 60 seconds.
+- Falsifier: manual read-through time check.
+
+4) Funnel Illustration
+- Goal: Visualize proposals filtered by oracles.
+- Proof plan: `npm run verify` checks funnel text block exists.
+- Assumption: ASCII funnel is legible.
+- Falsifier: view on mobile and confirm monospace readability.
+
+5) Roles -> Constraints Mapping
+- Goal: Replace FE/BE/QA framing with constraints + oracles.
+- Proof plan: `npm run verify` checks mapping terms.
+- Assumption: mapping is concrete and action-oriented.
+- Falsifier: reviewer can list at least two oracles per constraint.
+
+6) Control Theory Lens
+- Goal: Teach sensors/actuators/controller in the loop.
+- Proof plan: `npm run verify` checks section titles.
+- Assumption: readers understand the loop as control.
+- Falsifier: manual check that each term is defined on the page.
+
+7) Paste-ins (Claude + AGENTS)
+- Goal: Provide drop-in instructions and operating rules.
+- Proof plan: `npm run verify` checks paste-in content exists.
+- Assumption: copy buttons work in modern browsers.
+- Falsifier: click copy and paste into a text editor.
+
+8) Truth Command
+- Goal: One shared oracle for proof in the repo.
+- Proof plan: `npm run verify` passes with required files + phrases.
+- Assumption: verify is deterministic.
+- Falsifier: run twice; output is identical.
