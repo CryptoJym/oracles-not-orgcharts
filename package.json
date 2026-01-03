@@ -1,0 +1,11 @@
+{
+  "name": "oracles-not-orgcharts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "verify": "bash scripts/verify.sh",
+    "lint": "node scripts/verify.mjs",
+    "test": "node scripts/verify.mjs",
+    "build": "node scripts/verify.mjs"
+  }
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oracles, Not Org Charts</title>
+    <meta name="description" content="Proof-driven development for AI agents. If it doesn't run, it doesn't exist." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Spectral:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <div class="logo">Oracles, Not Org Charts</div>
+        <nav class="nav">
+          <a href="#phrase">Phrase</a>
+          <a href="#diff">Diff</a>
+          <a href="#example">Example</a>
+          <a href="#paste">Paste-ins</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="phrase" class="hero">
+        <div class="container hero__inner">
+          <div class="hero__copy">
+            <p class="eyebrow">Proof-Driven Development for AI Agents</p>
+            <h1>If it doesn&#39;t run, it doesn&#39;t exist.</h1>
+            <p class="lead">
+              This page teaches the phase shift: move from narrative to oracles.
+              Every claim ends in an executable check, or it stays a hypothesis.
+            </p>
+            <div class="hero__cta">
+              <button class="pill">Oracles, not org charts</button>
+              <button class="pill pill--ghost">Propose -> Patch -> Prove -> Pack</button>
+            </div>
+          </div>
+          <div class="hero__panel">
+            <div class="panel__title">Instant intuition</div>
+            <p>
+              Verification is cheaper than invention. A test run falsifies a bad
+              idea in seconds. Thinking harder cannot.
+            </p>
+            <div class="meter">
+              <span>Loop tightness</span>
+              <div class="meter__bar"><span></span></div>
+            </div>
+            <div class="meter">
+              <span>Truth density</span>
+              <div class="meter__bar meter__bar--alt"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="diff" class="section">
+        <div class="container">
+          <div class="section__header">
+            <h2>The mindset shift (as a diff)</h2>
+            <p>From narrative to proof. From roles to constraints.</p>
+          </div>
+          <div class="diff">
+            <div class="diff__col">
+              <h3>Before</h3>
+              <ul>
+                <li>Goal: write code that sounds right.</li>
+                <li>Trust: model confidence + explanation.</li>
+                <li>Success: "I implemented it."</li>
+                <li>Strategy: big plan -> big change -> debug later.</li>
+                <li>QA: a phase at the end.</li>
+                <li>Uncertainty: hidden or hand-waved.</li>
+              </ul>
+            </div>
+            <div class="diff__col diff__col--after">
+              <h3>After</h3>
+              <ul>
+                <li>Goal: produce a change the computer can verify.</li>
+                <li>Trust: compilers, linters, tests, benchmarks.</li>
+                <li>Success: "Here is the command that passed."</li>
+                <li>Strategy: small diff -> fastest falsifier first.</li>
+                <li>QA: an always-on judge in the loop.</li>
+                <li>Uncertainty: explicit assumptions + falsifiers.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split">
+        <div class="container split__inner">
+          <div>
+            <h2>Roles -> constraints</h2>
+            <p>
+              Front-end / back-end / QA are throughput partitions. The AI-native
+              decomposition is constraints + interfaces + oracles.
+            </p>
+            <div class="chip-list">
+              <span>Spec</span><span>Interfaces</span><span>Transformations</span>
+              <span>Verification</span><span>Observability</span>
+            </div>
+          </div>
+          <div class="constraint-grid">
+            <div>
+              <h4>UI constraints</h4>
+              <p>Accessibility, latency, responsiveness, cross-browser.</p>
+              <span class="oracle">Oracles: Playwright, a11y, visual snapshots</span>
+            </div>
+            <div>
+              <h4>Data constraints</h4>
+              <p>Schemas, idempotency, boundary checks.</p>
+              <span class="oracle">Oracles: contract tests, schema validation</span>
+            </div>
+            <div>
+              <h4>Reliability constraints</h4>
+              <p>SLOs, rollback safety, error budgets.</p>
+              <span class="oracle">Oracles: telemetry, canaries, replay tests</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="example" class="section">
+        <div class="container">
+          <div class="section__header">
+            <h2>A one-minute example</h2>
+            <p>Same task, two mindsets.</p>
+          </div>
+          <div class="example">
+            <div class="example__card">
+              <h3>Open-loop (story)</h3>
+              <p>
+                "I normalized emails in signup and login. This should prevent
+                duplicates."
+              </p>
+            </div>
+            <div class="example__card example__card--proof">
+              <h3>Proof-driven (physics)</h3>
+              <ul>
+                <li>Invariant: email is canonical (trim + lowercase) and unique.</li>
+                <li>Small diff: add normalizeEmail() once; call at ingress.</li>
+                <li>Regression test: Foo@Bar.com then foo@bar.com -> fail.</li>
+                <li>Proof: npm run verify passes.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__header">
+            <h2>Why it scales</h2>
+            <p>Closed loops converge. Open loops drift.</p>
+          </div>
+          <pre class="funnel">
+(LLM proposes diffs)            (Oracles judge truth)
+  many candidates      ->       lint / build / tests       ->   ship
++ patch A            fails unit test
++ patch B            fails typecheck
++ patch C            passes all checks
+          </pre>
+        </div>
+      </section>
+
+      <section class="section control">
+        <div class="container">
+          <div class="section__header">
+            <h2>Control theory lens</h2>
+            <p>Planning is control. Oracles are sensors.</p>
+          </div>
+          <div class="control__grid">
+            <div>
+              <h4>Sensors (truth)</h4>
+              <ul>
+                <li>CI results, unit/integration tests</li>
+                <li>Static analysis, typecheck</li>
+                <li>Runtime telemetry, SLOs</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Actuators (change)</h4>
+              <ul>
+                <li>Code edits, schema updates</li>
+                <li>Config + infra changes</li>
+                <li>Feature flags and rollbacks</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Controller (harness)</h4>
+              <ul>
+                <li>Propose -> Patch -> Prove -> Pack</li>
+                <li>Stops at first failure</li>
+                <li>Reduces scope when uncertain</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="paste" class="section paste">
+        <div class="container">
+          <div class="section__header">
+            <h2>Paste-ins</h2>
+            <p>Drop these into your project to enforce proof over prose.</p>
+          </div>
+
+          <div class="code-block" data-copy>
+            <div class="code-block__header">
+              <span>Claude Project Instructions</span>
+              <button class="copy" data-copy-btn>Copy</button>
+            </div>
+            <pre><code>You are an engineering agent in a proof-driven repo.
+
+Prime directive: If it doesn't run, it doesn't exist.
+Never claim fixed/works/done without executable evidence (tests/typecheck/build/lint).
+
+Operate in a closed loop:
+1) Propose: Goal + non-goals + smallest approach + proof plan (commands).
+2) Patch: small diffs only; no rewrites unless required.
+3) Prove: run fastest falsifiers first (format -> lint -> typecheck/build -> unit tests -> integration/e2e as needed).
+4) Pack: add regression tests for bug fixes; update docs/contracts.
+
+Output format every time:
+- Plan (Goal, Non-goals, Proof plan)
+- Changes (files + why)
+- Proof (commands + pass/fail)
+- Risks & mitigations
+If you can't run commands, say exactly why and provide the exact commands a human/CI should run.</code></pre>
+          </div>
+
+          <div class="code-block" data-copy>
+            <div class="code-block__header">
+              <span>AGENTS.md (repo root)</span>
+              <button class="copy" data-copy-btn>Copy</button>
+            </div>
+            <pre><code># AGENTS.md -- Proof-Driven Agent Operating Rules
+
+Phrase: If it doesn't run, it doesn't exist.
+
+This repo uses closed-loop development. Agents may propose and implement changes,
+but correctness is determined by oracles: compilers, linters, tests, benchmarks--not prose.
+
+Non-negotiables:
+1) No proof, no claim.
+2) Regression test mandate for bug fixes.
+3) Don't disable truth gates.
+4) Interfaces are physics.
+5) Externalize uncertainty with falsifiers.
+
+Loop: Propose -> Patch -> Prove -> Pack
+Proof ladder: format -> lint -> typecheck/build -> unit tests -> integration/e2e (if relevant)
+Truth command: npm run verify (or make verify).
+</code></pre>
+          </div>
+
+          <div class="code-block" data-copy>
+            <div class="code-block__header">
+              <span>verify.sh (template)</span>
+              <button class="copy" data-copy-btn>Copy</button>
+            </div>
+            <pre><code>#!/usr/bin/env bash
+set -euo pipefail
+
+echo "== format check =="
+# TODO: replace with your formatter check
+
+echo "== lint =="
+# TODO: eslint ./ ruff check / golangci-lint run
+
+echo "== typecheck/build =="
+# TODO: tsc -p . / mypy . / cargo check
+
+echo "== unit tests =="
+# TODO: vitest / pytest / go test ./...
+
+echo "== verify complete =="</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section close">
+        <div class="container close__inner">
+          <h2>Oracles, not org charts.</h2>
+          <p>
+            Division of labor is not required for quality. Division of verification is.
+            Build the harness, and the model becomes reliable.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span>Proof-driven development is the operating system for AI-native engineering.</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

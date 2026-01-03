@@ -1,0 +1,178 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Initialize project structure and verification script",
+        "description": "Set up static HTML/CSS/JS project with npm package.json and implement deterministic verify command to check required files and phrases.",
+        "details": "Create package.json with scripts: { 'verify': 'node verify.js' }. Implement verify.js using Node.js fs module to check existence of index.html, presence of key phrases like 'If it doesn\\'t run, it doesn\\'t exist.', proof loop terms, and required sections. Use exact string matching for determinism. Run `npm install` for no dependencies needed. Best practice: Use synchronous fs.existsSync and fs.readFileSync for simple checks.",
+        "testStrategy": "Run `npm run verify` manually; ensure it passes with all required files/phrases and fails when removing them. Manual check: delete phrase from hero, verify fails.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Implement hero section with phrase and explanation",
+        "description": "Create hero section displaying memorable phrase 'If it doesn't run, it doesn't exist.' with short explanation to convert reader in seconds.",
+        "details": "In index.html, add <section id='hero'> with <h1>If it doesn't run, it doesn't exist.</h1> followed by 1-2 sentence explanation of proof-driven development paradigm. Style with CSS: full-width, large bold font, high contrast (white bg, black text). Ensure phrase exactly matches verify script check.",
+        "testStrategy": "`npm run verify` checks phrase presence in hero; manual browser check for visual prominence and readability.",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "Build mindset diff section (before vs after)",
+        "description": "Add section contrasting role-based thinking vs constraints + interfaces + oracles.",
+        "details": "Use HTML table or two-column divs: Left 'Before': bullet points on role prompts; Right 'After': constraints, interfaces, oracles. CSS: side-by-side responsive grid. Include exact phrases for verify: 'Replace role-based thinking with constraints + interfaces + oracles.'",
+        "testStrategy": "`npm run verify` confirms section phrases; browser resize test for mobile/desktop layout.",
+        "priority": "high",
+        "dependencies": [
+          1,
+          2
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Develop one-minute example with invariant, test, proof",
+        "description": "Create concrete example section showing invariant + test + proof loop in action.",
+        "details": "HTML section with code blocks: 1) Invariant definition, 2) Test code snippet, 3) Proof execution. Use <pre><code> with syntax highlighting via CSS. Explain proof loop briefly. Make scannable for 60-second read.",
+        "testStrategy": "`npm run verify` checks example content; time test: read/understand in <60s manually.",
+        "priority": "high",
+        "dependencies": [
+          1,
+          2,
+          3
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Add funnel illustration and proof loop visualization",
+        "description": "Implement visual funnel and Propose -> Patch -> Prove -> Pack loop diagram.",
+        "details": "Use text-based SVG or CSS-drawn funnel: wide top (Propose), narrowing to Pack. HTML <svg> with paths/arrows labeled exactly 'Propose -> Patch -> Prove -> Pack'. Responsive CSS scaling.",
+        "testStrategy": "`npm run verify` checks loop phrases; browser zoom/resize test for clarity.",
+        "priority": "medium",
+        "dependencies": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Create roles to constraints mapping section",
+        "description": "Build section mapping traditional roles to constraints + interfaces + oracles.",
+        "details": "Table format: columns 'Role' vs 'Constraint/Interface/Oracle'. Rows e.g., 'Planner' -> 'Propose constraints'. CSS table styling: borders, hover effects for interactivity.",
+        "testStrategy": "`npm run verify` confirms mapping content; manual scan for clarity.",
+        "priority": "medium",
+        "dependencies": [
+          1,
+          2,
+          3
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Add control theory lens section",
+        "description": "Include section explaining sensors/actuators/controller through proof-driven lens.",
+        "details": "Three-part divs: Sensors (oracles), Actuators (patches), Controller (prove loop). Diagrams with arrows. Tie to 'If it doesn't run...' paradigm.",
+        "testStrategy": "`npm run verify` checks key terms; comprehension check via quick read.",
+        "priority": "medium",
+        "dependencies": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Implement paste-in sections for Claude and AGENTS.md",
+        "description": "Add copy-paste blocks for Claude instructions and AGENTS.md content.",
+        "details": "HTML <pre><code id='claude-block'>...</code> and <pre><code id='agents-block'>...</code> with content teaching proof-driven dev. Include exact phrases from PRD for verify.",
+        "testStrategy": "`npm run verify` checks paste-in phrases; manual copy test.",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "Add copy buttons for all paste-in blocks",
+        "description": "Implement JS copy-to-clipboard buttons for Claude and AGENTS.md blocks.",
+        "details": "Vanilla JS: Add <button onclick='copyToClipboard(\"claude-block\")'>Copy</button>. Function: navigator.clipboard.writeText(document.getElementById(id).textContent). Fallback for old browsers: select/execCommand. Style buttons: prominent, green on success.",
+        "testStrategy": "Browser test: click copy, paste into notepad verifies content; test in Chrome/Firefox/Safari.",
+        "priority": "medium",
+        "dependencies": [
+          8
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Apply global styling, layout, and responsiveness",
+        "description": "Style entire page for clarity, single-page scroll, mobile-first responsive design.",
+        "details": "CSS: sans-serif font (system-ui), max-width 800px centered, sections with padding/margins, smooth scroll. Media queries @media (max-width: 768px) for stacking. No frameworks, pure CSS Grid/Flexbox.",
+        "testStrategy": "Browser dev tools: test iPhone/Android/Desktop views; Lighthouse audit for performance/accessibility.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 11,
+        "title": "Final verification and proof plan validation",
+        "description": "Run full verify, fix any issues, ensure all assumptions hold.",
+        "details": "Execute `npm run verify`; address failures. Manual tests: copy buttons, 60s read-through conversion, no content drift.",
+        "testStrategy": "`npm run verify` must pass; manual falsifier checks: copy in browser, scan for proof phrases.",
+        "priority": "high",
+        "dependencies": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2026-01-03T18:43:50.090Z",
+      "updated": "2026-01-03T18:43:50.091Z",
+      "description": "Tasks for master context"
+    }
+  }
+}
