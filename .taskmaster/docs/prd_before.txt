@@ -1,0 +1,28 @@
+# PRD: Proof-Driven Development Website (Before)
+
+## Overview
+Create a single-page educational website that teaches proof-driven development
+for AI agents. The page must convert a reader in under 60 seconds by showing a
+memorable phrase, a mindset diff, a concrete example, a visual funnel, and
+paste-ins for Claude + AGENTS.md.
+
+## Goals
+- Teach the core paradigm: "If it doesn't run, it doesn't exist."
+- Replace role-based thinking with constraints + interfaces + oracles.
+- Make the proof loop (Propose -> Patch -> Prove -> Pack) unmistakable.
+- Provide copy-paste blocks for immediate adoption.
+
+## Non-Goals
+- No backend, no auth, no CMS.
+- No frameworks required; static HTML/CSS/JS only.
+- No dark-mode or theme toggles (keep focus on clarity).
+
+## Requirements
+1) Hero section with phrase + short explanation.
+2) Mindset diff section (before vs after).
+3) One-minute example with invariant + test + proof.
+4) Funnel illustration (text-based is acceptable).
+5) Roles -> constraints mapping.
+6) Control theory lens: sensors/actuators/controller.
+7) Paste-in sections for Claude instructions and AGENTS.md.
+8) Copy buttons for paste-in blocks.
