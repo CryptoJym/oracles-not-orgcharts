@@ -1,0 +1,3252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>15 Patterns | AI-Native Intuitions</title>
+    <meta name="description" content="Fifteen patterns that reshape intuition for the AI-native era. Interactive physics metaphors for understanding systems change." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="patterns.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <div class="grid-bg"></div>
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+    <header class="nav">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">
+          <span class="nav__icon">◈</span>
+          <span>PATTERNS</span>
+        </a>
+        <div class="nav__links">
+          <a href="index.html">Oracle Shift</a>
+          <a href="shifts.html">9 Shifts</a>
+          <a href="#patterns-map">All 15</a>
+        </div>
+        <div class="nav__status">
+          <span class="status-dot"></span>
+          <span class="mono">PATTERNS: 15</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="hero" class="hero hero--patterns">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="pulse"></span>
+            <span class="mono">AI-NATIVE INTUITIONS</span>
+          </div>
+
+          <h1 class="hero__title">
+            <span class="hero__line">15 patterns</span>
+            <span class="hero__line hero__line--accent">that reshape how you see.</span>
+          </h1>
+
+          <p class="hero__sub">
+            Each pattern is a physics metaphor you can play with.
+            Drag, toggle, watch. Let your hands teach your intuition.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="#pattern-1" class="btn btn--primary">
+              <span class="btn__glow"></span>
+              Start Exploring
+            </a>
+            <a href="#patterns-map" class="btn btn--ghost">
+              <span class="mono">View Pattern Map</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN MAP (Mini-Nav) -->
+      <section id="patterns-map" class="patterns-map">
+        <div class="patterns-map__inner">
+          <div class="patterns-map__header">
+            <h2 class="patterns-map__title">Pattern Map</h2>
+            <div class="depth-toggle">
+              <button class="depth-toggle__btn depth-toggle__btn--active" data-depth="simple">Simple</button>
+              <button class="depth-toggle__btn" data-depth="deep">Deep</button>
+            </div>
+          </div>
+          <div class="patterns-map__grid">
+            <a href="#pattern-1" class="pattern-chip" data-pattern="1">
+              <span class="pattern-chip__num">01</span>
+              <span class="pattern-chip__name">Coherence Wins</span>
+            </a>
+            <a href="#pattern-2" class="pattern-chip" data-pattern="2">
+              <span class="pattern-chip__num">02</span>
+              <span class="pattern-chip__name">Loop Is Product</span>
+            </a>
+            <a href="#pattern-3" class="pattern-chip" data-pattern="3">
+              <span class="pattern-chip__num">03</span>
+              <span class="pattern-chip__name">Bottleneck Gravity</span>
+            </a>
+            <a href="#pattern-4" class="pattern-chip" data-pattern="4">
+              <span class="pattern-chip__num">04</span>
+              <span class="pattern-chip__name">Action Gets Cheap</span>
+            </a>
+            <a href="#pattern-5" class="pattern-chip" data-pattern="5">
+              <span class="pattern-chip__num">05</span>
+              <span class="pattern-chip__name">Language = Infra</span>
+            </a>
+            <a href="#pattern-6" class="pattern-chip" data-pattern="6">
+              <span class="pattern-chip__num">06</span>
+              <span class="pattern-chip__name">Legibility = Power</span>
+            </a>
+            <a href="#pattern-7" class="pattern-chip" data-pattern="7">
+              <span class="pattern-chip__num">07</span>
+              <span class="pattern-chip__name">Symbiosis Modes</span>
+            </a>
+            <a href="#pattern-8" class="pattern-chip" data-pattern="8">
+              <span class="pattern-chip__num">08</span>
+              <span class="pattern-chip__name">Identity Gravity</span>
+            </a>
+            <a href="#pattern-9" class="pattern-chip" data-pattern="9">
+              <span class="pattern-chip__num">09</span>
+              <span class="pattern-chip__name">Entropy Debt</span>
+            </a>
+            <a href="#pattern-10" class="pattern-chip" data-pattern="10">
+              <span class="pattern-chip__num">10</span>
+              <span class="pattern-chip__name">Persuasion Gravity</span>
+            </a>
+            <a href="#pattern-11" class="pattern-chip" data-pattern="11">
+              <span class="pattern-chip__num">11</span>
+              <span class="pattern-chip__name">Prompt = Policy</span>
+            </a>
+            <a href="#pattern-12" class="pattern-chip" data-pattern="12">
+              <span class="pattern-chip__num">12</span>
+              <span class="pattern-chip__name">Fear Variable</span>
+            </a>
+            <a href="#pattern-13" class="pattern-chip" data-pattern="13">
+              <span class="pattern-chip__num">13</span>
+              <span class="pattern-chip__name">AI vs AI</span>
+            </a>
+            <a href="#pattern-14" class="pattern-chip" data-pattern="14">
+              <span class="pattern-chip__num">14</span>
+              <span class="pattern-chip__name">Values = Constraints</span>
+            </a>
+            <a href="#pattern-15" class="pattern-chip" data-pattern="15">
+              <span class="pattern-chip__num">15</span>
+              <span class="pattern-chip__name">Identity Stress</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 1: Coherence Wins -->
+      <section id="pattern-1" class="pattern-band pattern-band--odd" data-pattern="1">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-01-coherence.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 01</span>
+            <h2 class="pattern-title">Coherence Wins</h2>
+            <p class="pattern-line">Coherence beats cleverness.</p>
+
+            <!-- Level tabs -->
+            <div class="level-tabs" data-pattern="1">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="1">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="1">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="1">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="1">
+              <p class="pattern-body">
+                When instructions contradict, AI models don't pick the "right" one—they hallucinate
+                a compromise. Clear, coherent direction produces reliable outputs. Messy inputs
+                produce messy outputs.
+              </p>
+              <p class="pattern-takeaway mono">Clear beats messy. Less rework, fewer "what did we decide?" loops.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="1" hidden>
+              <p class="pattern-body">
+                Contradiction creates cognitive overhead for both humans and machines. When a policy
+                says "move fast" AND "nothing ships without review," teams waste energy resolving
+                the tension every time. AI amplifies this—it will try to satisfy both constraints,
+                producing outputs that do neither well.
+              </p>
+              <p class="pattern-body">
+                <strong>The coherence multiplier:</strong> One precise decision can collapse many
+                contradictions. "Reviews happen async within 24h" resolves the speed-vs-quality tension
+                once, saving thousands of micro-decisions.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="1" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Decision recall accuracy (ask 5 people "what did we decide?")</li>
+                    <li>Rework rate per project phase</li>
+                    <li>Number of active "interpretations" per policy</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>"Single source of truth + owner + timestamp" for all decisions</li>
+                    <li>Contradiction audits in prompt libraries</li>
+                    <li>Explicit priority rankings when values conflict</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">Real contradictions are harder to spot—they hide in assumptions and implicit context, not labeled cards.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="1">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="coherence">
+              <!-- LEVEL 1: Quick - Mess→Clear slider -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="1">
+                <div class="coherence-demo">
+                  <div class="coherence-field" id="coherence-field">
+                    <!-- Particles will be generated by JS -->
+                  </div>
+                  <div class="coherence-controls">
+                    <label class="slider-label">
+                      <span class="slider-label__text">Mess</span>
+                      <input type="range" min="0" max="100" value="20" class="coherence-slider" id="coherence-slider">
+                      <span class="slider-label__text">Clear</span>
+                    </label>
+                    <div class="coherence-output mono" id="coherence-output">
+                      <span class="output-label">Signal:</span>
+                      <span class="output-value">20%</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="level-notice mono">Notice: removing contradictions increases speed.</p>
+              </div>
+
+              <!-- LEVEL 2: Deeper - Contradiction Finder -->
+              <div class="level-content" data-level="deeper" data-pattern="1" hidden>
+                <div class="contradiction-demo" id="contradiction-demo">
+                  <div class="contradiction-header mono">
+                    <span>Contradictions found:</span>
+                    <span class="rework-meter">
+                      <span class="rework-meter-fill"></span>
+                    </span>
+                    <span class="rework-value">0/4</span>
+                  </div>
+                  <div class="statement-grid">
+                    <div class="statement-card" data-conflict="speed">
+                      <strong>"Move fast, ship daily"</strong>
+                      <div class="contradiction-text">↯ But also "nothing ships without full QA review"</div>
+                    </div>
+                    <div class="statement-card" data-conflict="quality">
+                      <strong>"Quality is our brand"</strong>
+                      <div class="contradiction-text">↯ But also "we can't miss the deadline"</div>
+                    </div>
+                    <div class="statement-card" data-conflict="customer">
+                      <strong>"Customer is always right"</strong>
+                      <div class="contradiction-text">↯ But also "we know better than the customer"</div>
+                    </div>
+                    <div class="statement-card" data-conflict="process">
+                      <strong>"Follow the process"</strong>
+                      <div class="contradiction-text">↯ But also "use your judgment"</div>
+                    </div>
+                  </div>
+                  <div class="clarify-card">
+                    <strong>Clarify Card</strong><br>
+                    Click statements above to surface contradictions
+                  </div>
+                </div>
+                <p class="level-notice">Notice: one precise decision can collapse many contradictions.</p>
+              </div>
+
+              <!-- LEVEL 3: Lab - Controls -->
+              <div class="level-content" data-level="lab" data-pattern="1" hidden>
+                <div class="lab-demo">
+                  <div class="lab-demo-header mono">
+                    <span>Coherence Dashboard</span>
+                  </div>
+                  <div class="lab-controls-grid">
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Decision Source</label>
+                      <select class="lab-select mono" id="coherence-source">
+                        <option value="scattered">Scattered (Slack, email, meetings)</option>
+                        <option value="single">Single source of truth</option>
+                      </select>
+                    </div>
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Conflict Resolution</label>
+                      <select class="lab-select mono" id="coherence-resolution">
+                        <option value="implicit">Implicit (figure it out)</option>
+                        <option value="explicit">Explicit priority ranking</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="lab-output">
+                    <div class="lab-output-label mono">Predicted Coherence:</div>
+                    <div class="lab-output-value" id="coherence-lab-output">▓░░░░ Low</div>
+                  </div>
+                </div>
+                <p class="level-notice mono">Notice: coherence requires ongoing maintenance, not one-time clarity.</p>
+              </div>
+
+              <div class="demo-footer">
+                <button class="reset-btn mono" data-reset="coherence">↺ Reset</button>
+              </div>
+            </div>
+
+            <!-- Workplace Examples Drawer -->
+            <div class="workplace-drawer" id="workplace-1" hidden>
+              <div class="workplace-examples">
+                <h4 class="workplace-title mono">How this shows up at work:</h4>
+                <ul class="workplace-list">
+                  <li>• Team debates the same decision repeatedly because no one documented it</li>
+                  <li>• AI outputs vary wildly because prompts contain contradictory instructions</li>
+                  <li>• New hires get different answers from different people about "how we do things"</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 2: The Loop Is the Product -->
+      <section id="pattern-2" class="pattern-band pattern-band--even" data-pattern="2">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-02-stewardship.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 02</span>
+            <h2 class="pattern-title">The Loop Is the Product</h2>
+            <p class="pattern-line">Speed of iteration beats quality of plan.</p>
+
+            <!-- Level tabs -->
+            <div class="level-tabs" data-pattern="2">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="2">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="2">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="2">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="2">
+              <p class="pattern-body">
+                Feedback reveals what plans assume. A perfect plan tested once loses to a rough
+                sketch tested ten times. Each iteration compounds learning—speed is a multiplier
+                on insight.
+              </p>
+              <p class="pattern-takeaway mono">Cycle time vs outcome quality correlation proves the point.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="2" hidden>
+              <p class="pattern-body">
+                The traditional view treats iteration as a cost—each cycle burns time and resources.
+                The modern view treats iteration as the product—each cycle is an investment that
+                yields data you couldn't get any other way.
+              </p>
+              <p class="pattern-body">
+                <strong>The iteration dividend:</strong> 10× speed doesn't just save time—it changes
+                what's possible to learn. Weekly teams see 4 data points per month. Daily teams see 20.
+                That's not 5× more data—it's a fundamentally different relationship with uncertainty.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="2" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Cycle time (idea to deployed test)</li>
+                    <li>Feedback latency (deploy to first user signal)</li>
+                    <li>Pivot count per quarter (direction changes from data)</li>
+                    <li>Plan vs actual drift</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Feature flags (ship without releasing, test in prod)</li>
+                    <li>Trunk-based development (eliminate branch merge delays)</li>
+                    <li>Synthetic testing (feedback before real users arrive)</li>
+                    <li>Automated deployments (remove human bottlenecks)</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">The demo assumes all iterations are equal. Reality: fast iterations on the wrong thing waste cycles. Speed only helps when the feedback signal is real.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="2">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="loop">
+              <!-- LEVEL 1: Quick - Speed Dial -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="2">
+                <div class="loop-demo">
+                  <svg class="loop-dial" viewBox="0 0 200 200" id="loop-dial">
+                    <defs>
+                      <linearGradient id="speedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#f85149"/>
+                        <stop offset="50%" style="stop-color:#d29922"/>
+                        <stop offset="100%" style="stop-color:#3fb950"/>
+                      </linearGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="var(--border)" stroke-width="12"/>
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="url(#speedGrad)" stroke-width="12"
+                            stroke-dasharray="502" stroke-dashoffset="251" stroke-linecap="round"
+                            transform="rotate(-90 100 100)" class="loop-arc" id="loop-arc"/>
+                    <text x="100" y="95" text-anchor="middle" class="loop-speed-text" id="loop-speed-text">1×</text>
+                    <text x="100" y="115" text-anchor="middle" class="loop-label-text">iteration speed</text>
+                    <circle cx="100" cy="20" r="12" fill="var(--accent-cyan)" class="loop-handle" id="loop-handle"/>
+                  </svg>
+                  <div class="loop-iterations" id="loop-iterations">
+                    <div class="iteration-dot"></div>
+                  </div>
+                  <div class="loop-output mono">
+                    <span>Cycles completed: </span>
+                    <span id="loop-cycles">0</span>
+                  </div>
+                </div>
+                <p class="level-notice">Notice: 10× speed doesn't just save time—it changes what's possible to learn.</p>
+              </div>
+
+              <!-- LEVEL 2: Deeper - Loop Racer Comparison -->
+              <div class="level-content" data-level="deeper" data-pattern="2" hidden>
+                <div class="loop-racer" id="loop-racer">
+                  <div class="racer-header mono">
+                    <span>Same starting point. Same destination. Different loop speeds.</span>
+                  </div>
+                  <div class="racer-tracks">
+                    <div class="racer-track" data-team="slow">
+                      <div class="track-label mono">Team A: Weekly iterations</div>
+                      <div class="track-bar">
+                        <div class="track-progress" id="slow-progress"></div>
+                        <div class="track-dot"></div>
+                      </div>
+                      <div class="track-stats mono">
+                        <span>Iterations: <span id="slow-iterations">0</span></span>
+                        <span>Learnings: <span id="slow-learnings">0</span></span>
+                      </div>
+                    </div>
+                    <div class="racer-track" data-team="fast">
+                      <div class="track-label mono">Team B: Daily iterations</div>
+                      <div class="track-bar track-bar--fast">
+                        <div class="track-progress track-progress--fast" id="fast-progress"></div>
+                        <div class="track-dot"></div>
+                      </div>
+                      <div class="track-stats mono">
+                        <span>Iterations: <span id="fast-iterations">0</span></span>
+                        <span>Learnings: <span id="fast-learnings">0</span></span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="race-btn mono" id="start-race">▶ Start Race (30 days)</button>
+                </div>
+                <p class="level-notice">Notice: Team B doesn't just arrive faster—they have 7× more course corrections.</p>
+              </div>
+
+              <!-- LEVEL 3: Lab - Controls -->
+              <div class="level-content" data-level="lab" data-pattern="2" hidden>
+                <div class="lab-demo">
+                  <div class="lab-demo-header mono">
+                    <span>Iteration Speed Simulator</span>
+                  </div>
+                  <div class="lab-controls-grid">
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Deployment Frequency</label>
+                      <select class="lab-select mono" id="loop-deploy">
+                        <option value="monthly">Monthly releases</option>
+                        <option value="weekly">Weekly releases</option>
+                        <option value="daily">Daily deploys</option>
+                        <option value="continuous">Continuous deployment</option>
+                      </select>
+                    </div>
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Feedback Source</label>
+                      <select class="lab-select mono" id="loop-feedback">
+                        <option value="surveys">Quarterly surveys</option>
+                        <option value="analytics">Real-time analytics</option>
+                        <option value="interviews">User interviews</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="lab-output">
+                    <div class="lab-output-label mono">Learning Velocity:</div>
+                    <div class="lab-output-value" id="loop-lab-output">▓░░░░ Low</div>
+                  </div>
+                </div>
+                <p class="level-notice mono">Notice: speed × signal quality = learning velocity.</p>
+              </div>
+
+              <div class="demo-footer">
+                <button class="reset-btn mono" data-reset="loop">↺ Reset</button>
+              </div>
+            </div>
+
+            <!-- Workplace Examples Drawer -->
+            <div class="workplace-drawer" id="workplace-2" hidden>
+              <div class="workplace-examples">
+                <h4 class="workplace-title mono">How this shows up at work:</h4>
+                <ul class="workplace-list">
+                  <li>• Team debates feature list for 3 weeks vs. team ships MVP in 3 days</li>
+                  <li>• 90-day "perfect fit" hiring search vs. 2-week trial contracts</li>
+                  <li>• Quarterly OKR rewrites vs. weekly "what did we learn" rituals</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 3: Bottlenecks Create Gravity Wells -->
+      <section id="pattern-3" class="pattern-band pattern-band--odd" data-pattern="3">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-03-cost-fluidity.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 03</span>
+            <h2 class="pattern-title">Bottlenecks Create Gravity Wells</h2>
+            <p class="pattern-line">Work accumulates around constraints.</p>
+
+            <!-- Level tabs -->
+            <div class="level-tabs" data-pattern="3">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="3">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="3">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="3">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="3">
+              <p class="pattern-body">
+                Accelerating non-bottlenecks adds cost, not value. When one stage is slower than
+                others, work piles up in front of it. Speeding up fast stages just moves the pile
+                to the slow stage faster.
+              </p>
+              <p class="pattern-takeaway mono">Queue length at each pipeline stage tells the truth.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="3" hidden>
+              <p class="pattern-body">
+                Theory of Constraints isn't new—but AI makes it more visible. When AI accelerates
+                one stage (drafting, coding, analysis), the human stages (review, approval, decision)
+                become the visible bottleneck.
+              </p>
+              <p class="pattern-body">
+                <strong>The gravity well effect:</strong> Work doesn't just queue—it creates pressure.
+                People rush reviews, skip steps, or find workarounds. The bottleneck shapes behavior
+                across the entire system.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="3" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Queue depth at each pipeline stage</li>
+                    <li>Wait time vs work time ratio</li>
+                    <li>Utilization by stage (bottleneck at 100%?)</li>
+                    <li>WIP limit violations</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Subordinate to constraint (don't outpace bottleneck)</li>
+                    <li>Elevate the constraint (add capacity there only)</li>
+                    <li>Exploit the constraint (never let it sit idle)</li>
+                    <li>Find the new constraint (it always moves)</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">The demo shows discrete stages. Reality: constraints shift. Today's bottleneck becomes tomorrow's fast lane when fixed. The constraint is always moving.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="3">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="bottleneck">
+              <!-- LEVEL 1: Quick - Marble Funnel -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="3">
+                <div class="bottleneck-demo">
+                  <canvas id="bottleneck-canvas" width="400" height="300"></canvas>
+                  <div class="bottleneck-controls">
+                    <button class="bottleneck-btn mono" data-action="add-marble">+ Add Work</button>
+                    <button class="bottleneck-btn mono" data-action="add-hole">+ Add Bottleneck</button>
+                    <button class="bottleneck-btn mono" data-action="remove-hole">− Remove Bottleneck</button>
+                  </div>
+                  <div class="bottleneck-stats mono">
+                    <span>Marbles: <span id="marble-count">0</span></span>
+                    <span>Stuck: <span id="stuck-count">0</span></span>
+                    <span>Through: <span id="through-count">0</span></span>
+                  </div>
+                </div>
+                <p class="level-notice">Notice: adding more work while the bottleneck exists just makes the pile bigger.</p>
+              </div>
+
+              <!-- LEVEL 2: Deeper - Pipeline Analyzer -->
+              <div class="level-content" data-level="deeper" data-pattern="3" hidden>
+                <div class="pipeline-analyzer" id="pipeline-analyzer">
+                  <div class="pipeline-header mono">
+                    <span>Click stages to accelerate. Find the real constraint.</span>
+                  </div>
+                  <div class="pipeline-stages">
+                    <div class="pipeline-stage" data-stage="intake" data-speed="5">
+                      <div class="stage-label mono">Intake</div>
+                      <div class="stage-queue">
+                        <div class="queue-bar" id="queue-intake"></div>
+                      </div>
+                      <div class="stage-throughput mono"><span id="tp-intake">5</span>/sec</div>
+                    </div>
+                    <div class="pipeline-stage" data-stage="process" data-speed="2">
+                      <div class="stage-label mono">Process</div>
+                      <div class="stage-queue">
+                        <div class="queue-bar queue-bar--bottleneck" id="queue-process"></div>
+                      </div>
+                      <div class="stage-throughput mono"><span id="tp-process">2</span>/sec</div>
+                    </div>
+                    <div class="pipeline-stage" data-stage="review" data-speed="4">
+                      <div class="stage-label mono">Review</div>
+                      <div class="stage-queue">
+                        <div class="queue-bar" id="queue-review"></div>
+                      </div>
+                      <div class="stage-throughput mono"><span id="tp-review">4</span>/sec</div>
+                    </div>
+                    <div class="pipeline-stage" data-stage="deploy" data-speed="10">
+                      <div class="stage-label mono">Deploy</div>
+                      <div class="stage-queue">
+                        <div class="queue-bar" id="queue-deploy"></div>
+                      </div>
+                      <div class="stage-throughput mono"><span id="tp-deploy">10</span>/sec</div>
+                    </div>
+                  </div>
+                  <div class="pipeline-output mono">
+                    Total throughput: <span id="pipeline-throughput">2</span>/sec (limited by slowest stage)
+                  </div>
+                </div>
+                <p class="level-notice">Notice: speeding up fast stages does nothing. Only the constraint matters.</p>
+              </div>
+
+              <!-- LEVEL 3: Lab - Controls -->
+              <div class="level-content" data-level="lab" data-pattern="3" hidden>
+                <div class="lab-demo">
+                  <div class="lab-demo-header mono">
+                    <span>Constraint Simulator</span>
+                  </div>
+                  <div class="lab-controls-grid">
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Bottleneck Stage</label>
+                      <select class="lab-select mono" id="bottleneck-stage">
+                        <option value="intake">Intake (requests)</option>
+                        <option value="process" selected>Process (AI work)</option>
+                        <option value="review">Review (human check)</option>
+                        <option value="deploy">Deploy (release)</option>
+                      </select>
+                    </div>
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Strategy</label>
+                      <select class="lab-select mono" id="bottleneck-strategy">
+                        <option value="ignore">Ignore constraint</option>
+                        <option value="subordinate">Subordinate to constraint</option>
+                        <option value="elevate">Elevate constraint</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="lab-output">
+                    <div class="lab-output-label mono">System Throughput:</div>
+                    <div class="lab-output-value" id="bottleneck-lab-output">▓▓░░░ Limited</div>
+                  </div>
+                </div>
+                <p class="level-notice mono">Notice: the constraint is always somewhere. Find it.</p>
+              </div>
+
+              <div class="demo-footer">
+                <button class="reset-btn mono" data-reset="bottleneck">↺ Reset</button>
+              </div>
+            </div>
+
+            <!-- Workplace Examples Drawer -->
+            <div class="workplace-drawer" id="workplace-3" hidden>
+              <div class="workplace-examples">
+                <h4 class="workplace-title mono">How this shows up at work:</h4>
+                <ul class="workplace-list">
+                  <li>• 10 PRs created daily, 2 reviewers available—work piles up waiting</li>
+                  <li>• AI drafts contracts in minutes; legal reviews take weeks</li>
+                  <li>• Features ship fast; learning if they're right takes months</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 4: Action Gets Cheap, Coordination Gets Expensive -->
+      <section id="pattern-4" class="pattern-band pattern-band--even" data-pattern="4">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-04-outcome-orientation.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 04</span>
+            <h2 class="pattern-title">Action Gets Cheap, Coordination Gets Expensive</h2>
+            <p class="pattern-line">The cost flip reshapes everything.</p>
+
+            <!-- Level tabs -->
+            <div class="level-tabs" data-pattern="4">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="4">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="4">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="4">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="4">
+              <p class="pattern-body">
+                AI collapses the cost of doing. Writing, coding, analyzing—all plummet toward near-zero.
+                But coordinating humans? That cost stays fixed—or rises as complexity grows.
+              </p>
+              <p class="pattern-takeaway mono">Clear interfaces beat perfect alignment.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="4" hidden>
+              <p class="pattern-body">
+                Traditional organizations optimize for execution efficiency because doing was expensive.
+                But when AI makes doing cheap, the bottleneck shifts to coordination—meetings,
+                approvals, alignment, handoffs.
+              </p>
+              <p class="pattern-body">
+                <strong>The coordination tax:</strong> Every person added to a decision multiplies
+                communication paths. AI accelerates individual work but can't sit in your meetings.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="4" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Meeting hours / execution hours ratio</li>
+                    <li>Handoff count between team members</li>
+                    <li>Decision latency (question → resolved answer)</li>
+                    <li>Rework percentage from misalignment</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Async-first decision processes</li>
+                    <li>Clear ownership boundaries</li>
+                    <li>Explicit interfaces between teams</li>
+                    <li>Smaller, autonomous work units</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">The demo assumes coordination cost is fixed. Reality: bad coordination compounds. One unclear decision creates cascading confusion downstream.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="4">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="cost">
+              <!-- LEVEL 1: Quick - Cost Bars -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="4">
+                <div class="cost-demo">
+                  <div class="cost-bars">
+                    <div class="cost-bar cost-bar--action">
+                      <div class="cost-bar__label mono">ACTION</div>
+                      <div class="cost-bar__track">
+                        <div class="cost-bar__fill" id="action-cost" style="height: 80%"></div>
+                      </div>
+                      <div class="cost-bar__value mono" id="action-value">$80</div>
+                    </div>
+                    <div class="cost-bar cost-bar--coord">
+                      <div class="cost-bar__label mono">COORDINATION</div>
+                      <div class="cost-bar__track">
+                        <div class="cost-bar__fill" id="coord-cost" style="height: 20%"></div>
+                      </div>
+                      <div class="cost-bar__value mono" id="coord-value">$20</div>
+                    </div>
+                  </div>
+                  <div class="cost-controls">
+                    <label class="slider-label">
+                      <span class="slider-label__text mono">2020</span>
+                      <input type="range" min="0" max="100" value="0" class="cost-slider" id="cost-slider">
+                      <span class="slider-label__text mono">2030</span>
+                    </label>
+                  </div>
+                  <div class="cost-insight mono" id="cost-insight">
+                    Traditional model: Optimize for execution speed.
+                  </div>
+                </div>
+                <p class="level-notice">Notice: as action cost drops, coordination becomes the dominant expense.</p>
+              </div>
+
+              <!-- LEVEL 2: Deeper - Team Time Breakdown -->
+              <div class="level-content" data-level="deeper" data-pattern="4" hidden>
+                <div class="time-breakdown" id="time-breakdown">
+                  <div class="time-header mono">
+                    <span>Where does a team's time go?</span>
+                  </div>
+                  <div class="time-categories">
+                    <div class="time-category" data-category="meetings">
+                      <div class="category-bar">
+                        <div class="category-fill category-fill--meetings" id="fill-meetings" style="width: 30%"></div>
+                      </div>
+                      <div class="category-meta mono">
+                        <span class="category-label">Meetings & Alignment</span>
+                        <span class="category-value" id="val-meetings">30%</span>
+                      </div>
+                    </div>
+                    <div class="time-category" data-category="waiting">
+                      <div class="category-bar">
+                        <div class="category-fill category-fill--waiting" id="fill-waiting" style="width: 25%"></div>
+                      </div>
+                      <div class="category-meta mono">
+                        <span class="category-label">Waiting for Others</span>
+                        <span class="category-value" id="val-waiting">25%</span>
+                      </div>
+                    </div>
+                    <div class="time-category" data-category="rework">
+                      <div class="category-bar">
+                        <div class="category-fill category-fill--rework" id="fill-rework" style="width: 20%"></div>
+                      </div>
+                      <div class="category-meta mono">
+                        <span class="category-label">Rework (Misalignment)</span>
+                        <span class="category-value" id="val-rework">20%</span>
+                      </div>
+                    </div>
+                    <div class="time-category" data-category="execution">
+                      <div class="category-bar">
+                        <div class="category-fill category-fill--execution" id="fill-execution" style="width: 25%"></div>
+                      </div>
+                      <div class="category-meta mono">
+                        <span class="category-label">Actual Execution</span>
+                        <span class="category-value" id="val-execution">25%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="time-controls">
+                    <button class="time-btn mono" data-scenario="before">Before AI</button>
+                    <button class="time-btn time-btn--active mono" data-scenario="after">After AI (naive)</button>
+                    <button class="time-btn mono" data-scenario="optimized">Optimized</button>
+                  </div>
+                </div>
+                <p class="level-notice">Notice: AI reduces execution but coordination waste remains—or grows.</p>
+              </div>
+
+              <!-- LEVEL 3: Lab Demo -->
+              <div class="level-content" data-level="lab" data-pattern="4" hidden>
+                <div class="lab-demo">
+                  <div class="lab-demo-header mono">
+                    <span>Coordination Economics</span>
+                  </div>
+                  <div class="lab-controls-grid">
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Team Size</label>
+                      <select class="lab-select mono" id="team-size-select">
+                        <option value="small">Small (3-5)</option>
+                        <option value="medium">Medium (6-12)</option>
+                        <option value="large">Large (13+)</option>
+                      </select>
+                    </div>
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Decision Mode</label>
+                      <select class="lab-select mono" id="decision-mode-select">
+                        <option value="consensus">Consensus required</option>
+                        <option value="delegate">Clear delegation</option>
+                        <option value="async">Async-first</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Workplace Drawer -->
+              <div class="workplace-drawer" data-pattern="4" hidden>
+                <div class="workplace-example">
+                  <strong>Feature development</strong>
+                  <p>AI writes code in hours. But 3 weeks of meetings to decide what to build.</p>
+                </div>
+                <div class="workplace-example">
+                  <strong>Content creation</strong>
+                  <p>AI generates 50 drafts in minutes. Stakeholder review takes 2 months.</p>
+                </div>
+                <div class="workplace-example">
+                  <strong>Data analysis</strong>
+                  <p>AI runs analysis in seconds. Getting agreement on what the data means takes forever.</p>
+                </div>
+              </div>
+
+              <button class="reset-btn mono" data-reset="cost">↺ Reset</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 5: Language Is Infrastructure -->
+      <section id="pattern-5" class="pattern-band pattern-band--odd" data-pattern="5">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-05-continuous-discovery.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 05</span>
+            <h2 class="pattern-title">Language Is Infrastructure</h2>
+            <p class="pattern-line">Your words are now executable.</p>
+
+            <!-- Level tabs -->
+            <div class="level-tabs" data-pattern="5">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="5">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="5">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="5">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="5">
+              <p class="pattern-body">
+                Natural language is no longer just communication—it's code.
+                The precision of your prompts determines the precision of your outcomes.
+              </p>
+              <p class="pattern-takeaway mono">Words compile. Choose them like code.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="5" hidden>
+              <p class="pattern-body">
+                We've spent decades building programming languages to bridge human intent and
+                machine execution. LLMs collapse that gap: language IS the interface.
+                Ambiguity that was "close enough" for humans becomes a bug when parsed by AI.
+              </p>
+              <p class="pattern-body">
+                <strong>The linguistic stack:</strong> Word choice → interpretation variance → output quality.
+                Each layer of ambiguity multiplies uncertainty in the final result.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="5" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Prompt retry rate (how often users rephrase)</li>
+                    <li>Output variance on repeated prompts</li>
+                    <li>Time-to-acceptable-output</li>
+                    <li>Prompt template adoption vs. freeform</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Prompt libraries with validated patterns</li>
+                    <li>Domain glossaries (reduce interpretation variance)</li>
+                    <li>Structured inputs vs. freeform text</li>
+                    <li>Chain-of-thought scaffolding</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">Demo shows discrete word→part mapping. Reality: words have probabilistic meanings that interact. "Build a robot" returns different robots each time. Precision reduces variance but never eliminates it.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="5">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="language">
+              <!-- LEVEL 1: Quick - Robot builder (existing) -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="5">
+                <div class="language-demo">
+                  <div class="robot-builder">
+                    <div class="robot-preview" id="robot-preview">
+                      <svg viewBox="0 0 120 160" class="robot-svg">
+                        <rect x="35" y="60" width="50" height="60" rx="5" class="robot-part robot-body" fill="var(--accent-cyan)"/>
+                        <rect x="40" y="10" width="40" height="45" rx="8" class="robot-part robot-head" fill="var(--accent-cyan)"/>
+                        <circle cx="52" cy="28" r="6" class="robot-part robot-eye-left" fill="var(--bg-deep)"/>
+                        <circle cx="68" cy="28" r="6" class="robot-part robot-eye-right" fill="var(--bg-deep)"/>
+                        <rect x="50" y="40" width="20" height="4" rx="2" class="robot-part robot-mouth" fill="var(--bg-deep)"/>
+                        <rect x="15" y="65" width="15" height="40" rx="4" class="robot-part robot-arm-left" fill="var(--accent-purple)"/>
+                        <rect x="90" y="65" width="15" height="40" rx="4" class="robot-part robot-arm-right" fill="var(--accent-purple)"/>
+                        <rect x="40" y="125" width="15" height="35" rx="4" class="robot-part robot-leg-left" fill="var(--accent-green)"/>
+                        <rect x="65" y="125" width="15" height="35" rx="4" class="robot-part robot-leg-right" fill="var(--accent-green)"/>
+                      </svg>
+                    </div>
+                    <div class="word-blocks" id="word-blocks">
+                      <div class="word-block" data-part="head" draggable="true">Head</div>
+                      <div class="word-block" data-part="body" draggable="true">Body</div>
+                      <div class="word-block" data-part="arms" draggable="true">Arms</div>
+                      <div class="word-block" data-part="legs" draggable="true">Legs</div>
+                      <div class="word-block" data-part="eyes" draggable="true">Eyes</div>
+                    </div>
+                    <div class="prompt-area">
+                      <div class="prompt-label mono">PROMPT:</div>
+                      <div class="prompt-text" id="prompt-text">Drop words here to build...</div>
+                    </div>
+                  </div>
+                </div>
+                <p class="level-notice">Notice: Each word produces exactly one outcome. Your prompts compile.</p>
+              </div>
+
+              <!-- LEVEL 2: Deeper - Precision Meter -->
+              <div class="level-content" data-level="deeper" data-pattern="5" hidden>
+                <div class="precision-meter" id="precision-meter">
+                  <div class="precision-header mono">
+                    <span>Prompt Precision → Output Variance</span>
+                  </div>
+                  <div class="prompt-examples">
+                    <button class="prompt-example mono" data-precision="low">
+                      <span class="prompt-text-short">"Make it better"</span>
+                      <span class="precision-score">▓░░░░ Low</span>
+                    </button>
+                    <button class="prompt-example mono" data-precision="medium">
+                      <span class="prompt-text-short">"Improve the intro paragraph"</span>
+                      <span class="precision-score">▓▓▓░░ Med</span>
+                    </button>
+                    <button class="prompt-example mono" data-precision="high">
+                      <span class="prompt-text-short">"Shorten intro to 2 sentences, lead with the key insight"</span>
+                      <span class="precision-score">▓▓▓▓▓ High</span>
+                    </button>
+                  </div>
+                  <div class="variance-display">
+                    <div class="variance-label mono">Possible Outputs:</div>
+                    <div class="variance-outputs" id="variance-outputs">
+                      <div class="variance-output">Click a prompt above</div>
+                    </div>
+                  </div>
+                </div>
+                <p class="level-notice">Notice: Vague prompts create a probability cloud. Precise prompts collapse it.</p>
+              </div>
+
+              <!-- LEVEL 3: Lab - Controls -->
+              <div class="level-content" data-level="lab" data-pattern="5" hidden>
+                <div class="lab-demo">
+                  <div class="lab-demo-header mono">
+                    <span>Linguistic Infrastructure</span>
+                  </div>
+                  <div class="lab-controls-grid">
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Prompt Template</label>
+                      <select class="lab-select mono" id="prompt-template">
+                        <option value="none">Freeform text</option>
+                        <option value="structured">Structured (who/what/how)</option>
+                        <option value="chain">Chain-of-thought</option>
+                      </select>
+                    </div>
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Domain Glossary</label>
+                      <select class="lab-select mono" id="domain-glossary">
+                        <option value="none">None</option>
+                        <option value="basic">Basic terms defined</option>
+                        <option value="full">Full taxonomy</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="lab-output-preview">
+                    <div class="lab-output-label mono">Expected Variance:</div>
+                    <div class="variance-bar-container">
+                      <div class="variance-bar" id="lab-variance-bar" style="width: 80%"></div>
+                    </div>
+                    <div class="variance-description mono" id="lab-variance-text">High variance - outputs unpredictable</div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="reset-btn mono" data-reset="language">↺ Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workplace Examples Drawer -->
+        <div class="workplace-drawer" data-pattern="5" hidden>
+          <div class="workplace-drawer__content">
+            <button class="workplace-drawer__close mono">✕ Close</button>
+            <h4 class="workplace-drawer__title">How "Language Is Infrastructure" Shows Up at Work</h4>
+            <div class="workplace-examples">
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Support Team</div>
+                <p>"We created prompt templates for common ticket types. Resolution time dropped 40%—not from AI speed, but from forcing precise problem descriptions."</p>
+              </div>
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Engineering Manager</div>
+                <p>"Our API docs became 10x more valuable when we realized AI was reading them too. We now write for two audiences: humans and machines."</p>
+              </div>
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Content Strategist</div>
+                <p>"We built a 'brand vocabulary'—not for humans (they already knew it) but so AI outputs would use our terminology consistently."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 6: Legibility Becomes Power -->
+      <section id="pattern-6" class="pattern-band pattern-band--even" data-pattern="6">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-06-trust-calibration.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 06</span>
+            <h2 class="pattern-title">Legibility Becomes Power</h2>
+            <p class="pattern-line">What AI can read, AI can leverage.</p>
+
+            <!-- Level tabs -->
+            <div class="level-tabs" data-pattern="6">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="6">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="6">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="6">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="6">
+              <p class="pattern-body">
+                Hidden knowledge is dead knowledge. If it's not in a format AI can parse,
+                it doesn't exist. Make your systems legible or lose to those who do.
+              </p>
+              <p class="pattern-takeaway mono">Structured > tacit. Queryable > tribal.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="6" hidden>
+              <p class="pattern-body">
+                James C. Scott wrote about how states make populations "legible" to govern them.
+                AI creates similar dynamics: organizations with structured, queryable knowledge
+                can deploy AI effectively; those with tacit, tribal knowledge cannot.
+              </p>
+              <p class="pattern-body">
+                <strong>The legibility paradox:</strong> Making knowledge machine-readable makes it
+                easier for AI to leverage—including competitors' AI. The new power play is
+                selective legibility: structured for your systems, opaque to others.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="6" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>% of decisions that can be audited via data</li>
+                    <li>Time to answer "why did X happen?"</li>
+                    <li>Knowledge re-use rate (same info, multiple uses)</li>
+                    <li>Onboarding time (proxy for tacit knowledge)</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Documentation standards (structured vs. prose)</li>
+                    <li>Decision logging requirements</li>
+                    <li>Schema enforcement on data entry</li>
+                    <li>API-first vs. UI-first system design</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">Demo shows binary legible/hidden. Reality: legibility is a spectrum, and over-structuring kills nuance. Tribal knowledge often carries context that structured data loses. The goal is selective legibility, not total legibility.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="6">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="legibility">
+              <!-- LEVEL 1: Quick - Search game (existing) -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="6">
+                <div class="legibility-demo">
+                  <div class="search-game" id="search-game">
+                    <div class="search-field">
+                      <input type="text" class="search-input" id="search-input" placeholder="Find the pattern...">
+                      <span class="search-icon">⌕</span>
+                    </div>
+                    <div class="data-grid" id="data-grid">
+                      <!-- Grid of findable/unfindable items -->
+                    </div>
+                    <div class="search-stats mono">
+                      <span>Legible: <span id="legible-count">0</span></span>
+                      <span>Hidden: <span id="hidden-count">0</span></span>
+                      <span>Time: <span id="search-time">0.0s</span></span>
+                    </div>
+                  </div>
+                </div>
+                <p class="level-notice">Notice: You can only find what's been made findable. The rest is invisible.</p>
+              </div>
+
+              <!-- LEVEL 2: Deeper - Knowledge Audit -->
+              <div class="level-content" data-level="deeper" data-pattern="6" hidden>
+                <div class="knowledge-audit" id="knowledge-audit">
+                  <div class="audit-header mono">
+                    <span>Organization Knowledge Audit</span>
+                  </div>
+                  <div class="knowledge-categories">
+                    <div class="knowledge-row" data-type="processes">
+                      <div class="knowledge-label mono">Process Documentation</div>
+                      <div class="knowledge-bar-wrapper">
+                        <div class="knowledge-bar knowledge-bar--legible" style="width: 30%"></div>
+                        <div class="knowledge-bar knowledge-bar--tacit" style="width: 70%"></div>
+                      </div>
+                      <div class="knowledge-pct mono"><span class="pct-legible">30%</span> / <span class="pct-tacit">70%</span></div>
+                    </div>
+                    <div class="knowledge-row" data-type="decisions">
+                      <div class="knowledge-label mono">Decision History</div>
+                      <div class="knowledge-bar-wrapper">
+                        <div class="knowledge-bar knowledge-bar--legible" style="width: 15%"></div>
+                        <div class="knowledge-bar knowledge-bar--tacit" style="width: 85%"></div>
+                      </div>
+                      <div class="knowledge-pct mono"><span class="pct-legible">15%</span> / <span class="pct-tacit">85%</span></div>
+                    </div>
+                    <div class="knowledge-row" data-type="expertise">
+                      <div class="knowledge-label mono">Expert Knowledge</div>
+                      <div class="knowledge-bar-wrapper">
+                        <div class="knowledge-bar knowledge-bar--legible" style="width: 10%"></div>
+                        <div class="knowledge-bar knowledge-bar--tacit" style="width: 90%"></div>
+                      </div>
+                      <div class="knowledge-pct mono"><span class="pct-legible">10%</span> / <span class="pct-tacit">90%</span></div>
+                    </div>
+                    <div class="knowledge-row" data-type="customer">
+                      <div class="knowledge-label mono">Customer Context</div>
+                      <div class="knowledge-bar-wrapper">
+                        <div class="knowledge-bar knowledge-bar--legible" style="width: 45%"></div>
+                        <div class="knowledge-bar knowledge-bar--tacit" style="width: 55%"></div>
+                      </div>
+                      <div class="knowledge-pct mono"><span class="pct-legible">45%</span> / <span class="pct-tacit">55%</span></div>
+                    </div>
+                  </div>
+                  <div class="audit-actions">
+                    <button class="audit-btn mono" data-action="digitize">Digitize Tacit</button>
+                    <button class="audit-btn mono" data-action="protect">Protect Legible</button>
+                  </div>
+                  <div class="ai-leverage-score">
+                    <span class="leverage-label mono">AI Leverage Potential:</span>
+                    <span class="leverage-value mono" id="leverage-score">25%</span>
+                  </div>
+                </div>
+                <p class="level-notice">Notice: AI leverage is proportional to legibility. Tacit knowledge = AI blind spots.</p>
+              </div>
+
+              <!-- LEVEL 3: Lab - Controls -->
+              <div class="level-content" data-level="lab" data-pattern="6" hidden>
+                <div class="lab-demo">
+                  <div class="lab-demo-header mono">
+                    <span>Legibility Investment</span>
+                  </div>
+                  <div class="lab-controls-grid">
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Documentation Depth</label>
+                      <select class="lab-select mono" id="doc-depth">
+                        <option value="none">Ad-hoc / None</option>
+                        <option value="basic">Basic SOPs</option>
+                        <option value="full">Full knowledge base</option>
+                      </select>
+                    </div>
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Data Structure</label>
+                      <select class="lab-select mono" id="data-structure">
+                        <option value="unstructured">Unstructured (prose)</option>
+                        <option value="semi">Semi-structured (tags)</option>
+                        <option value="structured">Fully structured (schema)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="lab-output-preview">
+                    <div class="lab-output-label mono">AI Leverage Score:</div>
+                    <div class="leverage-meter">
+                      <div class="leverage-fill" id="lab-leverage-fill" style="width: 15%"></div>
+                    </div>
+                    <div class="leverage-text mono" id="lab-leverage-text">Low - AI mostly unusable</div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="reset-btn mono" data-reset="legibility">↺ Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workplace Examples Drawer -->
+        <div class="workplace-drawer" data-pattern="6" hidden>
+          <div class="workplace-drawer__content">
+            <button class="workplace-drawer__close mono">✕ Close</button>
+            <h4 class="workplace-drawer__title">How "Legibility Becomes Power" Shows Up at Work</h4>
+            <div class="workplace-examples">
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Operations Lead</div>
+                <p>"We had an expert who 'just knew' how to handle edge cases. When they left, we lost 8 months—AI couldn't help because the knowledge was never written down."</p>
+              </div>
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Data Architect</div>
+                <p>"The teams with clean schemas in our data warehouse get 10x more AI use cases. The ones with 'flexible' formats can't use AI at all."</p>
+              </div>
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Sales Director</div>
+                <p>"We made our CRM notes structured instead of freeform. AI can now predict which deals will close—but so can any competitor who buys the same AI."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 7: Symbiosis Has Three Modes -->
+      <section id="pattern-7" class="pattern-band pattern-band--odd" data-pattern="7">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-07-uncertainty-navigation.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 07</span>
+            <h2 class="pattern-title">Symbiosis Has Three Modes</h2>
+            <p class="pattern-line">Human + AI = parasitism, commensalism, or mutualism.</p>
+
+            <!-- Level tabs -->
+            <div class="level-tabs" data-pattern="7">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="7">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="7">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="7">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="7">
+              <p class="pattern-body">
+                Not all collaboration is equal. Some setups extract value, some are neutral,
+                some multiply both parties. Design for mutualism or get disrupted.
+              </p>
+              <p class="pattern-takeaway mono">Default = parasitism. Mutualism requires design.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="7" hidden>
+              <p class="pattern-body">
+                Biological symbiosis maps cleanly: <strong>Parasitism</strong> (AI replaces humans, or humans
+                exploit AI labor without learning), <strong>Commensalism</strong> (one benefits, other unchanged),
+                <strong>Mutualism</strong> (both evolve and improve together).
+              </p>
+              <p class="pattern-body">
+                The winning pattern is mutualism—humans become better at what AI can't do,
+                while AI handles what humans shouldn't waste time on. This requires intentional design.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="7" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Skill growth rate (human learning with AI vs. without)</li>
+                    <li>Task delegation balance (who decides what AI does)</li>
+                    <li>Value capture ratio (who benefits from productivity gains)</li>
+                    <li>Capability evolution (are humans improving or atrophying?)</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Learning requirements (must understand what AI does)</li>
+                    <li>Skill development time allocation</li>
+                    <li>AI transparency settings (explain vs. just do)</li>
+                    <li>Human override frequency and authority</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">Demo shows clean categories. Reality: most relationships are mixed—parasitic in some ways, mutualistic in others. The question isn't "which mode" but "what's the net effect over time."</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="7">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="symbiosis">
+              <!-- LEVEL 1: Quick - Wave visualization (existing) -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="7">
+                <div class="symbiosis-demo">
+                  <div class="wave-container" id="wave-container">
+                    <canvas id="wave-canvas" width="400" height="200"></canvas>
+                  </div>
+                  <div class="symbiosis-modes">
+                    <button class="mode-btn mono" data-mode="parasitism">Parasitism</button>
+                    <button class="mode-btn mono mode-btn--active" data-mode="commensalism">Commensalism</button>
+                    <button class="mode-btn mono" data-mode="mutualism">Mutualism</button>
+                  </div>
+                  <div class="symbiosis-output mono" id="symbiosis-output">
+                    Commensalism: One wave benefits, other unchanged.
+                  </div>
+                </div>
+                <p class="level-notice">Notice: The waves show energy flow. Only mutualism amplifies both.</p>
+              </div>
+
+              <!-- LEVEL 2: Deeper - Relationship Evolution -->
+              <div class="level-content" data-level="deeper" data-pattern="7" hidden>
+                <div class="relationship-evolution" id="relationship-evolution">
+                  <div class="evolution-header mono">
+                    <span>Relationship Evolution Over Time</span>
+                  </div>
+                  <div class="evolution-timeline">
+                    <div class="timeline-track">
+                      <div class="timeline-marker" data-month="0" style="left: 0%">
+                        <span class="marker-label mono">Start</span>
+                      </div>
+                      <div class="timeline-marker" data-month="3" style="left: 33%">
+                        <span class="marker-label mono">3mo</span>
+                      </div>
+                      <div class="timeline-marker" data-month="6" style="left: 66%">
+                        <span class="marker-label mono">6mo</span>
+                      </div>
+                      <div class="timeline-marker" data-month="12" style="left: 100%">
+                        <span class="marker-label mono">1yr</span>
+                      </div>
+                    </div>
+                    <div class="evolution-path" id="evolution-path"></div>
+                  </div>
+                  <div class="evolution-entities">
+                    <div class="entity entity--human">
+                      <div class="entity-icon">👤</div>
+                      <div class="entity-label mono">Human Skills</div>
+                      <div class="entity-bar">
+                        <div class="entity-fill entity-fill--human" id="human-skills" style="width: 50%"></div>
+                      </div>
+                      <div class="entity-value mono" id="human-value">50</div>
+                    </div>
+                    <div class="entity entity--ai">
+                      <div class="entity-icon">🤖</div>
+                      <div class="entity-label mono">AI Capability</div>
+                      <div class="entity-bar">
+                        <div class="entity-fill entity-fill--ai" id="ai-skills" style="width: 50%"></div>
+                      </div>
+                      <div class="entity-value mono" id="ai-value">50</div>
+                    </div>
+                  </div>
+                  <div class="evolution-controls">
+                    <button class="evolution-btn mono" data-scenario="parasitism">⚠ No Learning</button>
+                    <button class="evolution-btn mono" data-scenario="commensalism">→ Passive Use</button>
+                    <button class="evolution-btn mono" data-scenario="mutualism">↑ Active Growth</button>
+                  </div>
+                  <div class="evolution-outcome mono" id="evolution-outcome">
+                    Choose a scenario to see how the relationship evolves
+                  </div>
+                </div>
+                <p class="level-notice">Notice: Time reveals the mode. Parasitism shows early; mutualism compounds.</p>
+              </div>
+
+              <!-- LEVEL 3: Lab - Mode Designer -->
+              <div class="level-content" data-level="lab" data-pattern="7" hidden>
+                <div class="lab-demo">
+                  <div class="lab-demo-header mono">
+                    <span>Symbiosis Mode Designer</span>
+                  </div>
+                  <div class="lab-controls-grid">
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Learning Required</label>
+                      <select class="lab-select mono" id="learning-required">
+                        <option value="none">None (just use it)</option>
+                        <option value="some">Some (tutorials)</option>
+                        <option value="deep">Deep (understand internals)</option>
+                      </select>
+                    </div>
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">Value Distribution</label>
+                      <select class="lab-select mono" id="value-distribution">
+                        <option value="company">Company captures all</option>
+                        <option value="split">Split between parties</option>
+                        <option value="worker">Worker gains skills</option>
+                      </select>
+                    </div>
+                    <div class="lab-control">
+                      <label class="lab-control-label mono">AI Transparency</label>
+                      <select class="lab-select mono" id="ai-transparency">
+                        <option value="black">Black box (just output)</option>
+                        <option value="explain">Explains reasoning</option>
+                        <option value="teach">Teaches the method</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="lab-output-preview">
+                    <div class="lab-output-label mono">Predicted Mode:</div>
+                    <div class="mode-indicator" id="predicted-mode">
+                      <span class="mode-icon">⚖️</span>
+                      <span class="mode-name mono">Commensalism</span>
+                    </div>
+                    <div class="mode-description mono" id="mode-description">One party benefits, other unchanged</div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="reset-btn mono" data-reset="symbiosis">↺ Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workplace Examples Drawer -->
+        <div class="workplace-drawer" data-pattern="7" hidden>
+          <div class="workplace-drawer__content">
+            <button class="workplace-drawer__close mono">✕ Close</button>
+            <h4 class="workplace-drawer__title">How "Symbiosis Has Three Modes" Shows Up at Work</h4>
+            <div class="workplace-examples">
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Software Developer</div>
+                <p>"I used Copilot like autocomplete for a year—my coding got faster but I stopped learning. Parasitism. Now I make it explain patterns first, then generate. Much slower, but I'm actually growing."</p>
+              </div>
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Customer Service Manager</div>
+                <p>"We automated tier-1 support. Reps handle harder cases now—their skills jumped. But we didn't raise their pay. Commensalism for workers, mutualism for the company."</p>
+              </div>
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Consultant</div>
+                <p>"I treat AI as a sparring partner, not an assistant. Every analysis I have it critique, every critique I push back on. Takes longer but my thinking is sharper than ever. Mutualism."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 8: Identity Is a Gravity Well -->
+      <section id="pattern-8" class="pattern-band pattern-band--even" data-pattern="8">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-08-context-choreography.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 08</span>
+            <h2 class="pattern-title">Identity Is a Gravity Well</h2>
+            <p class="pattern-line">"I am X" resists "I should try Y."</p>
+
+            <!-- Level tabs -->
+            <div class="level-tabs" data-pattern="8">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="8">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="8">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="8">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="8">
+              <p class="pattern-body">
+                The strongest barrier to AI adoption isn't capability—it's identity.
+                "I'm a writer" resists "let AI draft." Identity must evolve or shatter.
+              </p>
+              <p class="pattern-takeaway mono">Identity = inertia. Meta-identity = adaptability.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="8" hidden>
+              <p class="pattern-body">
+                Identity creates cognitive gravity: the stronger your self-concept around
+                a skill, the harder it is to delegate that skill to AI.
+              </p>
+              <p class="pattern-body">
+                "I am a coder" makes you resist AI code gen; "I solve problems using any tool"
+                makes you embrace it. The transition isn't about learning new tools—it's about
+                reconstructing identity around <strong>meta-skills that remain human</strong>.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="8" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Emotional resistance to specific AI tools</li>
+                    <li>Phrases like "that's not really X-ing"</li>
+                    <li>Time to try new AI capabilities (longer = stronger identity)</li>
+                    <li>Defense of process over outcome</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Role descriptions (skill-based vs. outcome-based)</li>
+                    <li>Success metrics (method-agnostic vs. method-specific)</li>
+                    <li>Team narratives about what "good" looks like</li>
+                    <li>Permission to experiment without identity threat</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">Demo shows identity as a single spring. Reality: people have multiple overlapping identities. Sometimes AI threatens one while serving another. The negotiation is internal and complex.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="8">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="identity">
+              <!-- LEVEL 1: Quick - Spring visualization (existing) -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="8">
+                <div class="identity-demo">
+                  <div class="spring-container" id="spring-container">
+                    <svg viewBox="0 0 400 200" class="spring-svg" id="spring-svg">
+                      <!-- Anchor point -->
+                      <rect x="10" y="80" width="30" height="40" rx="4" fill="var(--text-muted)" class="anchor"/>
+                      <text x="25" y="140" text-anchor="middle" class="anchor-label mono" fill="var(--text-muted)">IDENTITY</text>
+
+                      <!-- Spring (will be animated) -->
+                      <path id="spring-path" d="M40,100 Q60,80 80,100 Q100,120 120,100 Q140,80 160,100 Q180,120 200,100"
+                            fill="none" stroke="var(--accent-cyan)" stroke-width="3"/>
+
+                      <!-- Draggable ball -->
+                      <circle id="identity-ball" cx="200" cy="100" r="20" fill="var(--accent-purple)" class="identity-ball"/>
+                      <text id="ball-label" x="200" y="105" text-anchor="middle" fill="var(--text-primary)" class="ball-label mono">SELF</text>
+                    </svg>
+                  </div>
+                  <div class="identity-hint mono">← Drag to see resistance →</div>
+                  <div class="identity-tension mono">
+                    <span>Tension: </span>
+                    <span id="tension-value">0%</span>
+                  </div>
+                </div>
+                <p class="level-notice">Notice: The further you pull, the harder it snaps back. That's identity.</p>
+              </div>
+
+              <!-- LEVEL 2: Deeper - Identity Mapping -->
+              <div class="level-content" data-level="deeper" data-pattern="8" hidden>
+                <div class="identity-map" id="identity-map">
+                  <div class="map-header mono">
+                    <span>Identity ↔ AI Capability Map</span>
+                  </div>
+                  <div class="identity-items">
+                    <div class="identity-item" data-strength="high">
+                      <div class="identity-label mono">"I am a writer"</div>
+                      <div class="identity-strength">
+                        <div class="strength-bar" style="width: 90%"></div>
+                      </div>
+                      <div class="ai-threat mono">AI: Drafting</div>
+                      <div class="threat-level threat-level--high mono">HIGH THREAT</div>
+                    </div>
+                    <div class="identity-item" data-strength="medium">
+                      <div class="identity-label mono">"I am a researcher"</div>
+                      <div class="identity-strength">
+                        <div class="strength-bar" style="width: 65%"></div>
+                      </div>
+                      <div class="ai-threat mono">AI: Synthesis</div>
+                      <div class="threat-level threat-level--medium mono">MEDIUM</div>
+                    </div>
+                    <div class="identity-item" data-strength="low">
+                      <div class="identity-label mono">"I solve problems"</div>
+                      <div class="identity-strength">
+                        <div class="strength-bar" style="width: 30%"></div>
+                      </div>
+                      <div class="ai-threat mono">AI: Anything</div>
+                      <div class="threat-level threat-level--low mono">LOW</div>
+                    </div>
+                  </div>
+                  <div class="map-insight mono">
+                    Click to reframe: "I am a <em>creator</em> who uses any tool"
+                  </div>
+                </div>
+                <p class="level-notice">Notice: Same person, different framing = different AI relationship.</p>
+              </div>
+
+              <!-- LEVEL 3: Lab - Identity Reframe -->
+              <div class="level-content" data-level="lab" data-pattern="8" hidden>
+                <div class="lab-demo">
+                  <div class="lab-demo-header mono">
+                    <span>Identity Reframe Workshop</span>
+                  </div>
+                  <div class="reframe-exercise">
+                    <div class="reframe-input">
+                      <label class="lab-control-label mono">Current Identity Statement:</label>
+                      <input type="text" class="reframe-text mono" id="identity-input" placeholder="I am a ___">
+                    </div>
+                    <div class="reframe-arrow mono">↓ Reframe to meta-skill ↓</div>
+                    <div class="reframe-output">
+                      <label class="lab-control-label mono">Meta-Identity:</label>
+                      <div class="reframe-result mono" id="identity-output">
+                        Enter an identity above
+                      </div>
+                    </div>
+                    <div class="reframe-examples">
+                      <button class="reframe-example mono" data-from="writer" data-to="I communicate ideas effectively">writer</button>
+                      <button class="reframe-example mono" data-from="coder" data-to="I build solutions to problems">coder</button>
+                      <button class="reframe-example mono" data-from="designer" data-to="I shape user experiences">designer</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="reset-btn mono" data-reset="identity">↺ Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workplace Examples Drawer -->
+        <div class="workplace-drawer" data-pattern="8" hidden>
+          <div class="workplace-drawer__content">
+            <button class="workplace-drawer__close mono">✕ Close</button>
+            <h4 class="workplace-drawer__title">How "Identity Is a Gravity Well" Shows Up at Work</h4>
+            <div class="workplace-examples">
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Senior Developer (15 years)</div>
+                <p>"I fought Copilot for months. Finally realized: I'm not 'a coder'—I'm someone who solves business problems. Now I use AI for boilerplate so I can focus on architecture. Threat became enabler."</p>
+              </div>
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Content Strategist</div>
+                <p>"'I'm a writer' made AI feel like cheating. 'I craft messaging that moves people' made AI a research assistant. Same job, different identity, completely different tool relationship."</p>
+              </div>
+              <div class="workplace-example">
+                <div class="workplace-example__role mono">Engineering Manager</div>
+                <p>"My best engineers adopted AI fastest. They didn't identify as 'coders'—they identified as 'problem-solvers who happen to code.' The identity escape hatch matters."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 9: Entropy Debt Compounds -->
+      <section id="pattern-9" class="pattern-band pattern-band--odd" data-pattern="9">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-09-attention-economy.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 09</span>
+            <h2 class="pattern-title">Entropy Debt Compounds</h2>
+            <p class="pattern-line">AI-generated mess grows faster than human-generated mess.</p>
+
+            <!-- Level tabs -->
+            <div class="level-tabs" data-pattern="9">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="9">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="9">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="9">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="9">
+              <p class="pattern-body">
+                AI accelerates production—including the production of cruft.
+                Without deliberate entropy reduction, systems collapse under their own weight.
+              </p>
+              <p class="pattern-takeaway mono">Generate fast. Cull faster.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="9" hidden>
+              <p class="pattern-body">
+                Technical debt is a subset of entropy debt. When AI can generate code 10x faster,
+                it also generates inconsistency, duplication, and architectural drift 10x faster.
+              </p>
+              <p class="pattern-body">
+                <strong>The entropy multiplier:</strong> The solution isn't to slow generation—it's
+                to build entropy-reducing loops into the system. Codebase growth rate, refactoring
+                frequency, and search time inflation are your leading indicators.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="9" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Time-to-find for existing code increasing</li>
+                    <li>Duplicate implementations discovered weekly</li>
+                    <li>New hires take longer to onboard</li>
+                    <li>"Just rewrote it" becoming common</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Automated refactoring frequency</li>
+                    <li>Delete-to-create ratio targets</li>
+                    <li>Mandatory code review friction</li>
+                    <li>Architecture decision records (ADRs)</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">Real entropy is invisible until cascade failure. The meter shows gradual rise; reality shows sudden collapse.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="9">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="entropy">
+              <!-- LEVEL 1: Entropy Meter -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="9">
+                <div class="entropy-demo">
+                  <div class="debt-meter">
+                    <div class="debt-meter__track">
+                      <div class="debt-meter__fill" id="debt-fill"></div>
+                      <div class="debt-meter__danger"></div>
+                    </div>
+                    <div class="debt-meter__labels mono">
+                      <span>Clean</span>
+                      <span>Collapse</span>
+                    </div>
+                  </div>
+                  <div class="entropy-controls">
+                    <button class="entropy-btn entropy-btn--generate mono" id="entropy-generate">
+                      <span class="entropy-icon">⚡</span> Generate (+entropy)
+                    </button>
+                    <button class="entropy-btn entropy-btn--clean mono" id="entropy-clean">
+                      <span class="entropy-icon">🧹</span> Clean (-entropy)
+                    </button>
+                  </div>
+                  <div class="entropy-rate mono" id="entropy-rate">
+                    Rate: +0.5/sec (natural drift)
+                  </div>
+                </div>
+                <p class="level-notice">Notice: Entropy grows automatically. You can only slow it, not stop it.</p>
+              </div>
+
+              <!-- LEVEL 2: Debt Accumulator Timeline -->
+              <div class="level-content" data-level="deeper" data-pattern="9" hidden>
+                <div class="debt-accumulator" id="debt-accumulator">
+                  <div class="accumulator-header mono">
+                    <span>Entropy Debt Over Time</span>
+                  </div>
+                  <div class="accumulator-chart">
+                    <div class="chart-y-axis">
+                      <span class="mono">100%</span>
+                      <span class="mono">50%</span>
+                      <span class="mono">0%</span>
+                    </div>
+                    <div class="chart-area">
+                      <svg class="accumulator-graph" viewBox="0 0 300 120" preserveAspectRatio="none">
+                        <path id="entropy-path-human" class="entropy-line entropy-line--human" d="" fill="none" stroke-width="2"/>
+                        <path id="entropy-path-ai" class="entropy-line entropy-line--ai" d="" fill="none" stroke-width="2"/>
+                        <line class="collapse-threshold" x1="0" y1="24" x2="300" y2="24" stroke-dasharray="4,4"/>
+                      </svg>
+                      <div class="chart-legend mono">
+                        <span class="legend-item legend-item--human">— Human pace</span>
+                        <span class="legend-item legend-item--ai">— AI pace</span>
+                        <span class="legend-item legend-item--collapse">--- Collapse zone</span>
+                      </div>
+                    </div>
+                    <div class="chart-x-axis mono">
+                      <span>Month 1</span>
+                      <span>Month 6</span>
+                      <span>Month 12</span>
+                    </div>
+                  </div>
+                  <div class="accumulator-controls">
+                    <button class="accumulator-btn mono" data-mode="human">Human Team</button>
+                    <button class="accumulator-btn mono" data-mode="ai">AI-Augmented</button>
+                    <button class="accumulator-btn mono" data-mode="managed">AI + Culling</button>
+                  </div>
+                  <div class="accumulator-insight mono" id="accumulator-insight">
+                    Click to see entropy growth patterns
+                  </div>
+                </div>
+                <p class="level-notice">Notice: AI-augmented teams hit collapse faster—unless they cull proportionally.</p>
+              </div>
+
+              <!-- LEVEL 3: Entropy Budget Lab -->
+              <div class="level-content" data-level="lab" data-pattern="9" hidden>
+                <div class="entropy-budget-lab" id="entropy-budget-lab">
+                  <div class="lab-header mono">Entropy Budget Calculator</div>
+                  <div class="budget-controls">
+                    <div class="budget-control">
+                      <label class="mono">AI Generation Rate</label>
+                      <input type="range" id="ai-gen-rate" min="1" max="10" value="5" class="budget-slider">
+                      <span class="budget-value mono" id="ai-gen-value">5x</span>
+                    </div>
+                    <div class="budget-control">
+                      <label class="mono">Cleanup Frequency</label>
+                      <select id="cleanup-freq" class="budget-select mono">
+                        <option value="never">Never</option>
+                        <option value="quarterly">Quarterly</option>
+                        <option value="monthly" selected>Monthly</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="daily">Daily</option>
+                      </select>
+                    </div>
+                    <div class="budget-control">
+                      <label class="mono">Delete-to-Create Ratio</label>
+                      <input type="range" id="delete-ratio" min="0" max="100" value="20" class="budget-slider">
+                      <span class="budget-value mono" id="delete-ratio-value">1:5</span>
+                    </div>
+                  </div>
+                  <div class="budget-result">
+                    <div class="result-header mono">Projected Outcome (12 months)</div>
+                    <div class="result-display" id="entropy-result">
+                      <div class="result-indicator result-indicator--warning">
+                        <span class="result-icon">⚠️</span>
+                        <span class="result-text">Marginal sustainability</span>
+                      </div>
+                      <div class="result-details mono">
+                        Time-to-collapse: ~8 months | Recommended: Increase cleanup to weekly
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Workplace Drawer -->
+              <div class="workplace-drawer" data-pattern="9" hidden>
+                <div class="workplace-drawer__header mono">
+                  <span>📋 Workplace Translation</span>
+                  <button class="workplace-close" data-pattern="9">✕</button>
+                </div>
+                <div class="workplace-drawer__content">
+                  <p><strong>The meeting:</strong> "AI is making us so much more productive! Look at all this code!"</p>
+                  <p><strong>The reality:</strong> 50 new utility functions, 30 duplicates of existing ones. Sprint velocity up, but 40% of PRs refactor last sprint's AI output.</p>
+                  <p><strong>The pattern:</strong> Cheap generation without attention creates technical debt at machine speed. Search becomes archaeology.</p>
+                  <p><strong>The move:</strong> Track delete-to-create ratio. Healthy systems delete 1 line for every 3 added. AI-heavy teams often hit 1:20. Attention is the scarce resource—allocate it wisely.</p>
+                </div>
+              </div>
+
+              <button class="reset-btn mono" data-reset="entropy">↺ Reset</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 10: Persuasion Has Gravity -->
+      <section id="pattern-10" class="pattern-band pattern-band--even" data-pattern="10">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-10-graceful-degradation.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 10</span>
+            <h2 class="pattern-title">Persuasion Has Gravity</h2>
+            <p class="pattern-line">Beliefs attract evidence that confirms them.</p>
+
+            <!-- Level tabs -->
+            <div class="level-tabs" data-pattern="10">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="10">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="10">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="10">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="10">
+              <p class="pattern-body">
+                AI can generate infinite supporting evidence for any position.
+                The scarce resource isn't persuasion—it's discernment.
+              </p>
+              <p class="pattern-takeaway mono">Infinite content, finite discernment.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="10" hidden>
+              <p class="pattern-body">
+                Confirmation bias meets infinite content generation. AI can produce compelling
+                arguments for any position—true or false. This creates belief gravity wells.
+              </p>
+              <p class="pattern-body">
+                <strong>The discernment deficit:</strong> Once someone holds a position, AI can
+                reinforce it indefinitely. Critical thinking becomes the immune system. Source
+                diversity and contra-argument seeking are your leading indicators.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="10" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>AI-generated content dominates research feeds</li>
+                    <li>Team rarely encounters opposing viewpoints</li>
+                    <li>Decisions feel "obviously right" with no pushback</li>
+                    <li>Echo chambers form around AI recommendations</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Mandatory devil's advocate prompts</li>
+                    <li>Source diversity requirements</li>
+                    <li>Pre-mortem exercises on decisions</li>
+                    <li>Red team AI with opposing instructions</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">Real belief gravity is invisible. You don't see the evidence that never reaches you.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="10">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="persuasion">
+              <!-- LEVEL 1: Belief Magnet -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="10">
+                <div class="persuasion-demo">
+                  <div class="magnet-field" id="magnet-field">
+                    <div class="belief-magnet" id="belief-magnet">
+                      <span class="magnet-label mono">BELIEF</span>
+                    </div>
+                  </div>
+                  <div class="persuasion-controls">
+                    <button class="persuasion-btn mono" id="add-evidence">+ Add Evidence</button>
+                    <button class="persuasion-btn mono" id="toggle-polarity">⟲ Flip Belief</button>
+                  </div>
+                  <div class="persuasion-stats mono">
+                    <span>Confirming: <span id="confirm-count">0</span></span>
+                    <span>Disconfirming: <span id="disconfirm-count">0</span></span>
+                  </div>
+                </div>
+                <p class="level-notice">Notice: Evidence that confirms gets pulled in. Evidence that contradicts drifts away.</p>
+              </div>
+
+              <!-- LEVEL 2: Belief Ecosystem -->
+              <div class="level-content" data-level="deeper" data-pattern="10" hidden>
+                <div class="belief-ecosystem" id="belief-ecosystem">
+                  <div class="ecosystem-header mono">
+                    <span>Information Ecosystem Simulation</span>
+                  </div>
+                  <div class="ecosystem-view">
+                    <div class="belief-bubble belief-bubble--center" id="core-belief">
+                      <span class="mono">Your Position</span>
+                    </div>
+                    <div class="info-sources" id="info-sources">
+                      <!-- Generated dynamically -->
+                    </div>
+                  </div>
+                  <div class="ecosystem-controls">
+                    <button class="ecosystem-btn mono" data-mode="biased">Confirmation Mode</button>
+                    <button class="ecosystem-btn mono" data-mode="balanced">Balanced Mode</button>
+                    <button class="ecosystem-btn mono" data-mode="adversarial">Adversarial Mode</button>
+                  </div>
+                  <div class="ecosystem-stats mono" id="ecosystem-stats">
+                    Select a mode to see how information flows
+                  </div>
+                </div>
+                <p class="level-notice">Notice: In confirmation mode, you only see what already agrees with you.</p>
+              </div>
+
+              <!-- LEVEL 3: Discernment Lab -->
+              <div class="level-content" data-level="lab" data-pattern="10" hidden>
+                <div class="discernment-lab" id="discernment-lab">
+                  <div class="lab-header mono">Discernment Protocol Builder</div>
+                  <div class="protocol-builder">
+                    <div class="protocol-option">
+                      <input type="checkbox" id="proto-steelman" class="protocol-check">
+                      <label for="proto-steelman" class="mono">Steelman opposing view</label>
+                    </div>
+                    <div class="protocol-option">
+                      <input type="checkbox" id="proto-sources" class="protocol-check">
+                      <label for="proto-sources" class="mono">Require 3+ source perspectives</label>
+                    </div>
+                    <div class="protocol-option">
+                      <input type="checkbox" id="proto-premortem" class="protocol-check">
+                      <label for="proto-premortem" class="mono">Pre-mortem on conclusions</label>
+                    </div>
+                    <div class="protocol-option">
+                      <input type="checkbox" id="proto-redteam" class="protocol-check">
+                      <label for="proto-redteam" class="mono">Red team AI review</label>
+                    </div>
+                  </div>
+                  <div class="protocol-score">
+                    <div class="score-header mono">Discernment Score</div>
+                    <div class="score-display" id="discernment-score">
+                      <span class="score-value">0</span>
+                      <span class="score-max">/100</span>
+                    </div>
+                    <div class="score-label mono" id="score-label">No safeguards active</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Workplace Drawer -->
+              <div class="workplace-drawer" data-pattern="10" hidden>
+                <div class="workplace-drawer__header mono">
+                  <span>📋 Workplace Translation</span>
+                  <button class="workplace-close" data-pattern="10">✕</button>
+                </div>
+                <div class="workplace-drawer__content">
+                  <p><strong>The meeting:</strong> "Let's get AI to summarize the competitive landscape."</p>
+                  <p><strong>The reality:</strong> AI produces a confident summary that confirms what leadership already believes, filtering out disconfirming evidence.</p>
+                  <p><strong>The pattern:</strong> AI becomes a confirmation amplifier, making existing biases feel more justified.</p>
+                  <p><strong>The move:</strong> Require adversarial prompts: "Make the strongest case AGAINST our strategy." Compare outputs.</p>
+                </div>
+              </div>
+
+              <button class="reset-btn mono" data-reset="persuasion">↺ Reset</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 11: Prompt Is Policy -->
+      <section id="pattern-11" class="pattern-band pattern-band--odd" data-pattern="11">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-11-compositional-thinking.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 11</span>
+            <h2 class="pattern-title">Prompt Is Policy</h2>
+            <p class="pattern-line">Your system prompt is your constitution.</p>
+
+            <div class="level-tabs" data-pattern="11">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="11">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="11">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="11">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="11">
+              <p class="pattern-body">
+                The rules you embed in AI instructions become the laws of your system.
+                Prompt engineering is governance engineering.
+              </p>
+              <p class="pattern-takeaway mono">Prompts execute with zero discretion.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="11" hidden>
+              <p class="pattern-body">
+                <strong>Constitutional law, not guidelines:</strong> Unlike human policy—which gets interpreted,
+                negotiated, sometimes ignored—prompt-policy executes. Every time. No exceptions. No forgetting.
+              </p>
+              <p class="pattern-body">
+                <strong>Governance precision becomes critical:</strong> Ambiguity in prompts creates
+                unpredictable behavior at scale. Vague policies create vague boundaries.
+              </p>
+              <p class="pattern-body">
+                <strong>Policy conflicts in multi-agent systems</strong> reveal this clearly:
+                AI behaving inconsistently signals prompt ambiguity, edge cases signal policy gaps,
+                and user workarounds signal policy-behavior mismatch.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="11" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Policy contradiction rate across responses</li>
+                    <li>Override frequency in edge cases</li>
+                    <li>Ambiguous case count growing over time</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Policy priority ordering (what wins when they conflict)</li>
+                    <li>Conflict resolution rules (explicit fallbacks)</li>
+                    <li>Default behaviors (when policies don't apply)</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">
+                    Real policy conflicts are emergent and context-dependent.
+                    This shows deterministic conflicts only.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="11">→ Show me how this shows up at work</button>
+          </div>
+
+          <div class="pattern-visual">
+            <!-- LEVEL 1: Policy Toggle Demo -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="11">
+              <div class="interactive-container" data-interactive="policy">
+                <div class="policy-demo">
+                  <div class="policy-toggles" id="policy-toggles">
+                    <div class="policy-toggle">
+                      <span class="toggle-label">Allow external data</span>
+                      <label class="toggle-switch">
+                        <input type="checkbox" data-rule="external">
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+                    <div class="policy-toggle">
+                      <span class="toggle-label">Require citations</span>
+                      <label class="toggle-switch">
+                        <input type="checkbox" data-rule="citations" checked>
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+                    <div class="policy-toggle">
+                      <span class="toggle-label">Limit response length</span>
+                      <label class="toggle-switch">
+                        <input type="checkbox" data-rule="length">
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+                    <div class="policy-toggle">
+                      <span class="toggle-label">Formal tone only</span>
+                      <label class="toggle-switch">
+                        <input type="checkbox" data-rule="formal">
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="policy-output">
+                    <div class="policy-output__label mono">RESULTING BEHAVIOR:</div>
+                    <div class="policy-output__preview" id="policy-preview">
+                      AI will use internal data only and cite sources for all claims.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LEVEL 2: Policy Conflict Simulator -->
+            <div class="level-content" data-level="deeper" data-pattern="11" hidden>
+              <div class="policy-conflict" id="policy-conflict">
+                <div class="conflict-header mono">
+                  <span>Policy Conflict Simulator</span>
+                </div>
+                <div class="conflict-scenario">
+                  <div class="conflict-policies">
+                    <div class="conflict-policy conflict-policy--a">
+                      <span class="policy-label mono">POLICY A</span>
+                      <span class="policy-text">Always be helpful and complete</span>
+                    </div>
+                    <div class="conflict-vs mono">VS</div>
+                    <div class="conflict-policy conflict-policy--b">
+                      <span class="policy-label mono">POLICY B</span>
+                      <span class="policy-text">Never discuss competitor products</span>
+                    </div>
+                  </div>
+                  <div class="conflict-trigger">
+                    <span class="trigger-label mono">USER REQUEST:</span>
+                    <span class="trigger-text">"Compare your product to [competitor]"</span>
+                  </div>
+                </div>
+                <div class="conflict-controls">
+                  <button class="conflict-btn mono" data-scenario="compare">Compare Request</button>
+                  <button class="conflict-btn mono" data-scenario="sensitive">Sensitive Data</button>
+                  <button class="conflict-btn mono" data-scenario="speed">Speed vs Accuracy</button>
+                </div>
+                <div class="conflict-result" id="conflict-result">
+                  <div class="result-label mono">OUTCOME:</div>
+                  <div class="result-text">Policies conflict. Behavior depends on priority ordering (often undefined).</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LEVEL 3: Policy Composer Lab -->
+            <div class="level-content" data-level="lab" data-pattern="11" hidden>
+              <div class="policy-composer" id="policy-composer">
+                <div class="composer-header mono">Policy Composer</div>
+                <div class="composer-stack">
+                  <div class="policy-layer" data-priority="1">
+                    <span class="layer-priority mono">#1</span>
+                    <select class="layer-select mono">
+                      <option value="safety">Safety constraints</option>
+                      <option value="helpful">Be helpful</option>
+                      <option value="honest">Be honest</option>
+                      <option value="brief">Be brief</option>
+                    </select>
+                    <button class="layer-move" data-dir="down">↓</button>
+                  </div>
+                  <div class="policy-layer" data-priority="2">
+                    <span class="layer-priority mono">#2</span>
+                    <select class="layer-select mono">
+                      <option value="helpful">Be helpful</option>
+                      <option value="safety">Safety constraints</option>
+                      <option value="honest">Be honest</option>
+                      <option value="brief">Be brief</option>
+                    </select>
+                    <button class="layer-move" data-dir="down">↓</button>
+                  </div>
+                  <div class="policy-layer" data-priority="3">
+                    <span class="layer-priority mono">#3</span>
+                    <select class="layer-select mono">
+                      <option value="honest">Be honest</option>
+                      <option value="safety">Safety constraints</option>
+                      <option value="helpful">Be helpful</option>
+                      <option value="brief">Be brief</option>
+                    </select>
+                    <button class="layer-move" data-dir="down">↓</button>
+                  </div>
+                </div>
+                <div class="composer-output">
+                  <div class="output-label mono">Effective Constitution:</div>
+                  <div class="output-text" id="composer-output">
+                    When policies conflict, safety wins. Then helpfulness. Then honesty.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Workplace Drawer -->
+            <div class="workplace-drawer" data-pattern="11" hidden>
+              <div class="workplace-drawer__header mono">
+                <span>📋 Workplace Translation</span>
+                <button class="workplace-close" data-pattern="11">✕</button>
+              </div>
+              <div class="workplace-drawer__content">
+                <p><strong>The meeting:</strong> "We need an AI policy for the company."</p>
+                <p><strong>The reality:</strong> The policy document gets filed away while the actual prompts in production systems define real behavior.</p>
+                <p><strong>The pattern:</strong> Prompt instructions are the actual policy. Company guidelines only matter if encoded into prompts.</p>
+                <p><strong>The move:</strong> Treat prompt engineering as governance engineering. Version control prompts. Review them like code and policy combined.</p>
+              </div>
+            </div>
+
+            <button class="reset-btn mono" data-reset="policy">↺ Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 12: Fear Is a Systems Variable -->
+      <section id="pattern-12" class="pattern-band pattern-band--even" data-pattern="12">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-12-adversarial-awareness.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 12</span>
+            <h2 class="pattern-title">Fear Is a Systems Variable</h2>
+            <p class="pattern-line">Too little fear = reckless. Too much = paralyzed.</p>
+
+            <div class="level-tabs" data-pattern="12">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="12">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="12">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="12">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="12">
+              <p class="pattern-body">
+                Fear of AI is a dial, not a switch. Calibrate it: enough to be careful,
+                not so much you freeze. The optimal setting changes as you learn.
+              </p>
+              <p class="pattern-takeaway mono">Optimal fear is context-dependent.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="12" hidden>
+              <p class="pattern-body">
+                <strong>Yerkes-Dodson curve:</strong> Too little fear leads to careless mistakes.
+                Too much leads to paralysis. Moderate arousal optimizes performance.
+              </p>
+              <p class="pattern-body">
+                <strong>Fear as feedback signal:</strong> The healthy response isn't "don't be afraid"
+                or "be very afraid"—it's "be appropriately afraid, and update as you learn."
+                Fear should update with evidence, not lock in.
+              </p>
+              <p class="pattern-body">
+                <strong>Team velocity correlates with fear levels:</strong> Excessive review cycles signal
+                fear too high. Skipped testing and rushed deploys signal fear too low.
+                Fear unchanging over months signals the system isn't updating.
+              </p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="12" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Time to first AI experiment (how long before trying)</li>
+                    <li>Review cycle length (excessive = too fearful)</li>
+                    <li>Rollback frequency (too many or too few)</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Sandbox environments (lower stakes for experimentation)</li>
+                    <li>Incident post-mortems (learn without blame)</li>
+                    <li>Success story sharing (calibrate toward action)</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">
+                    Real fear isn't a single dial. It varies by domain, stakes, and individual.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="12">→ Show me how this shows up at work</button>
+          </div>
+
+          <div class="pattern-visual">
+            <!-- LEVEL 1: Fear Dial Demo -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="12">
+              <div class="interactive-container" data-interactive="fear">
+                <div class="fear-demo">
+                  <div class="fear-dial-container">
+                    <svg viewBox="0 0 200 120" class="fear-dial-svg" id="fear-dial-svg">
+                      <defs>
+                        <linearGradient id="fearGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" style="stop-color:#3fb950"/>
+                          <stop offset="50%" style="stop-color:#d29922"/>
+                          <stop offset="100%" style="stop-color:#f85149"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="var(--border)" stroke-width="15"/>
+                      <path d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="url(#fearGrad)" stroke-width="15" opacity="0.3"/>
+                      <path d="M70,34 A80,80 0 0,1 130,34" fill="none" stroke="var(--accent-green)" stroke-width="4" opacity="0.5"/>
+                      <line id="fear-needle" x1="100" y1="100" x2="100" y2="30" stroke="var(--accent-cyan)" stroke-width="3" stroke-linecap="round"/>
+                      <circle cx="100" cy="100" r="8" fill="var(--accent-cyan)"/>
+                      <text x="15" y="115" class="fear-label mono" fill="var(--accent-green)">Reckless</text>
+                      <text x="100" y="20" text-anchor="middle" class="fear-label mono" fill="var(--accent-green)">Optimal</text>
+                      <text x="185" y="115" text-anchor="end" class="fear-label mono" fill="var(--accent-red)">Paralyzed</text>
+                    </svg>
+                  </div>
+                  <div class="fear-controls">
+                    <input type="range" min="0" max="100" value="50" class="fear-slider" id="fear-slider">
+                  </div>
+                  <div class="fear-output mono" id="fear-output">
+                    Fear level: Optimal. Ready to learn with appropriate caution.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LEVEL 2: Fear Response Curve -->
+            <div class="level-content" data-level="deeper" data-pattern="12" hidden>
+              <div class="fear-curve" id="fear-curve">
+                <div class="curve-header mono">
+                  <span>Performance vs Fear Level (Yerkes-Dodson)</span>
+                </div>
+                <div class="curve-chart">
+                  <svg viewBox="0 0 300 150" class="curve-svg">
+                    <defs>
+                      <linearGradient id="curveGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgba(0, 255, 213, 0.1)"/>
+                        <stop offset="100%" style="stop-color:rgba(0, 255, 213, 0.3)"/>
+                      </linearGradient>
+                    </defs>
+                    <!-- Axes -->
+                    <line x1="30" y1="130" x2="280" y2="130" stroke="var(--border)" stroke-width="1"/>
+                    <line x1="30" y1="130" x2="30" y2="20" stroke="var(--border)" stroke-width="1"/>
+                    <!-- Labels -->
+                    <text x="155" y="145" text-anchor="middle" class="mono" fill="var(--text-dim)" font-size="8">Fear Level →</text>
+                    <text x="15" y="75" text-anchor="middle" class="mono" fill="var(--text-dim)" font-size="8" transform="rotate(-90, 15, 75)">Performance</text>
+                    <!-- Inverted U curve -->
+                    <path d="M40,120 Q100,30 155,30 Q210,30 270,120" fill="url(#curveGrad)" stroke="var(--accent)" stroke-width="2"/>
+                    <!-- Optimal zone -->
+                    <rect x="120" y="25" width="70" height="100" fill="rgba(59, 185, 80, 0.1)" stroke="var(--accent-green)" stroke-dasharray="4,2"/>
+                    <text x="155" y="18" text-anchor="middle" class="mono" fill="var(--accent-green)" font-size="7">OPTIMAL</text>
+                    <!-- Zone labels -->
+                    <text x="65" y="95" class="mono" fill="var(--accent-green)" font-size="7">Reckless</text>
+                    <text x="235" y="95" class="mono" fill="#ef4444" font-size="7">Paralyzed</text>
+                  </svg>
+                </div>
+                <div class="curve-insight mono">
+                  Performance peaks at moderate fear. Both extremes reduce effectiveness.
+                </div>
+              </div>
+            </div>
+
+            <!-- LEVEL 3: Fear Calibration Lab -->
+            <div class="level-content" data-level="lab" data-pattern="12" hidden>
+              <div class="fear-calibration" id="fear-calibration">
+                <div class="calibration-header mono">Fear Calibration Protocol</div>
+                <div class="calibration-domains">
+                  <div class="domain-item">
+                    <span class="domain-name mono">Code generation</span>
+                    <input type="range" min="0" max="100" value="30" class="domain-slider" data-domain="code">
+                    <span class="domain-value mono" data-domain="code">30</span>
+                  </div>
+                  <div class="domain-item">
+                    <span class="domain-name mono">Customer comms</span>
+                    <input type="range" min="0" max="100" value="60" class="domain-slider" data-domain="comms">
+                    <span class="domain-value mono" data-domain="comms">60</span>
+                  </div>
+                  <div class="domain-item">
+                    <span class="domain-name mono">Financial decisions</span>
+                    <input type="range" min="0" max="100" value="80" class="domain-slider" data-domain="finance">
+                    <span class="domain-value mono" data-domain="finance">80</span>
+                  </div>
+                </div>
+                <div class="calibration-output">
+                  <div class="output-label mono">Profile:</div>
+                  <div class="output-text" id="calibration-output">
+                    Low fear for code (sandbox available). Moderate for comms. High for finance (stakes matter).
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Workplace Drawer -->
+            <div class="workplace-drawer" data-pattern="12" hidden>
+              <div class="workplace-drawer__header mono">
+                <span>📋 Workplace Translation</span>
+                <button class="workplace-close" data-pattern="12">✕</button>
+              </div>
+              <div class="workplace-drawer__content">
+                <p><strong>The meeting:</strong> "We need to slow down on AI adoption until we're sure it's safe."</p>
+                <p><strong>The reality:</strong> Fear freezes the team while competitors learn and iterate. Neither extreme works.</p>
+                <p><strong>The pattern:</strong> Fear should be calibrated by domain. Sandbox experiments should feel safe. Production deploys should feel appropriately cautious.</p>
+                <p><strong>The move:</strong> Create graduated environments. Update fear based on actual outcomes, not hypotheticals.</p>
+              </div>
+            </div>
+
+            <button class="reset-btn mono" data-reset="fear">↺ Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 13: Security Becomes AI vs AI -->
+      <section id="pattern-13" class="pattern-band pattern-band--odd" data-pattern="13">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-13-human-ai-boundaries.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 13</span>
+            <h2 class="pattern-title">Security Becomes AI vs AI</h2>
+            <p class="pattern-line">Attack and defense both accelerate.</p>
+
+            <!-- Level tabs -->
+            <div class="level-tabs" data-pattern="13">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="13">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="13">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="13">Lab</button>
+            </div>
+
+            <!-- Level 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="13">
+              <p class="pattern-body">
+                AI writes exploits. AI writes patches. The arms race now runs at machine speed.
+                Human security teams become orchestrators, not combatants.
+              </p>
+              <p class="pattern-takeaway mono">Speed determines who wins, not skill.</p>
+            </div>
+
+            <!-- Level 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="13" hidden>
+              <p class="pattern-body">
+                <strong>New equilibrium:</strong> The cat-and-mouse game of security enters a new phase.
+                AI can find vulnerabilities faster than humans, but AI can also patch them faster.
+                The balance shifts from "who has better humans" to "who has better AI + better AI governance."
+              </p>
+              <p class="pattern-body">
+                <strong>Humans become meta-players:</strong> Security experts now set objectives, define
+                constraints, and evaluate AI security agents. The fight moves up a level of abstraction.
+                Humans move from fighters to referees.
+              </p>
+              <p class="pattern-body">
+                <strong>Verified by security incident response times:</strong> Organizations using AI-assisted
+                defense show dramatic reductions in mean time to patch—but so do AI-assisted attackers.
+              </p>
+            </div>
+
+            <!-- Level 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="13" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Vulnerability discovery rate (AI vs human baseline)</li>
+                    <li>Mean time to patch (automated vs manual)</li>
+                    <li>False positive rates in AI detection systems</li>
+                    <li>Novel attack surface emergence rate</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Detection sensitivity thresholds</li>
+                    <li>Automated response policies</li>
+                    <li>Human-in-the-loop escalation rules</li>
+                    <li>Attack simulation frequency</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">
+                    Real security is asymmetric: attackers need one success, defenders need 100% coverage.
+                    Demo shows balanced battles; reality favors whoever has the faster feedback loop.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="13">→ Show me how this shows up at work</button>
+          </div>
+
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="security">
+              <!-- LEVEL 1: AI Battle -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="13">
+                <div class="security-demo">
+                  <div class="battle-field" id="battle-field">
+                    <div class="battle-side battle-side--attack">
+                      <div class="side-label mono">ATTACK AI</div>
+                      <div class="side-health">
+                        <div class="health-bar" id="attack-health"></div>
+                      </div>
+                      <div class="side-score mono"><span id="attack-score">0</span> exploits</div>
+                    </div>
+                    <div class="battle-center">
+                      <div class="battle-log" id="battle-log">
+                        <!-- Battle events appear here -->
+                      </div>
+                    </div>
+                    <div class="battle-side battle-side--defend">
+                      <div class="side-label mono">DEFENSE AI</div>
+                      <div class="side-health">
+                        <div class="health-bar" id="defend-health"></div>
+                      </div>
+                      <div class="side-score mono"><span id="defend-score">0</span> patches</div>
+                    </div>
+                  </div>
+                  <div class="security-controls">
+                    <button class="security-btn mono" id="start-battle">▶ Start Battle</button>
+                    <button class="security-btn mono" id="pause-battle" disabled>⏸ Pause</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LEVEL 2: Attack Surface Scanner -->
+              <div class="level-content" data-level="deeper" data-pattern="13" hidden>
+                <div class="attack-surface" id="attack-surface">
+                  <div class="surface-header mono">
+                    <span>Attack Surface Scanner</span>
+                    <span class="scan-status" id="scan-status">Ready</span>
+                  </div>
+                  <div class="surface-grid">
+                    <div class="surface-node" data-vuln="none" data-service="api">
+                      <span class="node-icon">🔌</span>
+                      <span class="node-label mono">API</span>
+                    </div>
+                    <div class="surface-node" data-vuln="none" data-service="auth">
+                      <span class="node-icon">🔐</span>
+                      <span class="node-label mono">AUTH</span>
+                    </div>
+                    <div class="surface-node" data-vuln="none" data-service="db">
+                      <span class="node-icon">💾</span>
+                      <span class="node-label mono">DB</span>
+                    </div>
+                    <div class="surface-node" data-vuln="none" data-service="cdn">
+                      <span class="node-icon">🌐</span>
+                      <span class="node-label mono">CDN</span>
+                    </div>
+                    <div class="surface-node" data-vuln="none" data-service="queue">
+                      <span class="node-icon">📬</span>
+                      <span class="node-label mono">QUEUE</span>
+                    </div>
+                    <div class="surface-node" data-vuln="none" data-service="cache">
+                      <span class="node-icon">⚡</span>
+                      <span class="node-label mono">CACHE</span>
+                    </div>
+                  </div>
+                  <div class="surface-controls">
+                    <button class="scan-btn mono" id="run-scan">🔍 AI Scan (0.3s)</button>
+                    <button class="scan-btn scan-btn--human mono" id="run-human-scan">👤 Human Scan (15s)</button>
+                  </div>
+                  <div class="surface-result" id="surface-result">
+                    <div class="result-label mono">Findings:</div>
+                    <div class="result-text">Click a scan method to find vulnerabilities.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LEVEL 3: Defense Strategy Lab -->
+              <div class="level-content" data-level="lab" data-pattern="13" hidden>
+                <div class="defense-lab" id="defense-lab">
+                  <div class="lab-header mono">Defense Strategy Builder</div>
+                  <div class="strategy-sliders">
+                    <div class="strategy-item">
+                      <span class="strategy-name mono">Detection</span>
+                      <input type="range" min="0" max="100" value="50" class="strategy-slider" data-strategy="detection">
+                      <span class="strategy-value mono" data-strategy="detection">50%</span>
+                    </div>
+                    <div class="strategy-item">
+                      <span class="strategy-name mono">Response</span>
+                      <input type="range" min="0" max="100" value="50" class="strategy-slider" data-strategy="response">
+                      <span class="strategy-value mono" data-strategy="response">50%</span>
+                    </div>
+                    <div class="strategy-item">
+                      <span class="strategy-name mono">Prediction</span>
+                      <input type="range" min="0" max="100" value="50" class="strategy-slider" data-strategy="prediction">
+                      <span class="strategy-value mono" data-strategy="prediction">50%</span>
+                    </div>
+                  </div>
+                  <div class="strategy-budget">
+                    <span class="budget-label mono">Budget used:</span>
+                    <div class="budget-bar">
+                      <div class="budget-fill" id="budget-fill" style="width: 50%"></div>
+                    </div>
+                    <span class="budget-value mono" id="budget-value">150 / 300</span>
+                  </div>
+                  <div class="strategy-outcome" id="strategy-outcome">
+                    <div class="outcome-label mono">Projected posture:</div>
+                    <div class="outcome-text">Balanced approach. Good at catching known attacks, may miss novel threats.</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Workplace Drawer -->
+            <div class="workplace-drawer" data-pattern="13" hidden>
+              <div class="workplace-drawer__header mono">
+                <span>📋 Workplace Translation</span>
+                <button class="workplace-close" data-pattern="13">✕</button>
+              </div>
+              <div class="workplace-drawer__content">
+                <p><strong>The meeting:</strong> "Let's use AI to automate our security testing."</p>
+                <p><strong>The reality:</strong> You deploy AI-powered security tools that scan faster and find more vulnerabilities than your human team ever could. Meanwhile, attackers deploy their own AI that probes your defenses faster than you can patch. Each improvement in your detection triggers an improvement in their evasion.</p>
+                <p><strong>The pattern:</strong> Security becomes an AI arms race where both sides have access to the same fundamental capabilities. The advantage goes to whoever adapts faster—and attackers, unconstrained by compliance and change control, often move first.</p>
+                <p><strong>The move:</strong> Build security posture for a world where AI amplifies both offense and defense. Assume adversaries have the same tools. Focus on fundamentals that can't be automated away—minimizing attack surface, defense in depth, and incident response speed.</p>
+              </div>
+            </div>
+
+            <button class="reset-btn mono" data-reset="security">↺ Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 14: Values Are Constraints, Not Posters -->
+      <section id="pattern-14" class="pattern-band pattern-band--even" data-pattern="14">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-14-values-constraints.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 14</span>
+            <h2 class="pattern-title">Values Are Constraints, Not Posters</h2>
+            <p class="pattern-line">If AI can violate it, it's not really a value.</p>
+
+            <div class="level-tabs" data-pattern="14">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="14">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="14">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="14">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="14">
+              <p class="pattern-body">
+                Values posted on walls do nothing. Values embedded as constraints in AI systems
+                are enforced every time. Make your values executable.
+              </p>
+              <p class="pattern-takeaway mono">Values without enforcement are wishes.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="14" hidden>
+              <p class="pattern-body"><strong>Corporate values often become aspirational fiction:</strong> Nice words that collapse under pressure. AI forces honesty: if a value isn't encoded as a constraint, the system won't follow it.</p>
+              <p class="pattern-body"><strong>"We value customer privacy" means nothing</strong> unless the AI literally cannot access customer data without authorization. The statement becomes meaningless if violations are technically possible.</p>
+              <p class="pattern-body"><strong>Values become architecture, ethics becomes engineering:</strong> In AI systems, what you value is what you enforce. Everything else is marketing copy.</p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="14" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Violation attempts blocked vs. allowed</li>
+                    <li>Override request frequency</li>
+                    <li>Time from stated value → hard constraint</li>
+                    <li>Gap between stated and enforced values</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Enforcement level (poster/soft/hard)</li>
+                    <li>Override approval chain</li>
+                    <li>Audit trail depth</li>
+                    <li>Constraint bypass timeout</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">Real constraints require infrastructure changes. Edge cases are always more complex than binary choices. Political cost of hard constraints isn't shown. "Override" often means "call someone senior" in practice.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="14">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="values">
+              <!-- Level 1: Guardrails Demo -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="14">
+                <div class="values-demo">
+                  <div class="bridge-container">
+                    <svg viewBox="0 0 400 200" class="bridge-svg" id="bridge-svg">
+                      <!-- Bridge deck -->
+                      <rect x="50" y="100" width="300" height="10" fill="var(--text-muted)" rx="2"/>
+                      <!-- Left pillar -->
+                      <rect x="60" y="100" width="15" height="80" fill="var(--border)"/>
+                      <!-- Right pillar -->
+                      <rect x="325" y="100" width="15" height="80" fill="var(--border)"/>
+                      <!-- Guardrails (can be toggled) -->
+                      <rect x="50" y="85" width="300" height="8" rx="2" class="guardrail guardrail--top" id="guardrail-top" fill="var(--accent-cyan)"/>
+                      <rect x="50" y="115" width="300" height="8" rx="2" class="guardrail guardrail--bottom" id="guardrail-bottom" fill="var(--accent-cyan)"/>
+                      <!-- Moving car/agent -->
+                      <g id="bridge-agent" transform="translate(80, 90)">
+                        <rect x="0" y="0" width="30" height="15" rx="3" fill="var(--accent-purple)"/>
+                        <circle cx="8" cy="15" r="4" fill="var(--text-muted)"/>
+                        <circle cx="22" cy="15" r="4" fill="var(--text-muted)"/>
+                      </g>
+                      <!-- Cliff warnings -->
+                      <text x="25" y="140" class="cliff-label mono" fill="var(--accent-red)">⚠</text>
+                      <text x="375" y="140" class="cliff-label mono" fill="var(--accent-red)">⚠</text>
+                    </svg>
+                  </div>
+                  <div class="values-controls">
+                    <label class="values-toggle">
+                      <input type="checkbox" id="guardrails-toggle" checked>
+                      <span class="toggle-text mono">Guardrails Active</span>
+                    </label>
+                    <button class="values-btn mono" id="drive-agent">→ Drive Agent</button>
+                  </div>
+                  <div class="values-output mono" id="values-output">
+                    Guardrails active. Agent constrained to safe path.
+                  </div>
+                </div>
+                <div class="demo-insight mono">
+                  <span class="insight-label">Notice:</span> Without constraints, stated values don't stop the agent.
+                </div>
+              </div>
+
+              <!-- Level 2: Values Audit -->
+              <div class="level-content" data-level="deeper" data-pattern="14" hidden>
+                <div class="values-audit" id="values-audit">
+                  <div class="audit-header mono">
+                    <span>Values Reality Check</span>
+                    <span class="audit-score" id="audit-score">0% Enforced</span>
+                  </div>
+                  <div class="audit-grid">
+                    <div class="audit-column">
+                      <div class="audit-column-header mono">📋 What We Say</div>
+                      <div class="audit-item audit-item--stated" data-value="privacy">
+                        <span class="audit-value">"We value customer privacy"</span>
+                        <span class="audit-source mono">— Company Values Page</span>
+                      </div>
+                      <div class="audit-item audit-item--stated" data-value="transparency">
+                        <span class="audit-value">"We believe in transparency"</span>
+                        <span class="audit-source mono">— Annual Report</span>
+                      </div>
+                      <div class="audit-item audit-item--stated" data-value="security">
+                        <span class="audit-value">"Security is our priority"</span>
+                        <span class="audit-source mono">— CEO Letter</span>
+                      </div>
+                      <div class="audit-item audit-item--stated" data-value="ethics">
+                        <span class="audit-value">"We put ethics first"</span>
+                        <span class="audit-source mono">— Mission Statement</span>
+                      </div>
+                    </div>
+                    <div class="audit-column">
+                      <div class="audit-column-header mono">⚙️ What We Enforce</div>
+                      <div class="audit-item audit-item--enforced" data-value="privacy" data-enforced="false">
+                        <span class="enforcement-status">❌</span>
+                        <span class="audit-reality mono">No PII access controls</span>
+                      </div>
+                      <div class="audit-item audit-item--enforced" data-value="transparency" data-enforced="partial">
+                        <span class="enforcement-status">⚠️</span>
+                        <span class="audit-reality mono">Logging exists but optional</span>
+                      </div>
+                      <div class="audit-item audit-item--enforced" data-value="security" data-enforced="true">
+                        <span class="enforcement-status">✓</span>
+                        <span class="audit-reality mono">Auth required, encrypted</span>
+                      </div>
+                      <div class="audit-item audit-item--enforced" data-value="ethics" data-enforced="false">
+                        <span class="enforcement-status">❌</span>
+                        <span class="audit-reality mono">No constraint checks</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="audit-controls">
+                    <button class="audit-btn mono" id="run-audit">🔍 Run Audit</button>
+                    <button class="audit-btn audit-btn--fix mono" id="fix-values">🔧 Add Constraints</button>
+                  </div>
+                </div>
+                <div class="demo-insight mono">
+                  <span class="insight-label">Notice:</span> Most organizations have more stated values than enforced constraints.
+                </div>
+              </div>
+
+              <!-- Level 3: Constraint Designer Lab -->
+              <div class="level-content" data-level="lab" data-pattern="14" hidden>
+                <div class="constraint-lab" id="constraint-lab">
+                  <div class="lab-header mono">
+                    <span>⚗️ Constraint Designer</span>
+                  </div>
+
+                  <div class="constraint-builder">
+                    <div class="constraint-value">
+                      <span class="constraint-label mono">Value Statement</span>
+                      <select class="constraint-select mono" id="constraint-value-select">
+                        <option value="privacy">Customer Privacy</option>
+                        <option value="transparency">Operational Transparency</option>
+                        <option value="fairness">Algorithmic Fairness</option>
+                        <option value="accuracy">Data Accuracy</option>
+                      </select>
+                    </div>
+
+                    <div class="constraint-levels">
+                      <div class="constraint-level">
+                        <span class="level-label mono">Enforcement Level</span>
+                        <div class="level-options">
+                          <label class="level-option">
+                            <input type="radio" name="enforcement" value="poster" checked>
+                            <span class="option-label">📄 Poster Only</span>
+                            <span class="option-desc mono">Written policy, no enforcement</span>
+                          </label>
+                          <label class="level-option">
+                            <input type="radio" name="enforcement" value="soft">
+                            <span class="option-label">⚠️ Soft Constraint</span>
+                            <span class="option-desc mono">Warning + log, allow override</span>
+                          </label>
+                          <label class="level-option">
+                            <input type="radio" name="enforcement" value="hard">
+                            <span class="option-label">🛑 Hard Constraint</span>
+                            <span class="option-desc mono">Block action, no override</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="constraint-preview">
+                      <div class="preview-header mono">Implementation Preview</div>
+                      <div class="preview-code mono" id="constraint-preview">
+// Poster Only Mode
+console.log("We value customer privacy");
+// No actual enforcement
+agent.accessData(); // ✓ Allowed
+                      </div>
+                    </div>
+
+                    <div class="constraint-test">
+                      <button class="test-btn mono" id="test-constraint">▶ Test Violation Attempt</button>
+                      <div class="test-result mono" id="constraint-result"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Workplace Drawer -->
+            <div class="workplace-drawer" data-pattern="14" hidden>
+              <div class="workplace-drawer__header mono">
+                <span>📋 Workplace Translation</span>
+                <button class="workplace-close" data-pattern="14">✕</button>
+              </div>
+              <div class="workplace-drawer__content">
+                <p><strong>The meeting:</strong> "We value customer privacy in everything we do."</p>
+                <p><strong>The reality:</strong> Your AI assistant has full access to customer data with no access controls. The value statement is on the wall and in the employee handbook, but nothing in the system enforces it.</p>
+                <p><strong>The pattern:</strong> Values without enforcement are marketing copy. AI exposes this gap ruthlessly—systems either enforce constraints or they don't. There's no middle ground.</p>
+                <p><strong>The move:</strong> Audit your stated values against what your AI systems can actually do. Move from poster values (written policy) to soft constraints (warning + logging) to hard constraints (blocked actions). Make ethics into engineering.</p>
+              </div>
+            </div>
+
+            <button class="reset-btn mono" data-reset="values">↺ Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN 15: Identity Stress Is the Next Big Adoption Wall -->
+      <section id="pattern-15" class="pattern-band pattern-band--odd" data-pattern="15">
+        <div class="pattern-illustration" aria-hidden="true">
+          <img src="assets/images/patterns/pattern-15-identity-stress.png" alt="" loading="lazy">
+        </div>
+        <div class="pattern-band__inner">
+          <div class="pattern-text">
+            <span class="pattern-num mono">PATTERN 15</span>
+            <h2 class="pattern-title">Identity Stress Is the Next Big Adoption Wall</h2>
+            <p class="pattern-line">Skills can change. Self-concept struggles.</p>
+
+            <div class="level-tabs" data-pattern="15">
+              <button class="level-tab level-tab--active mono" data-level="quick" data-pattern="15">Quick</button>
+              <button class="level-tab mono" data-level="deeper" data-pattern="15">Deeper</button>
+              <button class="level-tab mono" data-level="lab" data-pattern="15">Lab</button>
+            </div>
+
+            <!-- LEVEL 1: Quick -->
+            <div class="level-content level-content--active" data-level="quick" data-pattern="15">
+              <p class="pattern-body">
+                The hardest part of AI adoption isn't learning new tools—it's letting go
+                of who you thought you were. Identity stress, not skill gaps, blocks progress.
+              </p>
+              <p class="pattern-takeaway mono">Train skills AND tend identity.</p>
+            </div>
+
+            <!-- LEVEL 2: Deeper -->
+            <div class="level-content" data-level="deeper" data-pattern="15" hidden>
+              <p class="pattern-body"><strong>AI creates an existential adoption barrier:</strong> We've solved technical adoption barriers many times. But when a tool can do what you trained your whole life to do, the question "what am I for?" becomes urgent.</p>
+              <p class="pattern-body"><strong>Identity transitions require support, not just training:</strong> Organizations that acknowledge and support identity transition—not just skill transition—will capture the talent that others lose to fear and denial.</p>
+              <p class="pattern-body"><strong>Resistance often masks grief:</strong> The person fighting hardest against AI may be mourning a future they spent decades building toward. Meet that grief with acknowledgment, not arguments.</p>
+            </div>
+
+            <!-- LEVEL 3: Lab -->
+            <div class="level-content" data-level="lab" data-pattern="15" hidden>
+              <div class="lab-panel">
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">📡 Signals to Watch</h4>
+                  <ul class="lab-list">
+                    <li>Stage distribution across team</li>
+                    <li>Time stuck in each stage</li>
+                    <li>Regression events (backsliding)</li>
+                    <li>"What am I for?" questions frequency</li>
+                  </ul>
+                </div>
+                <div class="lab-section">
+                  <h4 class="lab-heading mono">🎛️ Levers You Control</h4>
+                  <ul class="lab-list">
+                    <li>Acknowledgment intensity</li>
+                    <li>Reframing narrative choice</li>
+                    <li>Transition pace expectations</li>
+                    <li>Peer support vs. management support</li>
+                  </ul>
+                </div>
+                <div class="lab-section lab-section--caveat">
+                  <h4 class="lab-heading mono">⚠️ How This Demo Lies</h4>
+                  <p class="lab-caveat">Real transitions take months or years, not clicks. People cycle through stages non-linearly. Scripts sound hollow without genuine care. Some never integrate—and that's data too.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="workplace-btn mono" data-pattern="15">→ Show me how this shows up at work</button>
+          </div>
+          <div class="pattern-visual">
+            <div class="interactive-container" data-interactive="stress">
+              <!-- Level 1: Seesaw Demo -->
+              <div class="level-content level-content--active" data-level="quick" data-pattern="15">
+                <div class="stress-demo">
+                  <div class="seesaw-container">
+                    <svg viewBox="0 0 400 200" class="seesaw-svg" id="seesaw-svg">
+                      <!-- Fulcrum -->
+                      <polygon points="200,180 180,200 220,200" fill="var(--text-muted)"/>
+                      <!-- Seesaw plank -->
+                      <rect id="seesaw-plank" x="50" y="170" width="300" height="12" rx="3" fill="var(--border)" transform-origin="200 176"/>
+                      <!-- Left side (Old Identity) -->
+                      <g id="left-weight" transform="translate(80, 130)">
+                        <rect x="0" y="0" width="60" height="40" rx="5" fill="var(--accent-red)"/>
+                        <text x="30" y="25" text-anchor="middle" class="weight-label mono" fill="var(--bg-deep)">OLD</text>
+                      </g>
+                      <!-- Right side (New Identity) -->
+                      <g id="right-weight" transform="translate(260, 130)">
+                        <rect x="0" y="0" width="60" height="40" rx="5" fill="var(--accent-green)"/>
+                        <text x="30" y="25" text-anchor="middle" class="weight-label mono" fill="var(--bg-deep)">NEW</text>
+                      </g>
+                      <!-- Balance indicator -->
+                      <circle id="balance-dot" cx="200" cy="150" r="8" fill="var(--accent-cyan)"/>
+                    </svg>
+                  </div>
+                  <div class="stress-controls">
+                    <div class="stress-slider-group">
+                      <span class="mono">Old Identity Weight</span>
+                      <input type="range" min="0" max="100" value="70" class="stress-slider" id="old-weight-slider">
+                    </div>
+                    <div class="stress-slider-group">
+                      <span class="mono">New Identity Weight</span>
+                      <input type="range" min="0" max="100" value="30" class="stress-slider" id="new-weight-slider">
+                    </div>
+                  </div>
+                  <div class="stress-output mono" id="stress-output">
+                    Stress level: High. Old identity dominates, resisting change.
+                  </div>
+                </div>
+                <div class="demo-insight mono">
+                  <span class="insight-label">Notice:</span> Balance requires honoring both identities, not abandoning one.
+                </div>
+              </div>
+
+              <!-- Level 2: Identity Transition Map -->
+              <div class="level-content" data-level="deeper" data-pattern="15" hidden>
+                <div class="transition-map" id="transition-map">
+                  <div class="map-header mono">
+                    <span>Identity Transition Journey</span>
+                    <span class="map-stage" id="current-stage">Stage: Denial</span>
+                  </div>
+                  <div class="stage-track">
+                    <div class="stage-node stage-node--active" data-stage="denial">
+                      <div class="stage-marker">1</div>
+                      <div class="stage-info">
+                        <span class="stage-name mono">Denial</span>
+                        <span class="stage-phrase">"AI can't do what I do"</span>
+                      </div>
+                    </div>
+                    <div class="stage-connector"></div>
+                    <div class="stage-node" data-stage="resistance">
+                      <div class="stage-marker">2</div>
+                      <div class="stage-info">
+                        <span class="stage-name mono">Resistance</span>
+                        <span class="stage-phrase">"This is dehumanizing"</span>
+                      </div>
+                    </div>
+                    <div class="stage-connector"></div>
+                    <div class="stage-node" data-stage="exploration">
+                      <div class="stage-marker">3</div>
+                      <div class="stage-info">
+                        <span class="stage-name mono">Exploration</span>
+                        <span class="stage-phrase">"What if I tried..."</span>
+                      </div>
+                    </div>
+                    <div class="stage-connector"></div>
+                    <div class="stage-node" data-stage="integration">
+                      <div class="stage-marker">4</div>
+                      <div class="stage-info">
+                        <span class="stage-name mono">Integration</span>
+                        <span class="stage-phrase">"I'm more than my tasks"</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stage-detail" id="stage-detail">
+                    <div class="detail-behavior">
+                      <span class="detail-label mono">Visible Behavior</span>
+                      <span class="detail-text" id="behavior-text">Dismisses AI demos. Changes subject. Cites edge cases.</span>
+                    </div>
+                    <div class="detail-need">
+                      <span class="detail-label mono">Underlying Need</span>
+                      <span class="detail-text" id="need-text">Validation that years of expertise still matter.</span>
+                    </div>
+                    <div class="detail-support">
+                      <span class="detail-label mono">Effective Support</span>
+                      <span class="detail-text" id="support-text">Acknowledge expertise. Frame AI as amplifier, not replacement.</span>
+                    </div>
+                  </div>
+                  <div class="stage-controls">
+                    <button class="stage-btn mono" id="stage-prev" disabled>← Previous</button>
+                    <button class="stage-btn mono" id="stage-next">Next →</button>
+                  </div>
+                </div>
+                <div class="demo-insight mono">
+                  <span class="insight-label">Notice:</span> Forcing people forward creates backlash. Meet them where they are.
+                </div>
+              </div>
+
+              <!-- Level 3: Identity Support Designer Lab -->
+              <div class="level-content" data-level="lab" data-pattern="15" hidden>
+                <div class="support-lab" id="support-lab">
+                  <div class="lab-header mono">
+                    <span>⚗️ Identity Support Designer</span>
+                  </div>
+
+                  <div class="support-builder">
+                    <div class="support-persona">
+                      <span class="persona-label mono">Team Member Profile</span>
+                      <select class="persona-select mono" id="persona-select">
+                        <option value="senior">Senior Expert (20+ years)</option>
+                        <option value="mid">Mid-Career Professional</option>
+                        <option value="junior">Early Career (< 5 years)</option>
+                        <option value="manager">People Manager</option>
+                      </select>
+                    </div>
+
+                    <div class="support-config">
+                      <div class="config-row">
+                        <span class="config-label mono">Acknowledgment Level</span>
+                        <div class="config-options" id="acknowledgment-options">
+                          <button class="config-opt mono config-opt--active" data-value="low">Low</button>
+                          <button class="config-opt mono" data-value="med">Medium</button>
+                          <button class="config-opt mono" data-value="high">High</button>
+                        </div>
+                      </div>
+                      <div class="config-row">
+                        <span class="config-label mono">Reframing Approach</span>
+                        <div class="config-options" id="reframing-options">
+                          <button class="config-opt mono config-opt--active" data-value="tool">AI as Tool</button>
+                          <button class="config-opt mono" data-value="partner">AI as Partner</button>
+                          <button class="config-opt mono" data-value="amplifier">AI as Amplifier</button>
+                        </div>
+                      </div>
+                      <div class="config-row">
+                        <span class="config-label mono">New Narrative Focus</span>
+                        <div class="config-options" id="narrative-options">
+                          <button class="config-opt mono config-opt--active" data-value="efficiency">Efficiency Gains</button>
+                          <button class="config-opt mono" data-value="creativity">Creativity Unlock</button>
+                          <button class="config-opt mono" data-value="judgment">Judgment Matters</button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="support-preview">
+                      <div class="preview-header mono">Intervention Preview</div>
+                      <div class="preview-script" id="support-preview">
+                        <p class="script-line" id="ack-line">"Your 20 years of experience aren't replaceable."</p>
+                        <p class="script-line" id="frame-line">"Think of AI as a power tool that makes your expertise reach further."</p>
+                        <p class="script-line" id="narrative-line">"Now you can focus on the strategic decisions only you can make."</p>
+                      </div>
+                    </div>
+
+                    <div class="support-outcome">
+                      <div class="outcome-label mono">Predicted Outcome</div>
+                      <div class="outcome-meter">
+                        <div class="meter-fill" id="outcome-meter" style="width: 40%"></div>
+                      </div>
+                      <div class="outcome-text mono" id="outcome-text">Moderate resistance likely. Missing high acknowledgment.</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Workplace Drawer -->
+            <div class="workplace-drawer" data-pattern="15" hidden>
+              <div class="workplace-drawer__header mono">
+                <span>📋 Workplace Translation</span>
+                <button class="workplace-close" data-pattern="15">✕</button>
+              </div>
+              <div class="workplace-drawer__content">
+                <p><strong>The meeting:</strong> "Everyone needs to learn these AI tools by next quarter."</p>
+                <p><strong>The reality:</strong> Your top performers resist. Not because they can't learn—because learning threatens who they are.</p>
+                <p><strong>The pattern:</strong> Identity stress shows up as "concerns about quality" or "questions about the approach." The real fear is rarely spoken.</p>
+                <p><strong>The move:</strong> Create safe spaces to process identity transition. Acknowledge that expertise still matters. Frame AI as amplifier, not replacement. Measure psychological safety alongside skill adoption.</p>
+              </div>
+            </div>
+            <button class="reset-btn mono" data-reset="stress">↺ Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLOSING -->
+      <section class="section section--close patterns-close">
+        <div class="close-content">
+          <h2 class="close-title">
+            <span class="close-title__line">Intuition rewired.</span>
+            <span class="close-title__line close-title__line--em">Now go build.</span>
+          </h2>
+          <p class="close-sub">
+            These patterns aren't rules—they're lenses. Use them to see what others miss.
+          </p>
+          <div class="close-ctas">
+            <a href="index.html" class="btn btn--primary">
+              <span class="btn__glow"></span>
+              ← Back to Oracle Shift
+            </a>
+            <a href="shifts.html" class="btn btn--ghost">
+              <span class="mono">View 9 Shifts</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span class="footer__text">15 patterns for the AI-native era. Play, learn, apply.</span>
+        <span class="footer__mark mono">◈ PATTERNS</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="patterns.js"></script>
+  </body>
+</html>
