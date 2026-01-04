@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="patterns.css" />
+    <link rel="stylesheet" href="patterns.css?v=20260103d" />
   </head>
   <body>
     <div class="grain"></div>
@@ -26,6 +26,9 @@
           <a href="index.html">Oracle Shift</a>
           <a href="shifts.html">9 Shifts</a>
           <a href="#patterns-map">All 15</a>
+          <a href="#" class="nav__lexicon-link" onclick="document.getElementById('lexicon-drawer').classList.add('is-open'); return false;">
+            <span class="nav__lexicon-icon">◇</span> Lexicon
+          </a>
         </div>
         <div class="nav__status">
           <span class="status-dot"></span>
@@ -3245,6 +3248,158 @@ agent.accessData(); // ✓ Allowed
         <span class="footer__mark mono">◈ PATTERNS</span>
       </div>
     </footer>
+
+    <!-- LEXICON DRAWER -->
+    <div class="lexicon-toggle" id="lexicon-toggle" aria-label="Open Lexicon">
+      <span class="lexicon-toggle__icon">◇</span>
+      <span class="lexicon-toggle__label mono">LEXICON</span>
+    </div>
+
+    <aside class="lexicon-drawer" id="lexicon-drawer" aria-hidden="true">
+      <div class="lexicon-drawer__header">
+        <div class="lexicon-drawer__title">
+          <span class="lexicon-drawer__icon">◇</span>
+          <span>Manifold Lexicon</span>
+        </div>
+        <button class="lexicon-drawer__close" id="lexicon-close" aria-label="Close Lexicon">✕</button>
+      </div>
+
+      <div class="lexicon-drawer__search">
+        <input type="text" id="lexicon-search" class="lexicon-search mono" placeholder="Search terms...">
+      </div>
+
+      <div class="lexicon-drawer__content">
+        <!-- Geometry -->
+        <div class="lexicon-category" data-category="geometry">
+          <div class="lexicon-category__header">
+            <span class="lexicon-category__icon">◇</span>
+            <span class="lexicon-category__name">Geometry / Space</span>
+          </div>
+          <div class="lexicon-terms">
+            <div class="lexicon-term" data-term="embedding-space">
+              <span class="lexicon-term__name">Embedding Space</span>
+              <span class="lexicon-term__symbol mono">ℝᵈ</span>
+              <p class="lexicon-term__def">High-dimensional vector space where tokens, phrases, and concepts live as points.</p>
+            </div>
+            <div class="lexicon-term" data-term="manifold">
+              <span class="lexicon-term__name">Manifold</span>
+              <span class="lexicon-term__symbol mono">𝓜</span>
+              <p class="lexicon-term__def">The structured subset of embedding space that a process actually occupies.</p>
+            </div>
+            <div class="lexicon-term" data-term="curvature">
+              <span class="lexicon-term__name">Curvature</span>
+              <span class="lexicon-term__symbol mono">κ</span>
+              <p class="lexicon-term__def">How rapidly direction changes along a conceptual path. High curvature = fast frame shifts.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamics -->
+        <div class="lexicon-category" data-category="dynamics">
+          <div class="lexicon-category__header">
+            <span class="lexicon-category__icon">→</span>
+            <span class="lexicon-category__name">Dynamics / Flow</span>
+          </div>
+          <div class="lexicon-terms">
+            <div class="lexicon-term" data-term="gradient-flow">
+              <span class="lexicon-term__name">Gradient Flow</span>
+              <span class="lexicon-term__symbol mono">∇</span>
+              <p class="lexicon-term__def">Movement in the direction of steepest probability/coherence increase.</p>
+            </div>
+            <div class="lexicon-term" data-term="trajectory">
+              <span class="lexicon-term__name">Trajectory</span>
+              <span class="lexicon-term__symbol mono">γ</span>
+              <p class="lexicon-term__def">The path traced through concept space over the course of generation.</p>
+            </div>
+            <div class="lexicon-term" data-term="drift">
+              <span class="lexicon-term__name">Drift</span>
+              <span class="lexicon-term__symbol mono">δ</span>
+              <p class="lexicon-term__def">Gradual unintentional movement away from original intent or topic.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Attractors -->
+        <div class="lexicon-category" data-category="attractors">
+          <div class="lexicon-category__header">
+            <span class="lexicon-category__icon">◉</span>
+            <span class="lexicon-category__name">Attractors / Basins</span>
+          </div>
+          <div class="lexicon-terms">
+            <div class="lexicon-term" data-term="attractor">
+              <span class="lexicon-term__name">Attractor</span>
+              <span class="lexicon-term__symbol mono">⊛</span>
+              <p class="lexicon-term__def">A stable state or pattern that pulls nearby trajectories toward it.</p>
+            </div>
+            <div class="lexicon-term" data-term="attractor-basin">
+              <span class="lexicon-term__name">Attractor Basin</span>
+              <span class="lexicon-term__symbol mono">⊚</span>
+              <p class="lexicon-term__def">The region of starting points that all converge to the same attractor.</p>
+            </div>
+            <div class="lexicon-term" data-term="lock-in">
+              <span class="lexicon-term__name">Lock-in</span>
+              <span class="lexicon-term__symbol mono">⊗</span>
+              <p class="lexicon-term__def">When an attractor becomes so strong that escape requires extreme perturbation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coherence -->
+        <div class="lexicon-category" data-category="coherence">
+          <div class="lexicon-category__header">
+            <span class="lexicon-category__icon">≡</span>
+            <span class="lexicon-category__name">Coherence / Entropy</span>
+          </div>
+          <div class="lexicon-terms">
+            <div class="lexicon-term" data-term="coherence">
+              <span class="lexicon-term__name">Coherence</span>
+              <span class="lexicon-term__symbol mono">C</span>
+              <p class="lexicon-term__def">Degree to which parts of a generation mutually support consistent interpretation.</p>
+            </div>
+            <div class="lexicon-term" data-term="entropy">
+              <span class="lexicon-term__name">Entropy</span>
+              <span class="lexicon-term__symbol mono">H</span>
+              <p class="lexicon-term__def">Uncertainty or information spread in the semantic/probability space.</p>
+            </div>
+            <div class="lexicon-term" data-term="noise">
+              <span class="lexicon-term__name">Noise</span>
+              <span class="lexicon-term__symbol mono">ε</span>
+              <p class="lexicon-term__def">Random or irrelevant components that don't contribute to meaning.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interaction -->
+        <div class="lexicon-category" data-category="interaction">
+          <div class="lexicon-category__header">
+            <span class="lexicon-category__icon">⇄</span>
+            <span class="lexicon-category__name">Interaction / Alignment</span>
+          </div>
+          <div class="lexicon-terms">
+            <div class="lexicon-term" data-term="joint-manifold">
+              <span class="lexicon-term__name">Joint Manifold</span>
+              <span class="lexicon-term__symbol mono">𝓜∩</span>
+              <p class="lexicon-term__def">The shared conceptual space where human and AI understanding overlap.</p>
+            </div>
+            <div class="lexicon-term" data-term="alignment">
+              <span class="lexicon-term__name">Alignment</span>
+              <span class="lexicon-term__symbol mono">∥</span>
+              <p class="lexicon-term__def">Degree of agreement between human intent and AI interpretation.</p>
+            </div>
+            <div class="lexicon-term" data-term="context-anchor">
+              <span class="lexicon-term__name">Context Anchor</span>
+              <span class="lexicon-term__symbol mono">⚓</span>
+              <p class="lexicon-term__def">Strong tokens or phrases that pin interpretation in a specific direction.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="lexicon.html" class="lexicon-drawer__link btn btn--ghost">
+          <span class="mono">View Full Lexicon →</span>
+        </a>
+      </div>
+    </aside>
+    <div class="lexicon-overlay" id="lexicon-overlay"></div>
 
     <script src="script.js"></script>
     <script src="patterns.js"></script>
