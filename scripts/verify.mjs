@@ -70,10 +70,15 @@ const indexContent = readFileSync(resolve("index.html"), "utf8");
 const agentsContent = readFileSync(resolve("AGENTS.md"), "utf8");
 const combined = indexContent + agentsContent;
 
-// Check required phrases
-const missingPhrases = requiredPhrases.filter((phrase) =>
-  !indexContent.includes(phrase) && !agentsContent.includes(phrase)
-);
+// Normalize arrows for comparison (-> and → are equivalent)
+const normalizeArrows = (text) => text.replace(/→/g, "->").replace(/–>/g, "->");
+
+// Check required phrases (normalize arrows for comparison)
+const missingPhrases = requiredPhrases.filter((phrase) => {
+  const normalizedIndex = normalizeArrows(indexContent);
+  const normalizedAgents = normalizeArrows(agentsContent);
+  return !normalizedIndex.includes(phrase) && !normalizedAgents.includes(phrase);
+});
 
 if (missingPhrases.length) {
   console.error("❌ Missing required phrases:", missingPhrases.join(" | "));

@@ -3,299 +3,515 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Oracles, Not Org Charts</title>
-    <meta name="description" content="Proof-driven development for AI agents. If it doesn't run, it doesn't exist." />
+    <title>The Oracle Shift | AI Native</title>
+    <meta name="description" content="Lesson: Why verification replaces narration when working with AI. From org charts to oracles." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Spectral:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="noise"></div>
-    <header class="topbar">
-      <div class="container topbar__inner">
-        <div class="logo">Oracles, Not Org Charts</div>
-        <nav class="nav">
-          <a href="#phrase">Phrase</a>
-          <a href="#diff">Diff</a>
-          <a href="#example">Example</a>
-          <a href="#paste">Paste-ins</a>
-        </nav>
+    <div class="grain"></div>
+    <div class="grid-bg"></div>
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+    <!-- CURRICULUM BREADCRUMB -->
+    <div class="breadcrumb">
+      <div class="breadcrumb__inner">
+        <a href="https://jamesbrady.org" class="breadcrumb__link">jamesbrady.org</a>
+        <span class="breadcrumb__sep">→</span>
+        <a href="#" class="breadcrumb__link">AI Native</a>
+        <span class="breadcrumb__sep">→</span>
+        <span class="breadcrumb__current">The Oracle Shift</span>
+      </div>
+    </div>
+
+    <header class="nav">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo">
+          <span class="nav__icon">◈</span>
+          <span>THE ORACLE SHIFT</span>
+        </a>
+        <div class="nav__links">
+          <a href="#problem">Problem</a>
+          <a href="#insight">Insight</a>
+          <a href="#framework">Framework</a>
+          <a href="#apply">Apply</a>
+          <a href="shifts.html" class="nav__link--highlight">9 Shifts</a>
+          <a href="patterns.html" class="nav__link--highlight">Patterns</a>
+        </div>
+        <div class="nav__status">
+          <span class="status-dot"></span>
+          <span class="mono">LESSON 01</span>
+        </div>
       </div>
     </header>
 
     <main>
-      <section id="phrase" class="hero">
-        <div class="container hero__inner">
-          <div class="hero__copy">
-            <p class="eyebrow">Proof-Driven Development for AI Agents</p>
-            <h1>If it doesn&#39;t run, it doesn&#39;t exist.</h1>
-            <p class="lead">
-              This page teaches the phase shift: move from narrative to oracles.
-              Every claim ends in an executable check, or it stays a hypothesis.
+      <!-- MODULE INTRO -->
+      <section id="intro" class="module-intro">
+        <div class="module-intro__content">
+          <div class="module-badge">
+            <span class="pulse"></span>
+            <span class="mono">AI NATIVE CURRICULUM</span>
+          </div>
+
+          <h1 class="module-title">The Oracle Shift</h1>
+
+          <p class="module-premise">
+            AI doesn't think like you. Stop forcing human patterns onto it.<br/>
+            <strong>Learn how AI works, then do that.</strong>
+          </p>
+
+          <div class="module-meta">
+            <div class="module-meta__item">
+              <span class="mono">CORE INSIGHT</span>
+              <p>Verification replaces narration</p>
+            </div>
+            <div class="module-meta__item">
+              <span class="mono">YOU'LL LEARN</span>
+              <p>Why oracles beat org charts for AI work</p>
+            </div>
+            <div class="module-meta__item">
+              <span class="mono">TAKEAWAY</span>
+              <p>A framework you can paste into any project</p>
+            </div>
+          </div>
+
+          <div class="module-start">
+            <a href="#problem" class="btn btn--primary">
+              <span class="btn__glow"></span>
+              Start the lesson
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PART 1: THE PROBLEM -->
+      <section id="problem" class="section section--dark">
+        <div class="section__header">
+          <span class="section__number mono">PART 1</span>
+          <h2 class="section__title">The Problem</h2>
+          <p class="section__sub">Story-driven AI fails. Here's why.</p>
+        </div>
+
+        <div class="problem-setup">
+          <div class="problem-card">
+            <h3>How most people use AI</h3>
+            <div class="problem-flow">
+              <div class="flow-step">
+                <span class="flow-step__num">1</span>
+                <span>Describe what you want</span>
+              </div>
+              <span class="flow-arrow">→</span>
+              <div class="flow-step">
+                <span class="flow-step__num">2</span>
+                <span>AI generates a narrative</span>
+              </div>
+              <span class="flow-arrow">→</span>
+              <div class="flow-step">
+                <span class="flow-step__num">3</span>
+                <span>Trust the story</span>
+              </div>
+            </div>
+            <p class="problem-result">
+              <span class="mono result-bad">RESULT:</span>
+              "I fixed it" = unverified claim. Sounds right, might be wrong.
             </p>
-            <div class="hero__cta">
-              <button class="pill">Oracles, not org charts</button>
-              <button class="pill pill--ghost">Propose -> Patch -> Prove -> Pack</button>
-            </div>
           </div>
-          <div class="hero__panel">
-            <div class="panel__title">Instant intuition</div>
-            <p>
-              Verification is cheaper than invention. A test run falsifies a bad
-              idea in seconds. Thinking harder cannot.
-            </p>
-            <div class="meter">
-              <span>Loop tightness</span>
-              <div class="meter__bar"><span></span></div>
-            </div>
-            <div class="meter">
-              <span>Truth density</span>
-              <div class="meter__bar meter__bar--alt"><span></span></div>
-            </div>
+
+          <div class="problem-why">
+            <h4>Why this breaks:</h4>
+            <ul class="problem-list">
+              <li><span class="del">AI confidence ≠ correctness</span> — models sound certain even when wrong</li>
+              <li><span class="del">Narratives don't scale</span> — you can't review every claim by reading</li>
+              <li><span class="del">No feedback loop</span> — if it's wrong, you find out in production</li>
+              <li><span class="del">Human bottleneck</span> — you become the verification layer</li>
+            </ul>
+          </div>
+
+          <div class="problem-quote">
+            <blockquote>
+              "I implemented the feature" tells you nothing.<br/>
+              "Here's the test that proves it works" tells you everything.
+            </blockquote>
           </div>
         </div>
       </section>
-      <section id="diff" class="section">
-        <div class="container">
-          <div class="section__header">
-            <h2>The mindset shift (as a diff)</h2>
-            <p>From narrative to proof. From roles to constraints.</p>
+
+      <!-- PART 2: THE INSIGHT -->
+      <section id="insight" class="section">
+        <div class="section__header">
+          <span class="section__number mono">PART 2</span>
+          <h2 class="section__title">The Insight</h2>
+          <p class="section__sub">Replace narration with verification. Roles with constraints.</p>
+        </div>
+
+        <div class="insight-core">
+          <div class="insight-statement">
+            <p class="insight-old">The old model: divide labor by <em>role</em></p>
+            <div class="insight-arrow">↓</div>
+            <p class="insight-new">The AI-native model: divide verification by <em>oracle</em></p>
           </div>
-          <div class="diff">
-            <div class="diff__col">
-              <h3>Before</h3>
-              <ul>
-                <li>Goal: write code that sounds right.</li>
-                <li>Trust: model confidence + explanation.</li>
-                <li>Success: "I implemented it."</li>
-                <li>Strategy: big plan -> big change -> debug later.</li>
-                <li>QA: a phase at the end.</li>
-                <li>Uncertainty: hidden or hand-waved.</li>
+
+          <div class="insight-phrase">
+            <span class="mono">THE PHRASE</span>
+            <h3>Oracles, not org charts.</h3>
+            <p>Front-end, back-end, QA—these are human throughput partitions.
+               AI doesn't need them. It needs constraints it can check against.</p>
+          </div>
+        </div>
+
+        <!-- The Diff Viewer -->
+        <div class="diff-viewer">
+          <div class="diff-viewer__header">
+            <span class="mono">mindset.diff</span>
+            <span class="diff-viewer__badge">+6 -6</span>
+          </div>
+          <div class="diff-viewer__body">
+            <div class="diff-col diff-col--before">
+              <div class="diff-col__header">
+                <span class="diff-marker diff-marker--del">−</span>
+                <span class="mono">STORY-DRIVEN</span>
+              </div>
+              <ul class="diff-list">
+                <li><span class="line-num">1</span><span class="del">Goal: write code that sounds right</span></li>
+                <li><span class="line-num">2</span><span class="del">Trust: model confidence + explanation</span></li>
+                <li><span class="line-num">3</span><span class="del">Success: "I implemented it"</span></li>
+                <li><span class="line-num">4</span><span class="del">Strategy: big plan → big change</span></li>
+                <li><span class="line-num">5</span><span class="del">QA: a phase at the end</span></li>
+                <li><span class="line-num">6</span><span class="del">Uncertainty: hidden in confident tone</span></li>
               </ul>
             </div>
-            <div class="diff__col diff__col--after">
-              <h3>After</h3>
-              <ul>
-                <li>Goal: produce a change the computer can verify.</li>
-                <li>Trust: compilers, linters, tests, benchmarks.</li>
-                <li>Success: "Here is the command that passed."</li>
-                <li>Strategy: small diff -> fastest falsifier first.</li>
-                <li>QA: an always-on judge in the loop.</li>
-                <li>Uncertainty: explicit assumptions + falsifiers.</li>
+            <div class="diff-col diff-col--after">
+              <div class="diff-col__header">
+                <span class="diff-marker diff-marker--add">+</span>
+                <span class="mono">PROOF-DRIVEN</span>
+              </div>
+              <ul class="diff-list">
+                <li><span class="line-num">1</span><span class="add">Goal: produce verifiable change</span></li>
+                <li><span class="line-num">2</span><span class="add">Trust: compilers, tests, benchmarks</span></li>
+                <li><span class="line-num">3</span><span class="add">Success: "Here's the passing test"</span></li>
+                <li><span class="line-num">4</span><span class="add">Strategy: small diff → fast falsifier</span></li>
+                <li><span class="line-num">5</span><span class="add">QA: always-on judge in the loop</span></li>
+                <li><span class="line-num">6</span><span class="add">Uncertainty: explicit + falsifiable</span></li>
               </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-deeper">
+          <a href="shifts.html" class="btn btn--ghost">
+            <span class="mono">See all 9 mindset shifts →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- PART 3: THE FRAMEWORK -->
+      <section id="framework" class="section section--dark">
+        <div class="section__header">
+          <span class="section__number mono">PART 3</span>
+          <h2 class="section__title">The Framework</h2>
+          <p class="section__sub">How to operationalize this insight.</p>
+        </div>
+
+        <!-- The Loop -->
+        <div class="framework-block">
+          <h3 class="framework-block__title">
+            <span class="mono">3A</span> The Loop
+          </h3>
+          <p class="framework-block__desc">Every change follows this cycle. No exceptions.</p>
+
+          <div class="loop-viz">
+            <div class="loop-step loop-step--propose">
+              <span class="loop-step__name">Propose</span>
+              <span class="loop-step__desc">Goal, non-goals, proof plan</span>
+            </div>
+            <div class="loop-arrow">→</div>
+            <div class="loop-step loop-step--patch">
+              <span class="loop-step__name">Patch</span>
+              <span class="loop-step__desc">Small diff, focused change</span>
+            </div>
+            <div class="loop-arrow">→</div>
+            <div class="loop-step loop-step--prove">
+              <span class="loop-step__name">Prove</span>
+              <span class="loop-step__desc">Run fastest falsifier first</span>
+            </div>
+            <div class="loop-arrow">→</div>
+            <div class="loop-step loop-step--pack">
+              <span class="loop-step__name">Pack</span>
+              <span class="loop-step__desc">Regression test + docs</span>
+            </div>
+          </div>
+
+          <div class="proof-ladder">
+            <span class="mono">PROOF LADDER (stop at first failure)</span>
+            <div class="ladder-steps">
+              <span class="ladder-step">format</span>
+              <span class="ladder-sep">→</span>
+              <span class="ladder-step">lint</span>
+              <span class="ladder-sep">→</span>
+              <span class="ladder-step">typecheck</span>
+              <span class="ladder-sep">→</span>
+              <span class="ladder-step">unit tests</span>
+              <span class="ladder-sep">→</span>
+              <span class="ladder-step">integration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Control Theory -->
+        <div class="framework-block">
+          <h3 class="framework-block__title">
+            <span class="mono">3B</span> Control Theory Lens
+          </h3>
+          <p class="framework-block__desc">Think: sensors, controller, actuators. Most AI setups fail because they have actuators but weak sensors.</p>
+
+          <div class="control-diagram">
+            <div class="control-node control-node--sensors">
+              <div class="control-node__icon">◉</div>
+              <h4>Sensors</h4>
+              <span class="mono">(truth sources)</span>
+              <ul>
+                <li>Tests, type checks, linters</li>
+                <li>CI results, telemetry</li>
+              </ul>
+            </div>
+
+            <div class="control-flow">
+              <svg viewBox="0 0 200 60" class="flow-arrow">
+                <defs>
+                  <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#00ffd5;stop-opacity:0.2" />
+                    <stop offset="50%" style="stop-color:#00ffd5;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#00ffd5;stop-opacity:0.2" />
+                  </linearGradient>
+                </defs>
+                <path d="M0,30 L180,30" stroke="url(#flowGrad)" stroke-width="2" fill="none" class="flow-line"/>
+                <polygon points="180,30 165,22 165,38" fill="#00ffd5" class="flow-head"/>
+              </svg>
+            </div>
+
+            <div class="control-node control-node--controller">
+              <div class="control-node__icon">⬡</div>
+              <h4>Controller</h4>
+              <span class="mono">(the loop)</span>
+              <ul>
+                <li>Propose → Patch → Prove → Pack</li>
+                <li>Stop at first failure</li>
+              </ul>
+            </div>
+
+            <div class="control-flow">
+              <svg viewBox="0 0 200 60" class="flow-arrow">
+                <path d="M0,30 L180,30" stroke="url(#flowGrad)" stroke-width="2" fill="none" class="flow-line"/>
+                <polygon points="180,30 165,22 165,38" fill="#00ffd5" class="flow-head"/>
+              </svg>
+            </div>
+
+            <div class="control-node control-node--actuators">
+              <div class="control-node__icon">◎</div>
+              <h4>Actuators</h4>
+              <span class="mono">(changes)</span>
+              <ul>
+                <li>Code edits, configs</li>
+                <li>Rollbacks, deploys</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Funnel -->
+        <div class="framework-block">
+          <h3 class="framework-block__title">
+            <span class="mono">3C</span> The Funnel
+          </h3>
+          <p class="framework-block__desc">LLM proposes many options. Oracles filter down to what actually works.</p>
+
+          <div class="funnel-viz">
+            <div class="funnel-stage funnel-stage--proposals">
+              <div class="funnel-stage__label mono">LLM PROPOSES</div>
+              <div class="funnel-items">
+                <div class="funnel-item funnel-item--a">patch A</div>
+                <div class="funnel-item funnel-item--b">patch B</div>
+                <div class="funnel-item funnel-item--c">patch C</div>
+              </div>
+            </div>
+
+            <div class="funnel-filter">
+              <div class="filter-gate">
+                <span class="mono">ORACLES JUDGE</span>
+                <div class="filter-lines">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="funnel-results">
+              <div class="result result--fail">
+                <span class="result__patch">patch A</span>
+                <span class="result__verdict mono">✗ fails unit test</span>
+              </div>
+              <div class="result result--fail">
+                <span class="result__patch">patch B</span>
+                <span class="result__verdict mono">✗ fails typecheck</span>
+              </div>
+              <div class="result result--pass">
+                <span class="result__patch">patch C</span>
+                <span class="result__verdict mono">✓ passes all checks</span>
+              </div>
+            </div>
+
+            <div class="funnel-output">
+              <div class="ship-badge">
+                <span class="ship-icon">▶</span>
+                <span class="mono">SHIP</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section split">
-        <div class="container split__inner">
-          <div>
-            <h2>Roles -> constraints</h2>
-            <p>
-              Front-end / back-end / QA are throughput partitions. The AI-native
-              decomposition is constraints + interfaces + oracles.
-            </p>
-            <div class="chip-list">
-              <span>Spec</span><span>Interfaces</span><span>Transformations</span>
-              <span>Verification</span><span>Observability</span>
-            </div>
-          </div>
-          <div class="constraint-grid">
-            <div>
-              <h4>UI constraints</h4>
-              <p>Accessibility, latency, responsiveness, cross-browser.</p>
-              <span class="oracle">Oracles: Playwright, a11y, visual snapshots</span>
-            </div>
-            <div>
-              <h4>Data constraints</h4>
-              <p>Schemas, idempotency, boundary checks.</p>
-              <span class="oracle">Oracles: contract tests, schema validation</span>
-            </div>
-            <div>
-              <h4>Reliability constraints</h4>
-              <p>SLOs, rollback safety, error budgets.</p>
-              <span class="oracle">Oracles: telemetry, canaries, replay tests</span>
-            </div>
-          </div>
+      <!-- PART 4: APPLY IT -->
+      <section id="apply" class="section">
+        <div class="section__header">
+          <span class="section__number mono">PART 4</span>
+          <h2 class="section__title">Apply It</h2>
+          <p class="section__sub">Copy these into your project. Start proof-driven today.</p>
         </div>
-      </section>
-      <section id="example" class="section">
-        <div class="container">
-          <div class="section__header">
-            <h2>A one-minute example</h2>
-            <p>Same task, two mindsets.</p>
-          </div>
-          <div class="example">
-            <div class="example__card">
-              <h3>Open-loop (story)</h3>
-              <p>
-                "I normalized emails in signup and login. This should prevent
-                duplicates."
-              </p>
-            </div>
-            <div class="example__card example__card--proof">
-              <h3>Proof-driven (physics)</h3>
-              <ul>
-                <li>Invariant: email is canonical (trim + lowercase) and unique.</li>
-                <li>Small diff: add normalizeEmail() once; call at ingress.</li>
-                <li>Regression test: Foo@Bar.com then foo@bar.com -> fail.</li>
-                <li>Proof: npm run verify passes.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="section__header">
-            <h2>Why it scales</h2>
-            <p>Closed loops converge. Open loops drift.</p>
-          </div>
-          <pre class="funnel">
-(LLM proposes diffs)            (Oracles judge truth)
-  many candidates      ->       lint / build / tests       ->   ship
-+ patch A            fails unit test
-+ patch B            fails typecheck
-+ patch C            passes all checks
-          </pre>
-        </div>
-      </section>
-
-      <section class="section control">
-        <div class="container">
-          <div class="section__header">
-            <h2>Control theory lens</h2>
-            <p>Planning is control. Oracles are sensors.</p>
-          </div>
-          <div class="control__grid">
-            <div>
-              <h4>Sensors (truth)</h4>
-              <ul>
-                <li>CI results, unit/integration tests</li>
-                <li>Static analysis, typecheck</li>
-                <li>Runtime telemetry, SLOs</li>
-              </ul>
-            </div>
-            <div>
-              <h4>Actuators (change)</h4>
-              <ul>
-                <li>Code edits, schema updates</li>
-                <li>Config + infra changes</li>
-                <li>Feature flags and rollbacks</li>
-              </ul>
-            </div>
-            <div>
-              <h4>Controller (harness)</h4>
-              <ul>
-                <li>Propose -> Patch -> Prove -> Pack</li>
-                <li>Stops at first failure</li>
-                <li>Reduces scope when uncertain</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="paste" class="section paste">
-        <div class="container">
-          <div class="section__header">
-            <h2>Paste-ins</h2>
-            <p>Drop these into your project to enforce proof over prose.</p>
-          </div>
-
+        <div class="code-blocks">
           <div class="code-block" data-copy>
             <div class="code-block__header">
-              <span>Claude Project Instructions</span>
-              <button class="copy" data-copy-btn>Copy</button>
+              <div class="code-block__dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="code-block__title mono">Claude Project Instructions</span>
+              <button class="copy-btn" data-copy-btn>
+                <span class="copy-btn__text">Copy</span>
+                <span class="copy-btn__icon">⎘</span>
+              </button>
             </div>
             <pre><code>You are an engineering agent in a proof-driven repo.
 
 Prime directive: If it doesn't run, it doesn't exist.
-Never claim fixed/works/done without executable evidence (tests/typecheck/build/lint).
+Never claim fixed/works/done without executable evidence.
 
 Operate in a closed loop:
-1) Propose: Goal + non-goals + smallest approach + proof plan (commands).
-2) Patch: small diffs only; no rewrites unless required.
-3) Prove: run fastest falsifiers first (format -> lint -> typecheck/build -> unit tests -> integration/e2e as needed).
-4) Pack: add regression tests for bug fixes; update docs/contracts.
+1) Propose: Goal + non-goals + proof plan (exact commands)
+2) Patch: small diffs only; no rewrites unless required
+3) Prove: run fastest falsifiers first (format → lint → typecheck → tests)
+4) Pack: add regression tests for fixes; update docs
 
 Output format every time:
 - Plan (Goal, Non-goals, Proof plan)
 - Changes (files + why)
 - Proof (commands + pass/fail)
-- Risks & mitigations
-If you can't run commands, say exactly why and provide the exact commands a human/CI should run.</code></pre>
+- Risks & mitigations</code></pre>
           </div>
 
           <div class="code-block" data-copy>
             <div class="code-block__header">
-              <span>AGENTS.md (repo root)</span>
-              <button class="copy" data-copy-btn>Copy</button>
+              <div class="code-block__dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="code-block__title mono">AGENTS.md (drop in repo root)</span>
+              <button class="copy-btn" data-copy-btn>
+                <span class="copy-btn__text">Copy</span>
+                <span class="copy-btn__icon">⎘</span>
+              </button>
             </div>
-            <pre><code># AGENTS.md -- Proof-Driven Agent Operating Rules
+            <pre><code># AGENTS.md — Proof-Driven Agent Operating Rules
 
-Phrase: If it doesn't run, it doesn't exist.
-
-This repo uses closed-loop development. Agents may propose and implement changes,
-but correctness is determined by oracles: compilers, linters, tests, benchmarks--not prose.
+> If it doesn't run, it doesn't exist.
 
 Non-negotiables:
-1) No proof, no claim.
-2) Regression test mandate for bug fixes.
-3) Don't disable truth gates.
-4) Interfaces are physics.
-5) Externalize uncertainty with falsifiers.
+1) No proof, no claim
+2) Regression test mandate for bug fixes
+3) Don't disable truth gates
+4) Interfaces are physics
+5) Externalize uncertainty
 
-Loop: Propose -> Patch -> Prove -> Pack
-Proof ladder: format -> lint -> typecheck/build -> unit tests -> integration/e2e (if relevant)
-Truth command: npm run verify (or make verify).
-</code></pre>
+Loop: Propose → Patch → Prove → Pack
+Proof ladder: format → lint → typecheck → unit tests → integration
+Truth command: npm run verify</code></pre>
           </div>
 
           <div class="code-block" data-copy>
             <div class="code-block__header">
-              <span>verify.sh (template)</span>
-              <button class="copy" data-copy-btn>Copy</button>
+              <div class="code-block__dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="code-block__title mono">verify.sh (template)</span>
+              <button class="copy-btn" data-copy-btn>
+                <span class="copy-btn__text">Copy</span>
+                <span class="copy-btn__icon">⎘</span>
+              </button>
             </div>
             <pre><code>#!/usr/bin/env bash
 set -euo pipefail
 
-echo "== format check =="
-# TODO: replace with your formatter check
-
-echo "== lint =="
-# TODO: eslint ./ ruff check / golangci-lint run
-
-echo "== typecheck/build =="
-# TODO: tsc -p . / mypy . / cargo check
-
-echo "== unit tests =="
-# TODO: vitest / pytest / go test ./...
-
-echo "== verify complete =="</code></pre>
+echo "== format =="   && npm run format:check
+echo "== lint =="     && npm run lint
+echo "== typecheck ==" && npm run typecheck
+echo "== test =="     && npm run test
+echo "== verify OK =="</code></pre>
           </div>
         </div>
       </section>
 
-      <section class="section close">
-        <div class="container close__inner">
-          <h2>Oracles, not org charts.</h2>
-          <p>
-            Division of labor is not required for quality. Division of verification is.
-            Build the harness, and the model becomes reliable.
-          </p>
+      <!-- LESSON SUMMARY -->
+      <section class="section section--summary">
+        <div class="summary-content">
+          <h2 class="summary-title">Lesson Summary</h2>
+
+          <div class="summary-points">
+            <div class="summary-point">
+              <span class="summary-point__num">1</span>
+              <p><strong>The problem:</strong> Story-driven AI fails because narratives don't scale and confidence ≠ correctness.</p>
+            </div>
+            <div class="summary-point">
+              <span class="summary-point__num">2</span>
+              <p><strong>The insight:</strong> Replace roles with oracles. Verification beats narration.</p>
+            </div>
+            <div class="summary-point">
+              <span class="summary-point__num">3</span>
+              <p><strong>The framework:</strong> Propose → Patch → Prove → Pack. Every claim ends in executable evidence.</p>
+            </div>
+            <div class="summary-point">
+              <span class="summary-point__num">4</span>
+              <p><strong>The phrase:</strong> If it doesn't run, it doesn't exist.</p>
+            </div>
+          </div>
+
+          <div class="summary-next">
+            <a href="shifts.html" class="btn btn--primary">
+              <span class="btn__glow"></span>
+              Deep dive: The 9 Shifts →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CURRICULUM NAV -->
+      <section class="curriculum-nav">
+        <div class="curriculum-nav__inner">
+          <a href="#" class="curriculum-nav__link curriculum-nav__link--prev curriculum-nav__link--disabled">
+            <span class="mono">← PREVIOUS</span>
+            <span class="curriculum-nav__title">Start of curriculum</span>
+          </a>
+          <a href="#" class="curriculum-nav__link curriculum-nav__link--next">
+            <span class="mono">NEXT →</span>
+            <span class="curriculum-nav__title">Coming soon</span>
+          </a>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container">
-        <span>Proof-driven development is the operating system for AI-native engineering.</span>
+      <div class="footer__inner">
+        <span class="footer__text">AI Native: Learn how AI works, then do that.</span>
+        <a href="https://jamesbrady.org" class="footer__mark mono">jamesbrady.org</a>
       </div>
     </footer>
 

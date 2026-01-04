@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The 9 Shifts | Oracles, Not Org Charts</title>
+    <meta name="description" content="Nine phase shifts from story-driven to proof-driven development. Transform how you build with AI agents." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <div class="grid-bg"></div>
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+    <header class="nav">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">
+          <span class="nav__icon">◈</span>
+          <span>ORACLES</span>
+        </a>
+        <div class="nav__links">
+          <a href="index.html">Home</a>
+          <a href="#example">Example</a>
+          <a href="#shifts">All 9 Shifts</a>
+          <a href="#summary">Summary</a>
+          <a href="patterns.html" class="nav__link--highlight">Patterns</a>
+        </div>
+        <div class="nav__status">
+          <span class="status-dot"></span>
+          <span class="mono">SHIFTS: 9</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="hero" class="hero hero--shifts">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="pulse"></span>
+            <span class="mono">THE MINDSET DIFF</span>
+          </div>
+
+          <h1 class="hero__title">
+            <span class="hero__line">9 phase shifts</span>
+            <span class="hero__line hero__line--accent">from story to proof.</span>
+          </h1>
+
+          <p class="hero__sub">
+            A side-by-side comparison showing how the same task gets handled
+            with old vs new thinking. Every shift closes an open loop.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="#example" class="btn btn--primary">
+              <span class="btn__glow"></span>
+              See the Example
+            </a>
+            <a href="#shifts" class="btn btn--ghost">
+              <span class="mono">View All Shifts</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONCRETE EXAMPLE -->
+      <section id="example" class="section section--dark">
+        <div class="section__header">
+          <span class="section__number mono">00</span>
+          <h2 class="section__title">The Before & After</h2>
+          <p class="section__sub">Same task: "Fix the email duplicate bug." Two completely different approaches.</p>
+        </div>
+
+        <div class="example-full">
+          <div class="example-full__card example-full__card--before">
+            <div class="example-full__header">
+              <span class="diff-marker diff-marker--del">−</span>
+              <span class="mono">OPEN-LOOP (STORY-DRIVEN)</span>
+            </div>
+            <div class="example-full__content">
+              <pre><code>I've fixed the email duplicate bug by:
+
+1. Adding email normalization in the signup handler
+2. Adding email normalization in the login handler
+3. Both now call toLowerCase() and trim()
+
+This should prevent duplicate accounts from being created
+with different email capitalizations.
+
+The change looks correct and follows our patterns.
+Let me know if you'd like any adjustments!</code></pre>
+            </div>
+            <div class="example-full__problems">
+              <h5 class="mono">WHAT'S WRONG:</h5>
+              <ul>
+                <li><span class="del">"should prevent"</span> = unverified claim</li>
+                <li><span class="del">"looks correct"</span> = vibes, not proof</li>
+                <li>No test, no verification command, no evidence</li>
+                <li>If it breaks, we won't know until production</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="example-full__card example-full__card--after">
+            <div class="example-full__header">
+              <span class="diff-marker diff-marker--add">+</span>
+              <span class="mono">CLOSED-LOOP (PROOF-DRIVEN)</span>
+            </div>
+            <div class="example-full__content">
+              <pre><code>## Plan
+<strong>Goal:</strong> Prevent duplicate accounts from email case variations
+<strong>Non-goals:</strong> Not changing auth flow, not migrating existing data
+<strong>Approach:</strong> Single normalizeEmail() at ingress boundary
+<strong>Proof plan:</strong> npm run verify + new regression test
+
+## Changes
+- src/utils/email.ts: Added normalizeEmail(email: string)
+- src/handlers/auth.ts: Call normalizeEmail at signup/login ingress
+- tests/email.test.ts: Added case-sensitivity regression test
+
+## Proof
+<span class="add">$ npm run verify</span>
+<span class="add">✓ format (0.2s)</span>
+<span class="add">✓ lint (1.1s)</span>
+<span class="add">✓ typecheck (2.3s)</span>
+<span class="add">✓ unit tests (4.7s)</span>
+  <span class="add">✓ email.test.ts</span>
+    <span class="add">✓ normalizeEmail trims whitespace</span>
+    <span class="add">✓ normalizeEmail lowercases</span>
+    <span class="add">✓ Foo@Bar.com then foo@bar.com returns same user (REGRESSION)</span>
+
+## Risks & Mitigations
+- Existing duplicate accounts: Not addressed (out of scope, needs data migration)
+- Performance: normalizeEmail is O(n) on string length, negligible</code></pre>
+            </div>
+            <div class="example-full__wins">
+              <h5 class="mono">WHAT'S DIFFERENT:</h5>
+              <ul>
+                <li><span class="add">Every claim has executable evidence</span></li>
+                <li><span class="add">Regression test proves the specific bug class is caught</span></li>
+                <li><span class="add"><code>npm run verify</code> output is pasted, not described</span></li>
+                <li><span class="add">Risks are explicit, not hidden</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRANSFORMATION DIAGRAM -->
+      <section class="section">
+        <div class="section__header">
+          <span class="section__number mono">∞</span>
+          <h2 class="section__title">The Transformation</h2>
+          <p class="section__sub">From open loop to closed loop. From narrative to executable.</p>
+        </div>
+
+        <div class="transform-diagram">
+          <div class="transform-box transform-box--open">
+            <div class="transform-box__header mono">OPEN-LOOP (STORY)</div>
+            <div class="transform-box__flow">
+              <div class="transform-step">
+                <span class="transform-step__label">Human describes</span>
+                <span class="transform-step__detail mono">what they want</span>
+              </div>
+              <span class="transform-arrow">→</span>
+              <div class="transform-step">
+                <span class="transform-step__label">AI generates</span>
+                <span class="transform-step__detail mono">narrative</span>
+              </div>
+              <span class="transform-arrow">→</span>
+              <div class="transform-step">
+                <span class="transform-step__label">Human trusts</span>
+                <span class="transform-step__detail mono">the story</span>
+              </div>
+            </div>
+            <div class="transform-box__example">
+              <span class="del">"Fix the bug"</span> → <span class="del">"I fixed it"</span> → <span class="del">"Great!"</span>
+            </div>
+            <div class="transform-box__verdict mono">No verification. No proof. Just vibes.</div>
+          </div>
+
+          <div class="transform-shift">
+            <span class="transform-shift__icon">↓</span>
+            <span class="transform-shift__label mono">PHASE SHIFT</span>
+            <span class="transform-shift__icon">↓</span>
+          </div>
+
+          <div class="transform-box transform-box--closed">
+            <div class="transform-box__header mono">CLOSED-LOOP (PROOF)</div>
+            <div class="transform-box__flow">
+              <div class="transform-step">
+                <span class="transform-step__label">Human defines</span>
+                <span class="transform-step__detail mono">constraints</span>
+              </div>
+              <span class="transform-arrow">→</span>
+              <div class="transform-step">
+                <span class="transform-step__label">AI generates</span>
+                <span class="transform-step__detail mono">patch</span>
+              </div>
+              <span class="transform-arrow">→</span>
+              <div class="transform-step">
+                <span class="transform-step__label">Oracle</span>
+                <span class="transform-step__detail mono">judges</span>
+              </div>
+            </div>
+            <div class="transform-box__feedback">
+              <span class="feedback-arrow">↑</span>
+              <span class="mono">feedback</span>
+              <span class="feedback-arrow feedback-arrow--left">←</span>
+            </div>
+            <div class="transform-box__example">
+              <span class="add">"Fix the bug"</span> → <span class="add">patch + test</span> → <span class="add">verify: OK</span>
+            </div>
+            <div class="transform-box__verdict mono">Every claim terminates in executable evidence.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE 9 SHIFTS -->
+      <section id="shifts" class="section section--dark">
+        <div class="section__header">
+          <span class="section__number mono">09</span>
+          <h2 class="section__title">The 9 Shifts</h2>
+          <p class="section__sub">Each shift as a diff. Old thinking on the left, new thinking on the right.</p>
+        </div>
+
+        <div class="shifts-grid">
+          <!-- SHIFT 1 -->
+          <div class="shift-card" data-shift="1">
+            <div class="shift-card__number mono">01</div>
+            <h3 class="shift-card__title">Division of Labor → Division of Verification</h3>
+            <p class="shift-card__phrase mono">"Oracles, not org charts."</p>
+            <div class="shift-card__diff">
+              <div class="shift-diff shift-diff--before">
+                <div class="shift-diff__line"><span class="del">Team structure: 2 frontend, 3 backend, 1 QA</span></div>
+                <div class="shift-diff__line"><span class="del">Quality comes from: multiple reviewers checking each other</span></div>
+                <div class="shift-diff__line"><span class="del">AI role: "assistant" that generates code for humans to validate</span></div>
+              </div>
+              <div class="shift-diff shift-diff--after">
+                <div class="shift-diff__line"><span class="add">Constraint structure: UI constraints, data constraints, reliability constraints</span></div>
+                <div class="shift-diff__line"><span class="add">Quality comes from: oracles (tests, types, linters) judging every change</span></div>
+                <div class="shift-diff__line"><span class="add">AI role: "agent" that generates AND proves, validated by machines</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SHIFT 2 -->
+          <div class="shift-card" data-shift="2">
+            <div class="shift-card__number mono">02</div>
+            <h3 class="shift-card__title">Documentation → Verification</h3>
+            <p class="shift-card__phrase mono">"Proof over prose."</p>
+            <div class="shift-card__diff">
+              <div class="shift-diff shift-diff--before">
+                <div class="shift-diff__line"><span class="del">Success metric: "Is the code well-documented?"</span></div>
+                <div class="shift-diff__line"><span class="del">Trust source: "The comments explain what it does"</span></div>
+                <div class="shift-diff__line"><span class="del">Done when: "I described what I changed"</span></div>
+              </div>
+              <div class="shift-diff shift-diff--after">
+                <div class="shift-diff__line"><span class="add">Success metric: "Does npm run verify pass?"</span></div>
+                <div class="shift-diff__line"><span class="add">Trust source: "The test proves it works"</span></div>
+                <div class="shift-diff__line"><span class="add">Done when: "Here's the command output showing it passes"</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SHIFT 3 -->
+          <div class="shift-card" data-shift="3">
+            <div class="shift-card__number mono">03</div>
+            <h3 class="shift-card__title">Planning → Control Theory</h3>
+            <p class="shift-card__phrase mono">"Sensors before actuators."</p>
+            <div class="shift-card__diff">
+              <div class="shift-diff shift-diff--before">
+                <div class="shift-diff__line"><span class="del">Approach: "Let's plan this carefully upfront"</span></div>
+                <div class="shift-diff__line"><span class="del">Risk management: "We thought through the edge cases"</span></div>
+                <div class="shift-diff__line"><span class="del">Adaptation: "We'll adjust the plan if things change"</span></div>
+              </div>
+              <div class="shift-diff shift-diff--after">
+                <div class="shift-diff__line"><span class="add">Approach: "What sensors tell us if we're wrong?"</span></div>
+                <div class="shift-diff__line"><span class="add">Risk management: "What's the fastest way to falsify this?"</span></div>
+                <div class="shift-diff__line"><span class="add">Adaptation: "The feedback loop auto-corrects; we just tune it"</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SHIFT 4 -->
+          <div class="shift-card" data-shift="4">
+            <div class="shift-card__number mono">04</div>
+            <h3 class="shift-card__title">One-Shot Fixes → Loop Discipline</h3>
+            <p class="shift-card__phrase mono">"Propose → Patch → Prove → Pack."</p>
+            <div class="shift-card__diff">
+              <div class="shift-diff shift-diff--before">
+                <div class="shift-diff__line"><span class="del">Fix: "I changed the code"</span></div>
+                <div class="shift-diff__line"><span class="del">Verify: "It looks right"</span></div>
+                <div class="shift-diff__line"><span class="del">Done: "Moving on"</span></div>
+              </div>
+              <div class="shift-diff shift-diff--after">
+                <div class="shift-diff__line"><span class="add">Propose: "Goal, non-goals, approach, proof plan"</span></div>
+                <div class="shift-diff__line"><span class="add">Patch: "Small diff, focused change"</span></div>
+                <div class="shift-diff__line"><span class="add">Prove: "format → lint → typecheck → test"</span></div>
+                <div class="shift-diff__line"><span class="add">Pack: "Regression test + docs + changelog"</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SHIFT 5 -->
+          <div class="shift-card" data-shift="5">
+            <div class="shift-card__number mono">05</div>
+            <h3 class="shift-card__title">Bugs → Interface Gaps</h3>
+            <p class="shift-card__phrase mono">"Interfaces are physics."</p>
+            <div class="shift-card__diff">
+              <div class="shift-diff shift-diff--before">
+                <div class="shift-diff__line"><span class="del">Diagnosis: "There's a bug in the email handler"</span></div>
+                <div class="shift-diff__line"><span class="del">Fix: "I corrected the logic"</span></div>
+                <div class="shift-diff__line"><span class="del">Prevention: "I'll be more careful next time"</span></div>
+              </div>
+              <div class="shift-diff shift-diff--after">
+                <div class="shift-diff__line"><span class="add">Diagnosis: "The contract allows invalid state"</span></div>
+                <div class="shift-diff__line"><span class="add">Fix: "I tightened the boundary constraint"</span></div>
+                <div class="shift-diff__line"><span class="add">Prevention: "The type system now rejects this class of bug"</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SHIFT 6 -->
+          <div class="shift-card" data-shift="6">
+            <div class="shift-card__number mono">06</div>
+            <h3 class="shift-card__title">Implied Confidence → Explicit Uncertainty</h3>
+            <p class="shift-card__phrase mono">"Certainty from tests, not vibes."</p>
+            <div class="shift-card__diff">
+              <div class="shift-diff shift-diff--before">
+                <div class="shift-diff__line"><span class="del">Response: "I've implemented the feature."</span></div>
+                <div class="shift-diff__line"><span class="del">Ambiguity: Hidden in the confident tone</span></div>
+                <div class="shift-diff__line"><span class="del">Risk: Discovered in production</span></div>
+              </div>
+              <div class="shift-diff shift-diff--after">
+                <div class="shift-diff__line"><span class="add">Response: "I've implemented the feature. Uncertainty: auth edge case untested because X. Falsifier: added TODO test."</span></div>
+                <div class="shift-diff__line"><span class="add">Ambiguity: Explicit, with mitigation</span></div>
+                <div class="shift-diff__line"><span class="add">Risk: Visible before merge</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SHIFT 7 -->
+          <div class="shift-card" data-shift="7">
+            <div class="shift-card__number mono">07</div>
+            <h3 class="shift-card__title">Human QA → Oracle Specialists</h3>
+            <p class="shift-card__phrase mono">"Specialists as tools, not people."</p>
+            <div class="shift-card__diff">
+              <div class="shift-diff shift-diff--before">
+                <div class="shift-diff__line"><span class="del">Quality gate: "QA team reviews the PR"</span></div>
+                <div class="shift-diff__line"><span class="del">Feedback time: Days</span></div>
+                <div class="shift-diff__line"><span class="del">Coverage: Whatever humans notice</span></div>
+              </div>
+              <div class="shift-diff shift-diff--after">
+                <div class="shift-diff__line"><span class="add">Quality gate: "Type oracle + Style oracle + Security oracle + Test oracle"</span></div>
+                <div class="shift-diff__line"><span class="add">Feedback time: Seconds</span></div>
+                <div class="shift-diff__line"><span class="add">Coverage: Mechanized, consistent, exhaustive</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SHIFT 8 -->
+          <div class="shift-card" data-shift="8">
+            <div class="shift-card__number mono">08</div>
+            <h3 class="shift-card__title">Pre-Deploy Testing → Pre-Generation Truth</h3>
+            <p class="shift-card__phrase mono">"Verify at the speed of thought."</p>
+            <div class="shift-card__diff">
+              <div class="shift-diff shift-diff--before">
+                <div class="shift-diff__line"><span class="del">When tests run: "Before we deploy"</span></div>
+                <div class="shift-diff__line"><span class="del">Iteration speed: Slow (write → commit → CI → wait → fix)</span></div>
+                <div class="shift-diff__line"><span class="del">Feedback distance: Large (bug created ↔ bug found)</span></div>
+              </div>
+              <div class="shift-diff shift-diff--after">
+                <div class="shift-diff__line"><span class="add">When tests run: "Before we commit, ideally before we save"</span></div>
+                <div class="shift-diff__line"><span class="add">Iteration speed: Fast (write → verify → fix → verify)</span></div>
+                <div class="shift-diff__line"><span class="add">Feedback distance: Minimal (bug created = bug found)</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SHIFT 9 -->
+          <div class="shift-card" data-shift="9">
+            <div class="shift-card__number mono">09</div>
+            <h3 class="shift-card__title">Team Practices → Portable Invariants</h3>
+            <p class="shift-card__phrase mono">"Tests, not tribal knowledge."</p>
+            <div class="shift-card__diff">
+              <div class="shift-diff shift-diff--before">
+                <div class="shift-diff__line"><span class="del">Knowledge location: "Our team does it this way"</span></div>
+                <div class="shift-diff__line"><span class="del">Transferability: Low (tribal, context-dependent)</span></div>
+                <div class="shift-diff__line"><span class="del">Drift: High (practices evolve silently)</span></div>
+              </div>
+              <div class="shift-diff shift-diff--after">
+                <div class="shift-diff__line"><span class="add">Knowledge location: "The tests enforce it"</span></div>
+                <div class="shift-diff__line"><span class="add">Transferability: High (clone repo, run verify, know truth)</span></div>
+                <div class="shift-diff__line"><span class="add">Drift: Low (invariants are checked, not remembered)</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ULTIMATE TEST -->
+      <section class="section">
+        <div class="section__header">
+          <span class="section__number mono">∴</span>
+          <h2 class="section__title">The Ultimate Test</h2>
+          <p class="section__sub">Ask yourself these three questions.</p>
+        </div>
+
+        <div class="test-questions">
+          <div class="test-question">
+            <span class="test-question__num mono">1</span>
+            <p>If a new AI agent (or human) cloned this repo tomorrow with <strong>zero context</strong>, could they run <strong>one command</strong> and know if the codebase is healthy?</p>
+          </div>
+          <div class="test-question">
+            <span class="test-question__num mono">2</span>
+            <p>Could they make a change and know <strong>immediately</strong> if they broke something?</p>
+          </div>
+          <div class="test-question">
+            <span class="test-question__num mono">3</span>
+            <p>Could they trust the system <strong>without trusting any individual's narrative</strong>?</p>
+          </div>
+        </div>
+
+        <div class="test-verdict">
+          <div class="test-verdict__row">
+            <span class="verdict-marker verdict-marker--yes">✓</span>
+            <span>If yes → you have <strong>proof-driven development</strong>.</span>
+          </div>
+          <div class="test-verdict__row">
+            <span class="verdict-marker verdict-marker--no">✗</span>
+            <span>If no → you have <strong>story-driven development</strong> with automation sprinkled on top.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SUMMARY TABLE -->
+      <section id="summary" class="section section--dark">
+        <div class="section__header">
+          <span class="section__number mono">Σ</span>
+          <h2 class="section__title">Summary: All 9 Shifts</h2>
+          <p class="section__sub">The complete transformation at a glance.</p>
+        </div>
+
+        <div class="summary-table-wrapper">
+          <table class="summary-table">
+            <thead>
+              <tr>
+                <th class="mono">OLD THINKING</th>
+                <th class="mono">NEW THINKING</th>
+                <th class="mono">REMEMBER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="del">Roles divide work</span></td>
+                <td><span class="add">Constraints define truth</span></td>
+                <td class="mono">Oracles, not org charts</td>
+              </tr>
+              <tr>
+                <td><span class="del">Document it well</span></td>
+                <td><span class="add">Prove it runs</span></td>
+                <td class="mono">Proof over prose</td>
+              </tr>
+              <tr>
+                <td><span class="del">Plan carefully</span></td>
+                <td><span class="add">Control feedback loops</span></td>
+                <td class="mono">Sensors before actuators</td>
+              </tr>
+              <tr>
+                <td><span class="del">Fix the bug</span></td>
+                <td><span class="add">Close the loop</span></td>
+                <td class="mono">Propose → Patch → Prove → Pack</td>
+              </tr>
+              <tr>
+                <td><span class="del">Code has bugs</span></td>
+                <td><span class="add">Interface has gaps</span></td>
+                <td class="mono">Interfaces are physics</td>
+              </tr>
+              <tr>
+                <td><span class="del">I think this works</span></td>
+                <td><span class="add">Here's the proof</span></td>
+                <td class="mono">Certainty from tests</td>
+              </tr>
+              <tr>
+                <td><span class="del">QA reviews code</span></td>
+                <td><span class="add">Oracles judge diffs</span></td>
+                <td class="mono">Specialists as tools</td>
+              </tr>
+              <tr>
+                <td><span class="del">Test before deploy</span></td>
+                <td><span class="add">Truth at generation</span></td>
+                <td class="mono">Verify at speed of thought</td>
+              </tr>
+              <tr>
+                <td><span class="del">Follow practices</span></td>
+                <td><span class="add">Verify invariants</span></td>
+                <td class="mono">Tests, not tribal knowledge</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ONE SENTENCE -->
+      <section class="section section--close">
+        <div class="close-content">
+          <blockquote class="one-sentence">
+            <p><strong>The shift:</strong> Stop asking "Does this look right?"</p>
+            <p class="one-sentence__emphasis">Start asking "What command proves this works?"</p>
+          </blockquote>
+          <a href="index.html" class="btn btn--primary" style="margin-top: 2rem;">
+            <span class="btn__glow"></span>
+            Back to Main
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span class="footer__text">The shift from narrative to proof. From vibes to verification.</span>
+        <span class="footer__mark mono">◈ ORACLES</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
