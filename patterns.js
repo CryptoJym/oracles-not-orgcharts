@@ -3562,6 +3562,7 @@ function initEnhancements() {
   initPatternAttributes();
   initScrollAnimations();
   initScrollProgress();
+  initLexiconDrawer();
 
   // Add smooth scroll for pattern chip links
   document.querySelectorAll('.pattern-chip').forEach(chip => {
@@ -3579,4 +3580,126 @@ function initEnhancements() {
       }
     });
   });
+}
+
+// ============================================================
+// LEXICON DRAWER
+// Slide-out reference panel for manifold terminology
+// ============================================================
+
+function initLexiconDrawer() {
+  const toggle = document.getElementById('lexicon-toggle');
+  const drawer = document.getElementById('lexicon-drawer');
+  const closeBtn = document.getElementById('lexicon-close');
+  const overlay = document.getElementById('lexicon-overlay');
+  const searchInput = document.getElementById('lexicon-search');
+
+  if (!toggle || !drawer) return;
+
+  // Toggle drawer
+  toggle.addEventListener('click', () => {
+    openLexiconDrawer();
+  });
+
+  // Close drawer
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      closeLexiconDrawer();
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      closeLexiconDrawer();
+    });
+  }
+
+  // Escape key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+      closeLexiconDrawer();
+    }
+  });
+
+  // Category expand/collapse
+  document.querySelectorAll('.lexicon-category__header').forEach(header => {
+    header.addEventListener('click', () => {
+      const category = header.closest('.lexicon-category');
+      category.classList.toggle('is-expanded');
+    });
+  });
+
+  // Search functionality
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      filterLexiconTerms(query);
+    });
+  }
+
+  function openLexiconDrawer() {
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    if (overlay) overlay.classList.add('is-visible');
+    document.body.style.overflow = 'hidden';
+
+    // Focus search input
+    setTimeout(() => {
+      if (searchInput) searchInput.focus();
+    }, 300);
+  }
+
+  function closeLexiconDrawer() {
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    if (overlay) overlay.classList.remove('is-visible');
+    document.body.style.overflow = '';
+
+    // Clear search
+    if (searchInput) {
+      searchInput.value = '';
+      filterLexiconTerms('');
+    }
+  }
+
+  function filterLexiconTerms(query) {
+    const terms = document.querySelectorAll('.lexicon-term');
+    const categories = document.querySelectorAll('.lexicon-category');
+
+    if (!query) {
+      // Show all, collapse categories
+      terms.forEach(term => term.style.display = '');
+      categories.forEach(cat => {
+        cat.style.display = '';
+        cat.classList.remove('is-expanded');
+      });
+      return;
+    }
+
+    // Filter terms
+    categories.forEach(category => {
+      const categoryTerms = category.querySelectorAll('.lexicon-term');
+      let hasVisibleTerms = false;
+
+      categoryTerms.forEach(term => {
+        const name = term.querySelector('.lexicon-term__name')?.textContent.toLowerCase() || '';
+        const definition = term.querySelector('.lexicon-term__definition')?.textContent.toLowerCase() || '';
+
+        if (name.includes(query) || definition.includes(query)) {
+          term.style.display = '';
+          hasVisibleTerms = true;
+        } else {
+          term.style.display = 'none';
+        }
+      });
+
+      // Show/hide category based on visible terms
+      if (hasVisibleTerms) {
+        category.style.display = '';
+        category.classList.add('is-expanded');
+      } else {
+        category.style.display = 'none';
+      }
+    });
+  }
 }

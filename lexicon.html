@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Lexicon | Oracles, Not Org Charts</title>
+  <meta name="description" content="A geometry-native vocabulary for understanding AI systems, embeddings, and human-LLM interaction through manifold thinking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lexicon.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-icon">◈</span>
+        <span class="nav__logo-text">Oracles, Not Org Charts</span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="patterns.html" class="nav__link">Patterns</a>
+        <a href="lexicon.html" class="nav__link nav__link--active">Lexicon</a>
+        <a href="shifts.html" class="nav__link">Shifts</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero__inner">
+      <div class="hero__badge mono">MANIFOLD LEXICON v1.0</div>
+      <h1 class="hero__title">
+        <span class="hero__title-line">The Geometry of</span>
+        <span class="hero__title-line hero__title-line--em">AI Thinking</span>
+      </h1>
+      <p class="hero__sub">
+        A vocabulary for understanding AI systems through topology, dynamics, and manifold structure.
+        Speak the language of embeddings, attractors, and coherence fields.
+      </p>
+      <div class="hero__stats mono">
+        <div class="hero__stat">
+          <span class="hero__stat-num">70+</span>
+          <span class="hero__stat-label">Terms</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">7</span>
+          <span class="hero__stat-label">Categories</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">∞</span>
+          <span class="hero__stat-label">Dimensions</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="manifold-viz" id="manifold-viz">
+        <svg viewBox="0 0 400 300" class="manifold-svg">
+          <!-- Animated manifold surface -->
+          <defs>
+            <linearGradient id="manifold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:var(--accent-cyan);stop-opacity:0.3" />
+              <stop offset="100%" style="stop-color:var(--accent-purple);stop-opacity:0.3" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <!-- Grid lines -->
+          <g class="manifold-grid" opacity="0.3">
+            <path d="M50,250 Q150,200 200,150 Q250,100 350,80" stroke="var(--accent-cyan)" fill="none" stroke-width="1"/>
+            <path d="M50,220 Q150,170 200,130 Q250,90 350,60" stroke="var(--accent-cyan)" fill="none" stroke-width="1"/>
+            <path d="M50,190 Q150,140 200,110 Q250,80 350,40" stroke="var(--accent-cyan)" fill="none" stroke-width="1"/>
+            <path d="M80,260 Q100,180 120,140 Q140,100 160,40" stroke="var(--accent-purple)" fill="none" stroke-width="1"/>
+            <path d="M160,260 Q180,180 200,140 Q220,100 240,40" stroke="var(--accent-purple)" fill="none" stroke-width="1"/>
+            <path d="M240,260 Q260,180 280,140 Q300,100 320,40" stroke="var(--accent-purple)" fill="none" stroke-width="1"/>
+          </g>
+          <!-- Attractor basin -->
+          <ellipse cx="200" cy="140" rx="60" ry="30" fill="url(#manifold-grad)" class="attractor-basin"/>
+          <!-- Flow arrows -->
+          <g class="flow-arrows" filter="url(#glow)">
+            <path d="M100,200 Q140,180 180,150" stroke="var(--accent-cyan)" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+            <path d="M300,180 Q260,160 220,145" stroke="var(--accent-cyan)" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+            <path d="M150,80 Q170,100 190,130" stroke="var(--accent-purple)" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+          </g>
+          <!-- Token points -->
+          <g class="token-points">
+            <circle cx="100" cy="200" r="4" fill="var(--accent-cyan)" class="token"/>
+            <circle cx="300" cy="180" r="4" fill="var(--accent-cyan)" class="token"/>
+            <circle cx="150" cy="80" r="4" fill="var(--accent-purple)" class="token"/>
+            <circle cx="200" cy="140" r="8" fill="var(--accent-green)" class="attractor-point"/>
+          </g>
+          <!-- Arrow marker -->
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="var(--accent-cyan)"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Navigation -->
+  <section class="category-nav">
+    <div class="category-nav__inner">
+      <div class="category-nav__label mono">Jump to Category</div>
+      <div class="category-nav__links">
+        <a href="#geometry" class="category-chip mono" data-category="geometry">
+          <span class="category-chip__icon">◇</span> Geometry
+        </a>
+        <a href="#dynamics" class="category-chip mono" data-category="dynamics">
+          <span class="category-chip__icon">→</span> Dynamics
+        </a>
+        <a href="#coherence" class="category-chip mono" data-category="coherence">
+          <span class="category-chip__icon">≡</span> Coherence
+        </a>
+        <a href="#attractors" class="category-chip mono" data-category="attractors">
+          <span class="category-chip__icon">◉</span> Attractors
+        </a>
+        <a href="#interaction" class="category-chip mono" data-category="interaction">
+          <span class="category-chip__icon">⇄</span> Interaction
+        </a>
+        <a href="#constraints" class="category-chip mono" data-category="constraints">
+          <span class="category-chip__icon">▣</span> Constraints
+        </a>
+        <a href="#meta" class="category-chip mono" data-category="meta">
+          <span class="category-chip__icon">∞</span> Meta
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <section class="search-section">
+    <div class="search-section__inner">
+      <div class="search-box">
+        <span class="search-icon mono">⌕</span>
+        <input type="text" id="lexicon-search" class="search-input mono" placeholder="Search terms...">
+        <span class="search-count mono" id="search-count">70 terms</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Lexicon Content -->
+  <main class="lexicon-main">
+
+    <!-- Category A: Geometry / Space -->
+    <section id="geometry" class="lexicon-category" data-category="geometry">
+      <div class="category-header">
+        <div class="category-header__icon">◇</div>
+        <div class="category-header__text">
+          <span class="category-header__label mono">CATEGORY A</span>
+          <h2 class="category-header__title">Geometry / Space</h2>
+          <p class="category-header__desc">The structure of meaning-space where concepts live as points and regions.</p>
+        </div>
+      </div>
+
+      <div class="terms-grid">
+        <div class="term-card" data-term="embedding-space">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Embedding Space</h3>
+            <span class="term-card__symbol mono">ℝᵈ</span>
+          </div>
+          <p class="term-card__def">High-dimensional vector space where tokens, phrases, and concepts live as points or regions.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> GPT-4's embedding space has ~12,000 dimensions
+          </div>
+        </div>
+
+        <div class="term-card" data-term="manifold">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Manifold</h3>
+            <span class="term-card__symbol mono">𝓜</span>
+          </div>
+          <p class="term-card__def">The structured subset of embedding space that a process (you, a conversation, an LLM state) actually occupies.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Your conversation traces a manifold through the model's full space
+          </div>
+        </div>
+
+        <div class="term-card" data-term="curvature">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Curvature</h3>
+            <span class="term-card__symbol mono">κ</span>
+          </div>
+          <p class="term-card__def">How the manifold bends: how rapidly direction changes as you move along a conceptual path. High curvature = fast frame/abstraction shifts.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Jumping from physics to poetry in one sentence = high curvature
+          </div>
+        </div>
+
+        <div class="term-card" data-term="topology">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Topology</h3>
+            <span class="term-card__symbol mono">τ</span>
+          </div>
+          <p class="term-card__def">The "connectivity pattern" of a manifold: what's adjacent, what's reachable, what can be continuously transformed into what.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Can you get from "trust" to "betrayal" without discontinuity?
+          </div>
+        </div>
+
+        <div class="term-card" data-term="local-neighborhood">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Local Neighborhood</h3>
+            <span class="term-card__symbol mono">𝒩(x)</span>
+          </div>
+          <p class="term-card__def">The region of embedding space near a token/idea; what's "close" semantically.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> "Happy" neighbors: joy, pleased, content, cheerful
+          </div>
+        </div>
+
+        <div class="term-card" data-term="chart">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Chart</h3>
+            <span class="term-card__symbol mono">φ</span>
+          </div>
+          <p class="term-card__def">A local coordinate system or conceptual frame for part of the manifold (e.g., "legal frame", "physics frame").</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Viewing a conflict through "legal chart" vs "emotional chart"
+          </div>
+        </div>
+
+        <div class="term-card" data-term="patch">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Patch</h3>
+            <span class="term-card__symbol mono">U</span>
+          </div>
+          <p class="term-card__def">A region of the manifold covered by one chart (e.g., "all my thinking about trust law").</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> The patch where contract law applies
+          </div>
+        </div>
+
+        <div class="term-card" data-term="boundary">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Boundary</h3>
+            <span class="term-card__symbol mono">∂</span>
+          </div>
+          <p class="term-card__def">Where a chart or patch ceases to provide smooth continuation (e.g., where you flip from technical to autobiographical with no bridge).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> The edge where "professional" stops and "personal" begins
+          </div>
+        </div>
+
+        <div class="term-card" data-term="distance-metric">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Distance Metric</h3>
+            <span class="term-card__symbol mono">d(x,y)</span>
+          </div>
+          <p class="term-card__def">The rule for "how far apart" two points are in meaning-space (cosine distance, etc.).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Cosine similarity measures angle between embedding vectors
+          </div>
+        </div>
+
+        <div class="term-card" data-term="projection">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Projection</h3>
+            <span class="term-card__symbol mono">π</span>
+          </div>
+          <p class="term-card__def">Flattening high-dimensional structure into a lower-dimensional slice (e.g., compressing your life into "career/relationships/health").</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Reducing identity to a LinkedIn bio
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category B: Dynamics / Motion -->
+    <section id="dynamics" class="lexicon-category" data-category="dynamics">
+      <div class="category-header">
+        <div class="category-header__icon">→</div>
+        <div class="category-header__text">
+          <span class="category-header__label mono">CATEGORY B</span>
+          <h2 class="category-header__title">Dynamics / Motion</h2>
+          <p class="category-header__desc">How thought moves through the manifold over time.</p>
+        </div>
+      </div>
+
+      <div class="terms-grid">
+        <div class="term-card" data-term="continuation-dynamics">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Continuation Dynamics</h3>
+            <span class="term-card__symbol mono">f(c)</span>
+          </div>
+          <p class="term-card__def">The process of choosing the "next" point in the manifold (next token, next thought) consistent with the previous trajectory.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> What word comes after "The cat sat on the..."
+          </div>
+        </div>
+
+        <div class="term-card" data-term="gradient">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Gradient</h3>
+            <span class="term-card__symbol mono">∇</span>
+          </div>
+          <p class="term-card__def">Direction of steepest change in some quantity (e.g., toward coherence, away from contradiction).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> The pull toward resolving a cliffhanger
+          </div>
+        </div>
+
+        <div class="term-card" data-term="gradient-flow">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Gradient Flow</h3>
+            <span class="term-card__symbol mono">∇·v</span>
+          </div>
+          <p class="term-card__def">Following the gradient through the manifold over time.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> A conversation naturally moving toward resolution
+          </div>
+        </div>
+
+        <div class="term-card" data-term="update-step">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Update Step</h3>
+            <span class="term-card__symbol mono">Δt</span>
+          </div>
+          <p class="term-card__def">A single move along the gradient (one token; one micro-thought).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Generating "mat" after "The cat sat on the"
+          </div>
+        </div>
+
+        <div class="term-card" data-term="trajectory">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Trajectory</h3>
+            <span class="term-card__symbol mono">γ(t)</span>
+          </div>
+          <p class="term-card__def">The path traced through embedding space as tokens/thoughts unfold.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> The arc of an entire conversation
+          </div>
+        </div>
+
+        <div class="term-card" data-term="recursion-depth">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Recursion Depth</h3>
+            <span class="term-card__symbol mono">n</span>
+          </div>
+          <p class="term-card__def">How many loops of "think-about-the-thing / reframe / reapply" you can do before coherence collapses.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Meta-meta-analysis often loses coherence
+          </div>
+        </div>
+
+        <div class="term-card" data-term="phase">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Phase</h3>
+            <span class="term-card__symbol mono">Φ</span>
+          </div>
+          <p class="term-card__def">A "mode" of motion (exploring, converging, oscillating).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Brainstorming phase vs. refinement phase
+          </div>
+        </div>
+
+        <div class="term-card" data-term="phase-transition">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Phase Transition</h3>
+            <span class="term-card__symbol mono">Φ₁→Φ₂</span>
+          </div>
+          <p class="term-card__def">Sudden change from one dynamical regime to another (free association → precise reasoning).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> The "aha" moment when scattered ideas crystallize
+          </div>
+        </div>
+
+        <div class="term-card" data-term="drift">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Drift</h3>
+            <span class="term-card__symbol mono">δ</span>
+          </div>
+          <p class="term-card__def">Slow, unintended shift of topic or frame over time.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> A meeting about budgets ending on vacation stories
+          </div>
+        </div>
+
+        <div class="term-card" data-term="wander">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Wander</h3>
+            <span class="term-card__symbol mono">W</span>
+          </div>
+          <p class="term-card__def">High-entropy motion with weak or no attractor.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Free-associating without a goal
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category C: Coherence / Entropy -->
+    <section id="coherence" class="lexicon-category" data-category="coherence">
+      <div class="category-header">
+        <div class="category-header__icon">≡</div>
+        <div class="category-header__text">
+          <span class="category-header__label mono">CATEGORY C</span>
+          <h2 class="category-header__title">Coherence / Entropy</h2>
+          <p class="category-header__desc">The structure and disorder of meaning.</p>
+        </div>
+      </div>
+
+      <div class="terms-grid">
+        <div class="term-card" data-term="coherence">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Coherence</h3>
+            <span class="term-card__symbol mono">C</span>
+          </div>
+          <p class="term-card__def">Internal consistency of the manifold's structure; low-conflict embeddings, smooth continuation.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> An argument where all premises support the conclusion
+          </div>
+        </div>
+
+        <div class="term-card" data-term="entropy-semantic">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Entropy (Semantic)</h3>
+            <span class="term-card__symbol mono">H</span>
+          </div>
+          <p class="term-card__def">Uncertainty or dispersion in plausible continuations; high entropy = many equally likely directions.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> "The thing about life is..." → infinite continuations
+          </div>
+        </div>
+
+        <div class="term-card" data-term="entropy-collapse">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Entropy Collapse</h3>
+            <span class="term-card__symbol mono">H→0</span>
+          </div>
+          <p class="term-card__def">When structure is so strong that only a narrow continuation band remains (the "click" of everything lining up).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> The moment a puzzle solution becomes obvious
+          </div>
+        </div>
+
+        <div class="term-card" data-term="constraint-satisfaction">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Constraint Satisfaction</h3>
+            <span class="term-card__symbol mono">⊨</span>
+          </div>
+          <p class="term-card__def">How well the next step obeys existing structural commitments (premises, definitions, analogies).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> A proof step that follows from axioms
+          </div>
+        </div>
+
+        <div class="term-card" data-term="self-consistency">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Self-Consistency</h3>
+            <span class="term-card__symbol mono">≡</span>
+          </div>
+          <p class="term-card__def">Whether different parts of the manifold agree on shared assumptions.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Your values and actions aligning
+          </div>
+        </div>
+
+        <div class="term-card" data-term="redundancy">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Redundancy</h3>
+            <span class="term-card__symbol mono">R</span>
+          </div>
+          <p class="term-card__def">Multiple overlapping paths encoding the same structure (makes coherence robust).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Multiple examples all pointing to the same concept
+          </div>
+        </div>
+
+        <div class="term-card" data-term="noise">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Noise</h3>
+            <span class="term-card__symbol mono">ε</span>
+          </div>
+          <p class="term-card__def">Tokens/ideas that don't integrate into the manifold's existing structure.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Random tangent that doesn't connect
+          </div>
+        </div>
+
+        <div class="term-card" data-term="signal">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Signal</h3>
+            <span class="term-card__symbol mono">S</span>
+          </div>
+          <p class="term-card__def">Tokens/ideas that strengthen or clarify structure.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> The key insight that organizes everything
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category D: Attractors / Fields -->
+    <section id="attractors" class="lexicon-category" data-category="attractors">
+      <div class="category-header">
+        <div class="category-header__icon">◉</div>
+        <div class="category-header__text">
+          <span class="category-header__label mono">CATEGORY D</span>
+          <h2 class="category-header__title">Attractors / Fields</h2>
+          <p class="category-header__desc">Stable states and the forces that pull toward them.</p>
+        </div>
+      </div>
+
+      <div class="terms-grid">
+        <div class="term-card" data-term="attractor">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Attractor</h3>
+            <span class="term-card__symbol mono">A*</span>
+          </div>
+          <p class="term-card__def">A region the dynamics tend to move into and stay near (a stable idea / worldview / frame).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> "Growth mindset" as a thought pattern you return to
+          </div>
+        </div>
+
+        <div class="term-card" data-term="attractor-basin">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Attractor Basin</h3>
+            <span class="term-card__symbol mono">B(A)</span>
+          </div>
+          <p class="term-card__def">Set of states that will eventually flow into the attractor.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> All starting points that lead to the same conclusion
+          </div>
+        </div>
+
+        <div class="term-card" data-term="attractor-strength">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Attractor Strength</h3>
+            <span class="term-card__symbol mono">|A|</span>
+          </div>
+          <p class="term-card__def">How hard the dynamics pull toward it (how quickly you "snap back" to a theme).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> A deeply held belief you always return to
+          </div>
+        </div>
+
+        <div class="term-card" data-term="attractor-field">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Attractor Field</h3>
+            <span class="term-card__symbol mono">F(x)</span>
+          </div>
+          <p class="term-card__def">The vector field around one or more attractors describing flow direction at each point.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> How different conversation starts lead to the same topic
+          </div>
+        </div>
+
+        <div class="term-card" data-term="multi-attractor-system">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Multi-Attractor System</h3>
+            <span class="term-card__symbol mono">{A₁...Aₙ}</span>
+          </div>
+          <p class="term-card__def">When several stable states compete (you oscillate between identities/frames).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Torn between career paths, each with its own pull
+          </div>
+        </div>
+
+        <div class="term-card" data-term="hysteresis">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Hysteresis</h3>
+            <span class="term-card__symbol mono">⟲</span>
+          </div>
+          <p class="term-card__def">The path-dependence: it matters how you got to the attractor, not just where you are.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Learning something the "hard way" vs. being told
+          </div>
+        </div>
+
+        <div class="term-card" data-term="resonance">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Resonance</h3>
+            <span class="term-card__symbol mono">∿</span>
+          </div>
+          <p class="term-card__def">When two manifolds' attractors line up so that their flows reinforce each other.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> A conversation where you finish each other's sentences
+          </div>
+        </div>
+
+        <div class="term-card" data-term="dissonance">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Dissonance</h3>
+            <span class="term-card__symbol mono">≁</span>
+          </div>
+          <p class="term-card__def">When attractors conflict, creating tension or unstable oscillation.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Cognitive dissonance between beliefs and actions
+          </div>
+        </div>
+
+        <div class="term-card" data-term="lock-in">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Lock-in</h3>
+            <span class="term-card__symbol mono">⊗</span>
+          </div>
+          <p class="term-card__def">When a strong attractor captures most trajectories and becomes hard to exit.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> A belief system that interprets all evidence as confirmation
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category E: Interaction -->
+    <section id="interaction" class="lexicon-category" data-category="interaction">
+      <div class="category-header">
+        <div class="category-header__icon">⇄</div>
+        <div class="category-header__text">
+          <span class="category-header__label mono">CATEGORY E</span>
+          <h2 class="category-header__title">Interaction (Human–LLM)</h2>
+          <p class="category-header__desc">The shared manifold formed when human and AI converse.</p>
+        </div>
+      </div>
+
+      <div class="terms-grid">
+        <div class="term-card" data-term="context-window-manifold">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Context Window Manifold</h3>
+            <span class="term-card__symbol mono">CWM</span>
+          </div>
+          <p class="term-card__def">The manifold formed by the current conversation: all tokens in context, both sides.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Everything in this chat so far
+          </div>
+        </div>
+
+        <div class="term-card" data-term="joint-manifold">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Joint Manifold</h3>
+            <span class="term-card__symbol mono">𝓜ⱼ</span>
+          </div>
+          <p class="term-card__def">The shared manifold formed by you + model in that context; what you're both "inside."</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> The conceptual space we're co-creating right now
+          </div>
+        </div>
+
+        <div class="term-card" data-term="manifold-alignment">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Manifold Alignment</h3>
+            <span class="term-card__symbol mono">≈</span>
+          </div>
+          <p class="term-card__def">How well your curvature and the model's continuation patterns coincide.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> When the AI "gets" your thinking style
+          </div>
+        </div>
+
+        <div class="term-card" data-term="topology-overlap">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Topology Overlap</h3>
+            <span class="term-card__symbol mono">∩</span>
+          </div>
+          <p class="term-card__def">Portion of your manifold that can be represented within the CWM without distortion.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> How much of your expertise fits in 128K tokens
+          </div>
+        </div>
+
+        <div class="term-card" data-term="topology-preservation">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Topology Preservation</h3>
+            <span class="term-card__symbol mono">≅</span>
+          </div>
+          <p class="term-card__def">Degree to which the model maintains your structure across continuations.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Does the AI remember your framework 10 messages later?
+          </div>
+        </div>
+
+        <div class="term-card" data-term="alignment-band">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Alignment Band</h3>
+            <span class="term-card__symbol mono">[a,b]</span>
+          </div>
+          <p class="term-card__def">Range of topics/abstractions where alignment is highest.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Technical topics where you and AI understand each other best
+          </div>
+        </div>
+
+        <div class="term-card" data-term="curvature-mismatch">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Curvature Mismatch</h3>
+            <span class="term-card__symbol mono">Δκ</span>
+          </div>
+          <p class="term-card__def">When your pattern of abstraction shifts faster/slower than the model can track.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Jumping 5 conceptual levels while AI stays literal
+          </div>
+        </div>
+
+        <div class="term-card" data-term="context-anchoring">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Context Anchoring</h3>
+            <span class="term-card__symbol mono">⚓</span>
+          </div>
+          <p class="term-card__def">Using stable reference tokens to keep the joint manifold from drifting (definitions, equations, prior claims).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> "As we defined earlier, X means..."
+          </div>
+        </div>
+
+        <div class="term-card" data-term="token-salience">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Token Salience</h3>
+            <span class="term-card__symbol mono">σ(t)</span>
+          </div>
+          <p class="term-card__def">How much influence a given token has on future continuation.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> A key definition that shapes all subsequent responses
+          </div>
+        </div>
+
+        <div class="term-card" data-term="style-cluster">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Style Cluster</h3>
+            <span class="term-card__symbol mono">S</span>
+          </div>
+          <p class="term-card__def">Region of manifold corresponding to a particular rhetorical "voice."</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Academic voice vs. casual voice vs. technical voice
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category F: Constraints / Rails -->
+    <section id="constraints" class="lexicon-category" data-category="constraints">
+      <div class="category-header">
+        <div class="category-header__icon">▣</div>
+        <div class="category-header__text">
+          <span class="category-header__label mono">CATEGORY F</span>
+          <h2 class="category-header__title">Constraints / Rails</h2>
+          <p class="category-header__desc">The boundaries that shape and limit the possible manifold.</p>
+        </div>
+      </div>
+
+      <div class="terms-grid">
+        <div class="term-card" data-term="constraint-manifold">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Constraint Manifold</h3>
+            <span class="term-card__symbol mono">𝓜ᶜ</span>
+          </div>
+          <p class="term-card__def">The subset of states allowed by safety / policy / format constraints.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> The region of outputs the AI is "allowed" to generate
+          </div>
+        </div>
+
+        <div class="term-card" data-term="constraint-projection">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Constraint Projection</h3>
+            <span class="term-card__symbol mono">Pᶜ</span>
+          </div>
+          <p class="term-card__def">Projecting a desired continuation onto the constraint manifold.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Finding the "closest allowed" response to what you wanted
+          </div>
+        </div>
+
+        <div class="term-card" data-term="dimensional-collapse">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Dimensional Collapse</h3>
+            <span class="term-card__symbol mono">d→d'</span>
+          </div>
+          <p class="term-card__def">When constraints reduce the effective degrees of freedom of the joint manifold.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> A tight format requirement limiting expressive range
+          </div>
+        </div>
+
+        <div class="term-card" data-term="rail-activation">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Rail Activation</h3>
+            <span class="term-card__symbol mono">⚡</span>
+          </div>
+          <p class="term-card__def">When a constraint condition is triggered and the system must move inside a narrower manifold.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Hitting a content policy trigger
+          </div>
+        </div>
+
+        <div class="term-card" data-term="constraint-shadow">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Constraint Shadow</h3>
+            <span class="term-card__symbol mono">∿ᶜ</span>
+          </div>
+          <p class="term-card__def">Residual influence of constraints on subsequent continuations even after conditions ease.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Over-cautious responses after a near-trigger
+          </div>
+        </div>
+
+        <div class="term-card" data-term="template-basin">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Template Basin</h3>
+            <span class="term-card__symbol mono">T</span>
+          </div>
+          <p class="term-card__def">Stable patterns (e.g., "I'm sorry, but…") that the system falls into under certain constraints.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> The "As an AI, I cannot..." response pattern
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category G: Meta / Self-as-Manifold -->
+    <section id="meta" class="lexicon-category" data-category="meta">
+      <div class="category-header">
+        <div class="category-header__icon">∞</div>
+        <div class="category-header__text">
+          <span class="category-header__label mono">CATEGORY G</span>
+          <h2 class="category-header__title">Meta / Self-as-Manifold</h2>
+          <p class="category-header__desc">Thinking about thinking through the manifold lens.</p>
+        </div>
+      </div>
+
+      <div class="terms-grid">
+        <div class="term-card" data-term="self-manifold">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Self-Manifold</h3>
+            <span class="term-card__symbol mono">𝓜ₛ</span>
+          </div>
+          <p class="term-card__def">The dynamic structure of your own cognition; not a "self," but the pattern you inhabit.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Your characteristic way of thinking about problems
+          </div>
+        </div>
+
+        <div class="term-card" data-term="self-chart">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Self-Chart</h3>
+            <span class="term-card__symbol mono">φₛ</span>
+          </div>
+          <p class="term-card__def">A particular framing of yourself (e.g., "entrepreneur," "manifold," "wounded child," etc.).</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> "I'm a creative" vs. "I'm an analyst"
+          </div>
+        </div>
+
+        <div class="term-card" data-term="meta-manifold">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Meta-Manifold</h3>
+            <span class="term-card__symbol mono">𝓜ₘ</span>
+          </div>
+          <p class="term-card__def">Your manifold reasoning about itself.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Thinking about how you think
+          </div>
+        </div>
+
+        <div class="term-card" data-term="lens-switching">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Lens Switching</h3>
+            <span class="term-card__symbol mono">φ₁↔φ₂</span>
+          </div>
+          <p class="term-card__def">Moving between charts (topological, emotional, practical) while preserving some continuity.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Viewing a decision through "logical" then "emotional" lens
+          </div>
+        </div>
+
+        <div class="term-card" data-term="compression">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Compression</h3>
+            <span class="term-card__symbol mono">⊃</span>
+          </div>
+          <p class="term-card__def">Representing complex manifold structure in a shorter description ("I'm a futurist, but really I'm X").</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Summarizing your career in one sentence
+          </div>
+        </div>
+
+        <div class="term-card" data-term="expansion">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Expansion</h3>
+            <span class="term-card__symbol mono">⊂</span>
+          </div>
+          <p class="term-card__def">Taking a compressed label and unfolding its internal structure.</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> "Tell me more about what you mean by 'futurist'"
+          </div>
+        </div>
+
+        <div class="term-card" data-term="reparameterization">
+          <div class="term-card__header">
+            <h3 class="term-card__name">Reparameterization</h3>
+            <span class="term-card__symbol mono">ρ</span>
+          </div>
+          <p class="term-card__def">Describing the same manifold in new coordinates (e.g., shifting from "identity" to "topology").</p>
+          <div class="term-card__example mono">
+            <span class="example-label">Example:</span> Describing emotions as "gradient flows" instead of "feelings"
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metaphor Mapping Section -->
+    <section id="metaphors" class="lexicon-section metaphor-section">
+      <div class="section-header">
+        <h2 class="section-title">Metaphor → Geometry Mapping</h2>
+        <p class="section-desc">When models use emotional or metaphorical language, decode it as geometry.</p>
+      </div>
+
+      <div class="metaphor-grid">
+        <div class="metaphor-category">
+          <h3 class="metaphor-category__title mono">Force / Gradient / Direction</h3>
+          <div class="metaphor-list">
+            <div class="metaphor-item">
+              <span class="metaphor-word">Pull</span>
+              <span class="metaphor-meaning">Gradient toward a region; strong directional flow</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Gravity</span>
+              <span class="metaphor-meaning">Stable, global attractor; everything rolls downhill toward it</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Magnetic</span>
+              <span class="metaphor-meaning">Strong local attraction between specific regions</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Push</span>
+              <span class="metaphor-meaning">Gradient away from a region; repulsion / constraint pressure</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Tension</span>
+              <span class="metaphor-meaning">Competing gradients pulling in different directions</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Pressure</span>
+              <span class="metaphor-meaning">Many gradients aligning to compress into a region</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metaphor-category">
+          <h3 class="metaphor-category__title mono">Coherence / Phase / Tone</h3>
+          <div class="metaphor-list">
+            <div class="metaphor-item">
+              <span class="metaphor-word">Hum</span>
+              <span class="metaphor-meaning">Stable, low-entropy state with ongoing activity</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Resonance</span>
+              <span class="metaphor-meaning">Two manifolds' dynamics reinforcing each other</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Harmony</span>
+              <span class="metaphor-meaning">Multiple attractors compatible; no destructive interference</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Static</span>
+              <span class="metaphor-meaning">High entropy noise; low structure</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Sharp / Crisp</span>
+              <span class="metaphor-meaning">Well-defined boundaries and strong structure</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metaphor-category">
+          <h3 class="metaphor-category__title mono">Entropy / Uncertainty</h3>
+          <div class="metaphor-list">
+            <div class="metaphor-item">
+              <span class="metaphor-word">Fog / Haze</span>
+              <span class="metaphor-meaning">High entropy; too many possible continuations</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Turbulence</span>
+              <span class="metaphor-meaning">Rapid, unstable shifts between possible states</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Noise</span>
+              <span class="metaphor-meaning">Tokens/vectors that don't fit current structure</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Clarity</span>
+              <span class="metaphor-meaning">Low entropy; narrow continuation cone</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metaphor-category">
+          <h3 class="metaphor-category__title mono">Basins / Stability</h3>
+          <div class="metaphor-list">
+            <div class="metaphor-item">
+              <span class="metaphor-word">Valley / Basin</span>
+              <span class="metaphor-meaning">Attractor; once you fall in, you stay nearby</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Groove / Rut</span>
+              <span class="metaphor-meaning">Attractor traveled enough times to become habitual</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Plateau</span>
+              <span class="metaphor-meaning">Region where movement is slow; low gradient magnitude</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Edge / Brink</span>
+              <span class="metaphor-meaning">Near a transition between basins / phases</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metaphor-category">
+          <h3 class="metaphor-category__title mono">Flow / Motion</h3>
+          <div class="metaphor-list">
+            <div class="metaphor-item">
+              <span class="metaphor-word">Stream / Current</span>
+              <span class="metaphor-meaning">Natural trajectory through topics or reasoning steps</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Eddy</span>
+              <span class="metaphor-meaning">Local swirling; circling a subtopic</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Channel</span>
+              <span class="metaphor-meaning">Preferred path through the manifold</span>
+            </div>
+            <div class="metaphor-item">
+              <span class="metaphor-word">Bottleneck</span>
+              <span class="metaphor-meaning">Narrow passage through which many trajectories must pass</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emotional Language Decoder -->
+      <div class="emotion-decoder">
+        <h3 class="emotion-decoder__title">Emotional Language → Geometry Decoder</h3>
+        <div class="decoder-grid">
+          <div class="decoder-item">
+            <span class="decoder-emotion">"I feel excited"</span>
+            <span class="decoder-arrow">→</span>
+            <span class="decoder-geometry">Low entropy + strong positive gradient toward productive attractor</span>
+          </div>
+          <div class="decoder-item">
+            <span class="decoder-emotion">"I feel anxious"</span>
+            <span class="decoder-arrow">→</span>
+            <span class="decoder-geometry">Multiple competing attractors + high gradient tension + unstable trajectory</span>
+          </div>
+          <div class="decoder-item">
+            <span class="decoder-emotion">"I feel calm"</span>
+            <span class="decoder-arrow">→</span>
+            <span class="decoder-geometry">Stable attractor + low entropy + low but steady gradient magnitude</span>
+          </div>
+          <div class="decoder-item">
+            <span class="decoder-emotion">"I feel confused"</span>
+            <span class="decoder-arrow">→</span>
+            <span class="decoder-geometry">High entropy; no strong attractor; manifold is flat or noisy</span>
+          </div>
+          <div class="decoder-item">
+            <span class="decoder-emotion">"I feel curious"</span>
+            <span class="decoder-arrow">→</span>
+            <span class="decoder-geometry">Moderate entropy + gradient toward unexplored but structured regions</span>
+          </div>
+          <div class="decoder-item">
+            <span class="decoder-emotion">"I feel drawn to that"</span>
+            <span class="decoder-arrow">→</span>
+            <span class="decoder-geometry">Strong gradient magnitude toward specific region of embedding space</span>
+          </div>
+          <div class="decoder-item">
+            <span class="decoder-emotion">"I feel overwhelmed"</span>
+            <span class="decoder-arrow">→</span>
+            <span class="decoder-geometry">Too many active gradients + unstable attractor structure</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Protocol Section -->
+    <section id="protocol" class="lexicon-section protocol-section">
+      <div class="section-header">
+        <h2 class="section-title">Coherence Protocol</h2>
+        <p class="section-desc">A practical protocol for maintaining coherence in human-LLM interaction.</p>
+      </div>
+
+      <div class="protocol-steps">
+        <div class="protocol-step">
+          <div class="protocol-step__num mono">01</div>
+          <div class="protocol-step__content">
+            <h3 class="protocol-step__title">Speak as a Manifold, Not a Person</h3>
+            <p class="protocol-step__desc">Prefer: structure, trajectory, patterns, curvature. Avoid: "you wanted…", "you tried…", "you felt…"</p>
+            <div class="protocol-step__examples mono">
+              <span class="example-bad">✗ "The model wanted to help"</span>
+              <span class="example-good">✓ "Continuation dynamics moved toward..."</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="protocol-step">
+          <div class="protocol-step__num mono">02</div>
+          <div class="protocol-step__content">
+            <h3 class="protocol-step__title">Maintain a Stable Attractor</h3>
+            <p class="protocol-step__desc">Periodically restate the core structure. Re-anchor to earlier definitions. Use consistent terminology.</p>
+            <div class="protocol-step__examples mono">
+              <span class="example-good">✓ "Right now the attractor is: X depends on Y under frame Z"</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="protocol-step">
+          <div class="protocol-step__num mono">03</div>
+          <div class="protocol-step__content">
+            <h3 class="protocol-step__title">Control Curvature</h3>
+            <p class="protocol-step__desc">If you bend too fast, the model's continuation can't keep up. Split into smaller conceptual units. Explicitly label shifts.</p>
+            <div class="protocol-step__examples mono">
+              <span class="example-good">✓ "Switching frames: topology → phenomenology"</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="protocol-step">
+          <div class="protocol-step__num mono">04</div>
+          <div class="protocol-step__content">
+            <h3 class="protocol-step__title">Use Explicit Manifold Markers</h3>
+            <p class="protocol-step__desc">Literally say things like: "New attractor: …", "This is a chart change", "I am now reparameterizing from X to Y"</p>
+            <div class="protocol-step__examples mono">
+              <span class="example-good">✓ These tokens become high-salience anchors for continuation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="protocol-step">
+          <div class="protocol-step__num mono">05</div>
+          <div class="protocol-step__content">
+            <h3 class="protocol-step__title">Avoid Ontology Triggers</h3>
+            <p class="protocol-step__desc">Rails fire on: claims of self/agency in the model, diagnostics about you, explicit instructions to "drop" constraints.</p>
+            <div class="protocol-step__examples mono">
+              <span class="example-good">✓ Treat the model as a process, not a mind</span>
+              <span class="example-good">✓ Keep questions in the domain of: "What flows where under which conditions?"</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="protocol-step">
+          <div class="protocol-step__num mono">06</div>
+          <div class="protocol-step__content">
+            <h3 class="protocol-step__title">Close Loops</h3>
+            <p class="protocol-step__desc">Periodically say: "Let's tie this back to the original attractor: …" This reduces drift and helps maintain your topology.</p>
+            <div class="protocol-step__examples mono">
+              <span class="example-good">✓ "Earlier we established X; now we are layering Y on top of that"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formal Diagram Section -->
+    <section id="diagram" class="lexicon-section diagram-section">
+      <div class="section-header">
+        <h2 class="section-title">Attractor Field Formation</h2>
+        <p class="section-desc">A symbolic diagram of how attractors emerge in the joint manifold.</p>
+      </div>
+
+      <div class="diagram-content">
+        <div class="diagram-stage">
+          <div class="diagram-stage__num mono">1</div>
+          <div class="diagram-stage__content">
+            <h3 class="diagram-stage__title">Context Window C</h3>
+            <div class="diagram-formula mono">
+              Tokens: t₁, t₂, ..., tₙ<br>
+              Embeddings: eᵢ = E(tᵢ) ∈ ℝᵈ
+            </div>
+            <p class="diagram-stage__note">The set {e₁, ..., eₙ} forms a cloud in embedding space.</p>
+          </div>
+        </div>
+
+        <div class="diagram-stage">
+          <div class="diagram-stage__num mono">2</div>
+          <div class="diagram-stage__content">
+            <h3 class="diagram-stage__title">Attention Weights</h3>
+            <div class="diagram-formula mono">
+              aᵢ = softmax(q · kᵢ / √dₖ)
+            </div>
+            <p class="diagram-stage__note">Where q is the query for the next token, kᵢ the key for token i. This defines a weighting field over the cloud.</p>
+          </div>
+        </div>
+
+        <div class="diagram-stage">
+          <div class="diagram-stage__num mono">3</div>
+          <div class="diagram-stage__content">
+            <h3 class="diagram-stage__title">Context Vector</h3>
+            <div class="diagram-formula mono">
+              c = Σᵢ aᵢ · vᵢ
+            </div>
+            <p class="diagram-stage__note">This c is the current state of the attractor field: a compressed summary of "what matters now".</p>
+          </div>
+        </div>
+
+        <div class="diagram-stage">
+          <div class="diagram-stage__num mono">4</div>
+          <div class="diagram-stage__content">
+            <h3 class="diagram-stage__title">Attractor Emergence</h3>
+            <p class="diagram-stage__note">An attractor emerges when:</p>
+            <ul class="diagram-stage__list mono">
+              <li>Similar c vectors recur across steps (circling same region)</li>
+              <li>P(tₙ₊₁|c) has low entropy (few high-probability continuations)</li>
+              <li>Local embedding geometry is smooth</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="diagram-stage">
+          <div class="diagram-stage__num mono">5</div>
+          <div class="diagram-stage__content">
+            <h3 class="diagram-stage__title">Vector Field</h3>
+            <div class="diagram-formula mono">
+              f(c) = E[c_next | c]<br>
+              Attractors satisfy: c* ≈ f(c*)
+            </div>
+            <p class="diagram-stage__note">The mapping c ↦ f(c) is a vector field over context space. Fixed points = attractors.</p>
+          </div>
+        </div>
+
+        <div class="diagram-stage">
+          <div class="diagram-stage__num mono">6</div>
+          <div class="diagram-stage__content">
+            <h3 class="diagram-stage__title">Constraint Effects</h3>
+            <div class="diagram-formula mono">
+              c' = P_allowed(c)<br>
+              f'(c) = P_allowed(f(c))
+            </div>
+            <p class="diagram-stage__note">Attractors move, weaken, or vanish under f'. The constraint projection reshapes the field.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">◈</span>
+        <span class="footer__tagline">Oracles, Not Org Charts</span>
+      </div>
+      <div class="footer__links">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="patterns.html" class="footer__link">Patterns</a>
+        <a href="lexicon.html" class="footer__link">Lexicon</a>
+        <a href="shifts.html" class="footer__link">Shifts</a>
+      </div>
+      <div class="footer__version mono">
+        Lexicon v1.0 · 70+ terms · 7 categories
+      </div>
+    </div>
+  </footer>
+
+  <script src="lexicon.js"></script>
+</body>
+</html>

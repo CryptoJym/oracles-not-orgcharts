@@ -638,6 +638,10 @@ class StatusTyping {
   }
 
   async typeEffect() {
+    // Prevent concurrent runs
+    if (this.isTyping) return;
+    this.isTyping = true;
+
     const text = this.originalText;
     this.status.textContent = '';
 
@@ -649,11 +653,16 @@ class StatusTyping {
     // Type each character
     for (let i = 0; i < text.length; i++) {
       await new Promise(resolve => setTimeout(resolve, 50));
-      this.status.insertBefore(
-        document.createTextNode(text[i]),
-        cursor
-      );
+      // Ensure cursor is still a child before inserting
+      if (cursor.parentNode === this.status) {
+        this.status.insertBefore(
+          document.createTextNode(text[i]),
+          cursor
+        );
+      }
     }
+
+    this.isTyping = false;
   }
 }
 
